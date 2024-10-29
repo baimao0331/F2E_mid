@@ -2,20 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const pages = document.querySelectorAll('.page');
   const dots = document.querySelectorAll('#pagination .dot');
   let currentPage = 0;
-  let newPage = 0;
   let totalPages = pages.length;
 
-  console.log(totalPages);
+    console.log(totalPages);
 
   function updatePage(newPage) {
       if (newPage < 0 || newPage >= totalPages) return; // 檢查範圍
-
       // 隱藏所有頁面
       pages.forEach((page, index) => {
           page.classList.remove('active');
           dots[index].classList.remove('active');
       });
-
       // 顯示當前頁
       pages[newPage].classList.add('active');
       dots[newPage].classList.add('active');

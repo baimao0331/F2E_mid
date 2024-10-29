@@ -23,11 +23,11 @@ function displaySongs_recom(data) {
             const li = document.createElement('li');
             li.className = 'card';
             li.innerHTML = `
-                <a href="lyrics.html?songId=${song.id}" target="_blank" class="song-img">
+                <a href="lyric.html?songId=${song.id}" target="_blank" class="song-img">
                     <img src="${song.img}" alt="${song.title} 封面圖" class="song-img" />
                 </a>
                 <div class="song-info">
-                    <a href="lyrics.html?songId=${song.id}" target="_blank" class="song-name">${song.title}</a>
+                    <a href="lyric.html?songId=${song.id}" target="_blank" class="song-name">${song.title}</a>
                     <div class="song-artist"><p>${song.artist}</p></div>
                 </div>
             `;

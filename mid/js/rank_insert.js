@@ -12,15 +12,17 @@ function displayRanking(data) {
             li.className = 'rankbox';
             li.innerHTML = `
             <span class="ranking-number">${index + 1} </span> <!-- 顯示排名 -->
-                <a href="lyrics.html?songId=${song.id}" target="_blank" class="song-img"><img src="${song.img}" alt="${song.title} 封面圖" class="song-img" /></a>
-                <a href="lyrics.html?songId=${song.id}" target="_blank" class="song-name">${song.title}</a>
+                <a href="lyric.html?songId=${song.id}" target="_blank" class="song-img"><img src="${song.img}" alt="${song.title} 封面圖" class="song-img" /></a>
+                <a href="lyric.html?songId=${song.id}" target="_blank" class="song-name">${song.title}</a>
                 <div class="song-artist"><p>${song.artist}</p></div>
-                <a href="lyrics.html?songId=${song.id}" class="link-item">看歌詞</a>
+                <a href="lyric.html?songId=${song.id}" class="link-item">看歌詞</a>
             `;
             rankingList.appendChild(li);
         }
     });
 }
+
+
 
 // JSON 載入並初始化
 fetch('songs.json')
