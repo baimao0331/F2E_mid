@@ -1,0 +1,730 @@
+[
+  {
+    "id": 1,
+    "title": "Speaking",
+    "artist": "Mrs.GREEN APPLE",
+    "album": "Speaking",
+    "release": "2015-12-16",
+    "img": "./images/1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "WanteD! WanteD!",
+    "artist": "Mrs.GREEN APPLE",
+    "album": "WanteD! WanteD!",
+    "release": "2017-08-30",
+    "img": "./images/2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "春愁",
+    "artist": "Mrs.GREEN APPLE",
+    "album": "Love me, Love you",
+    "release": "2018-02-14",
+    "img": "./images/3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "青と夏",
+    "artist": "Mrs.GREEN APPLE",
+    "album": "青と夏",
+    "release": "2018-08-01",
+    "img": "./images/4.jpg"
+  },
+  {
+    "id": 5,
+    "title": "点描の唄(feat.井上苑子)",
+    "artist": "Mrs.GREEN APPLE",
+    "album": "青と夏",
+    "release": "2018-08-01",
+    "img": "./images/5.jpg"
+  },
+  {
+    "id": 6,
+    "title": "僕のこと",
+    "artist": "Mrs.GREEN APPLE",
+    "album": "僕のこと",
+    "release": "2019-01-09",
+    "img": "./images/6.jpg"
+  },
+  {
+    "id": 7,
+    "title": "ANTENNA",
+    "artist": "Mrs.GREEN APPLE",
+    "album": "ANTENNA",
+    "release": "2023-07-05",
+    "img": "./images/7.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Soranji",
+    "artist": "Mrs.GREEN APPLE",
+    "album": "Soranji",
+    "release": "2022-11-09",
+    "img": "./images/8.jpg"
+  },
+  {
+    "id": 9,
+    "title": "ニュー・マイ・ノーマル",
+    "artist": "Mrs.GREEN APPLE",
+    "album": "Unity",
+    "release": "2022-07-08",
+    "img": "./images/9.jpg"
+  },
+  {
+    "id": 10,
+    "title": "正解",
+    "artist": "RADWIMPS",
+    "album": "正解",
+    "release": "2024-02-28",
+    "img": "./images/10.jpg"
+  },
+  {
+    "id": 11,
+    "title": "うるうびと",
+    "artist": "RADWIMPS",
+    "album": "余命10年 ～Original Soundtrack～",
+    "release": "2022-03-04",
+    "img": "./images/11.jpg"
+  },
+  {
+    "id": 12,
+    "title": "祝祭 feat.三浦透子",
+    "artist": "RADWIMPS",
+    "album": "天気の子 complete version",
+    "release": "2019-11-27",
+    "img": "./images/12.jpg"
+  },
+  {
+    "id": 13,
+    "title": "愛にできることはまだあるかい",
+    "artist": "RADWIMPS",
+    "album": "天気の子 complete version",
+    "release": "2019-11-27",
+    "img": "./images/13.jpg"
+  },
+  {
+    "id": 14,
+    "title": "夢灯籠",
+    "artist": "RADWIMPS",
+    "album": "君の名は。",
+    "release": "2019-11-27",
+    "img": "./images/14.jpg"
+  },
+  {
+    "id": 15,
+    "title": "前前前世(movie ver.)",
+    "artist": "RADWIMPS",
+    "album": "君の名は。",
+    "release": "2019-11-27",
+    "img": "./images/15.jpg"
+  },
+  {
+    "id": 16,
+    "title": "スパークル(movie ver.)",
+    "artist": "RADWIMPS",
+    "album": "君の名は。",
+    "release": "2019-11-27",
+    "img": "./images/16.jpg"
+  },
+  {
+    "id": 17,
+    "title": "君と羊と青",
+    "artist": "RADWIMPS",
+    "album": "絶体絶命",
+    "release": "2011-03-09",
+    "img": "./images/17.jpg"
+  },
+  {
+    "id": 18,
+    "title": "05410-(ん)",
+    "artist": "RADWIMPS",
+    "album": "RADWIMPS 4～おかずのごはん～",
+    "release": "2006-12-06",
+    "img": "./images/18.jpg"
+  },
+  {
+    "id": 19,
+    "title": "me me she",
+    "artist": "RADWIMPS",
+    "album": "RADWIMPS 4～おかずのごはん～",
+    "release": "2006-12-06",
+    "img": "./images/19.jpg"
+  },
+  {
+    "id": 20,
+    "title": "有心論",
+    "artist": "RADWIMPS",
+    "album": "RADWIMPS 4～おかずのごはん～",
+    "release": "2006-12-06",
+    "img": "./images/20.jpg"
+  },
+  {
+    "id": 21,
+    "title": "春泥棒",
+    "artist": "ヨルシカ",
+    "album": "創作(Type A)",
+    "release": "2021-01-27",
+    "img": "./images/21.jpg"
+  },
+  {
+    "id": 22,
+    "title": "風を食む",
+    "artist": "ヨルシカ",
+    "album": "創作(Type A)",
+    "release": "2021-01-27",
+    "img": "./images/22.jpg"
+  },
+  {
+    "id": 23,
+    "title": "花に亡霊",
+    "artist": "ヨルシカ",
+    "album": "盗作",
+    "release": "2020-07-29",
+    "img": "./images/23.jpg"
+  },
+  {
+    "id": 24,
+    "title": "憂一乗",
+    "artist": "ヨルシカ",
+    "album": "エルマ",
+    "release": "2019-08-28",
+    "img": "./images/24.jpg"
+  },
+  {
+    "id": 25,
+    "title": "藍二乗",
+    "artist": "ヨルシカ",
+    "album": "だから僕は音楽を辞めた",
+    "release": "2019-04-10",
+    "img": "./images/25.jpg"
+  },
+  {
+    "id": 26,
+    "title": "だから僕は音楽を辞めた",
+    "artist": "ヨルシカ",
+    "album": "だから僕は音楽を辞めた",
+    "release": "2019-04-10",
+    "img": "./images/26.jpg"
+  },
+  {
+    "id": 27,
+    "title": "言って。",
+    "artist": "ヨルシカ",
+    "album": "夏草が邪魔をする",
+    "release": "2017-06-28",
+    "img": "./images/27.jpg"
+  },
+  {
+    "id": 28,
+    "title": "雲と幽霊",
+    "artist": "ヨルシカ",
+    "album": "夏草が邪魔をする",
+    "release": "2017-06-28",
+    "img": "./images/28.jpg"
+  },
+  {
+    "id": 29,
+    "title": "靴の花火",
+    "artist": "ヨルシカ",
+    "album": "夏草が邪魔をする",
+    "release": "2017-06-28",
+    "img": "./images/29.jpg"
+  },
+  {
+    "id": 30,
+    "title": "地球儀",
+    "artist": "米津玄師",
+    "album": "地球儀",
+    "release": "2023-07-26",
+    "img": "./images/30.jpg"
+  },
+  {
+    "id": 31,
+    "title": "KICK BACK",
+    "artist": "米津玄師",
+    "album": "KICK BACK",
+    "release": "2022-11-23",
+    "img": "./images/31.jpg"
+  },
+  {
+    "id": 32,
+    "title": "M八七",
+    "artist": "米津玄師",
+    "album": "M八七",
+    "release": "2022-07-10",
+    "img": "./images/32.jpg"
+  },
+  {
+    "id": 33,
+    "title": "Pale Blue",
+    "artist": "米津玄師",
+    "album": "Pale Blue",
+    "release": "2021-06-16",
+    "img": "./images/33.jpg"
+  },
+  {
+    "id": 34,
+    "title": "死神",
+    "artist": "米津玄師",
+    "album": "Pale Blue",
+    "release": "2021-06-16",
+    "img": "./images/34.jpg"
+  },
+  {
+    "id": 35,
+    "title": "馬と鹿",
+    "artist": "米津玄師",
+    "album": "馬と鹿",
+    "release": "2019-09-11",
+    "img": "./images/35.jpg"
+  },
+  {
+    "id": 36,
+    "title": "海の幽霊",
+    "artist": "米津玄師",
+    "album": "馬と鹿",
+    "release": "2019-09-11",
+    "img": "./images/36.jpg"
+  },
+  {
+    "id": 37,
+    "title": "Lemon",
+    "artist": "米津玄師",
+    "album": "Lemon",
+    "release": "2018-03-14",
+    "img": "./images/37.jpg"
+  },
+  {
+    "id": 38,
+    "title": "orion",
+    "artist": "米津玄師",
+    "album": "orion",
+    "release": "2017-02-15",
+    "img": "./images/38.jpg"
+  },
+  {
+    "id": 39,
+    "title": "LOSER",
+    "artist": "米津玄師",
+    "album": "LOSER/ナンバーナイン",
+    "release": "2016-09-28",
+    "img": "./images/39.jpg"
+  },
+  {
+    "id": 40,
+    "title": "SPECIALZ",
+    "artist": "King Gnu",
+    "album": "SPECIALZ",
+    "release": "2023-09-06",
+    "img": "./images/40.jpg"
+  },
+  {
+    "id": 41,
+    "title": "雨燦々",
+    "artist": "King Gnu",
+    "album": "Stardom",
+    "release": "2022-11-30",
+    "img": "./images/41.jpg"
+  },
+  {
+    "id": 42,
+    "title": "カメレオン",
+    "artist": "King Gnu",
+    "album": "カメレオン",
+    "release": "2022-03-16",
+    "img": "./images/42.jpg"
+  },
+  {
+    "id": 43,
+    "title": "一途",
+    "artist": "King Gnu",
+    "album": "一途/逆夢",
+    "release": "2021-12-29",
+    "img": "./images/43.jpg"
+  },
+  {
+    "id": 44,
+    "title": "逆夢",
+    "artist": "King Gnu",
+    "album": "一途/逆夢",
+    "release": "2021-12-29",
+    "img": "./images/44.jpg"
+  },
+  {
+    "id": 45,
+    "title": "Prayer X",
+    "artist": "King Gnu",
+    "album": "Prayer X",
+    "release": "2018-09-19",
+    "img": "./images/45.jpg"
+  },
+  {
+    "id": 46,
+    "title": "Teenager Forever",
+    "artist": "King Gnu",
+    "album": "CEREMONY",
+    "release": "2020-01-15",
+    "img": "./images/46.jpg"
+  },
+  {
+    "id": 47,
+    "title": "白日",
+    "artist": "King Gnu",
+    "album": "CEREMONY",
+    "release": "2020-01-15",
+    "img": "./images/47.jpg"
+  },
+  {
+    "id": 48,
+    "title": "Cantabile",
+    "artist": "Novelbright",
+    "album": "CIRCUS",
+    "release": "2024-04-03",
+    "img": "./images/48.jpg"
+  },
+  {
+    "id": 49,
+    "title": "雪の音",
+    "artist": "Novelbright",
+    "album": "CIRCUS",
+    "release": "2024-04-03",
+    "img": "./images/49.jpg"
+  },
+  {
+    "id": 50,
+    "title": "愛とか恋とか",
+    "artist": "Novelbright",
+    "album": "Assort",
+    "release": "2022-05-18",
+    "img": "./images/50.jpg"
+  },
+  {
+    "id": 51,
+    "title": "開幕宣言",
+    "artist": "Novelbright",
+    "album": "開幕宣言",
+    "release": "2021-04-28",
+    "img": "./images/51.jpg"
+  },
+  {
+    "id": 52,
+    "title": "Sunny drop",
+    "artist": "Novelbright",
+    "album": "開幕宣言",
+    "release": "2021-04-28",
+    "img": "./images/52.jpg"
+  },
+  {
+    "id": 53,
+    "title": "ツキミソウ",
+    "artist": "Novelbright",
+    "album": "開幕宣言",
+    "release": "2021-04-28",
+    "img": "./images/53.jpg"
+  },
+  {
+    "id": 54,
+    "title": "夢花火",
+    "artist": "Novelbright",
+    "album": "WONDERLAND",
+    "release": "2020-05-27",
+    "img": "./images/54.jpg"
+  },
+  {
+    "id": 55,
+    "title": "Chessboard",
+    "artist": "Official髭男dism",
+    "album": "Chessboard/日常",
+    "release": "2023-09-13",
+    "img": "./images/55.jpg"
+  },
+  {
+    "id": 56,
+    "title": "ミックスナッツ",
+    "artist": "Official髭男dism",
+    "album": "ミックスナッツ EP",
+    "release": "2022-06-22",
+    "img": "./images/56.jpg"
+  },
+  {
+    "id": 57,
+    "title": "I LOVE...",
+    "artist": "Official髭男dism",
+    "album": "I LOVE...",
+    "release": "2020-02-12",
+    "img": "./images/57.jpg"
+  },
+  {
+    "id": 58,
+    "title": "宿命",
+    "artist": "Official髭男dism",
+    "album": "宿命",
+    "release": "2019-07-31",
+    "img": "./images/58.jpg"
+  },
+  {
+    "id": 59,
+    "title": "Pretender",
+    "artist": "Official髭男dism",
+    "album": "Pretender",
+    "release": "2019-05-15",
+    "img": "./images/59.jpg"
+  },
+  {
+    "id": 60,
+    "title": "Sharon",
+    "artist": "Official髭男dism",
+    "album": "Rejoice",
+    "release": "2024-07-31",
+    "img": "./images/60.jpg"
+  },
+  {
+    "id": 61,
+    "title": "SOULSOUP",
+    "artist": "Official髭男dism",
+    "album": "Rejoice",
+    "release": "2024-07-31",
+    "img": "./images/61.jpg"
+  },
+  {
+    "id": 62,
+    "title": "Cry Baby",
+    "artist": "Official髭男dism",
+    "album": "Editorial",
+    "release": "2021-08-18",
+    "img": "./images/62.jpg"
+  },
+  {
+    "id": 63,
+    "title": "Laughter",
+    "artist": "Official髭男dism",
+    "album": "Editorial",
+    "release": "2021-08-18",
+    "img": "./images/63.jpg"
+  },
+  {
+    "id": 64,
+    "title": "イエスタデイ",
+    "artist": "Official髭男dism",
+    "album": "Traveler",
+    "release": "2019-10-09",
+    "img": "./images/64.jpg"
+  },
+  {
+    "id": 65,
+    "title": "裸の勇者",
+    "artist": "Vaundy",
+    "album": "裸の勇者",
+    "release": "2022-02-23",
+    "img": "./images/65.jpg"
+  },
+  {
+    "id": 66,
+    "title": "灯火",
+    "artist": "Vaundy",
+    "album": "strobo",
+    "release": "2020-05-27",
+    "img": "./images/66.jpg"
+  },
+  {
+    "id": 67,
+    "title": "怪獣の花唄",
+    "artist": "Vaundy",
+    "album": "strobo",
+    "release": "2020-05-27",
+    "img": "./images/67.jpg"
+  },
+  {
+    "id": 68,
+    "title": "東京フラッシュ",
+    "artist": "Vaundy",
+    "album": "strobo",
+    "release": "2020-05-27",
+    "img": "./images/68.jpg"
+  },
+  {
+    "id": 69,
+    "title": "不可幸力",
+    "artist": "Vaundy",
+    "album": "strobo",
+    "release": "2020-05-27",
+    "img": "./images/69.jpg"
+  },
+  {
+    "id": 70,
+    "title": "僕は今日も",
+    "artist": "Vaundy",
+    "album": "strobo",
+    "release": "2020-05-27",
+    "img": "./images/70.jpg"
+  },
+  {
+    "id": 71,
+    "title": "世界の秘密",
+    "artist": "Vaundy",
+    "album": "replica",
+    "release": "2023-11-15",
+    "img": "./images/71.jpg"
+  },
+  {
+    "id": 72,
+    "title": "そんなbitterな話",
+    "artist": "Vaundy",
+    "album": "replica",
+    "release": "2023-11-15",
+    "img": "./images/72.jpg"
+  },
+  {
+    "id": 73,
+    "title": "花占い",
+    "artist": "Vaundy",
+    "album": "replica",
+    "release": "2023-11-15",
+    "img": "./images/73.jpg"
+  },
+  {
+    "id": 74,
+    "title": "CHAINSAW BLOOD",
+    "artist": "Vaundy",
+    "album": "replica",
+    "release": "2023-11-15",
+    "img": "./images/74.jpg"
+  },
+  {
+    "id": 75,
+    "title": "踊",
+    "artist": "Ado",
+    "album": "狂言",
+    "release": "2022-01-26",
+    "img": "./images/75.jpg"
+  },
+  {
+    "id": 76,
+    "title": "ギラギラ",
+    "artist": "Ado",
+    "album": "狂言",
+    "release": "2022-01-26",
+    "img": "./images/76.jpg"
+  },
+  {
+    "id": 77,
+    "title": "うっせぇわ",
+    "artist": "Ado",
+    "album": "狂言",
+    "release": "2022-01-26",
+    "img": "./images/77.jpg"
+  },
+  {
+    "id": 78,
+    "title": "新時代",
+    "artist": "Ado",
+    "album": "ウタの歌 ONE PIECE FILM RED",
+    "release": "2023-06-14",
+    "img": "./images/78.jpg"
+  },
+  {
+    "id": 79,
+    "title": "私は最強",
+    "artist": "Ado",
+    "album": "ウタの歌 ONE PIECE FILM RED",
+    "release": "2023-06-14",
+    "img": "./images/79.jpg"
+  },
+  {
+    "id": 80,
+    "title": "逆光",
+    "artist": "Ado",
+    "album": "ウタの歌 ONE PIECE FILM RED",
+    "release": "2023-06-14",
+    "img": "./images/80.jpg"
+  },
+  {
+    "id": 81,
+    "title": "Tot Musica",
+    "artist": "Ado",
+    "album": "ウタの歌 ONE PIECE FILM RED",
+    "release": "2023-06-14",
+    "img": "./images/81.jpg"
+  },
+  {
+    "id": 82,
+    "title": "向日葵",
+    "artist": "Ado",
+    "album": "残夢",
+    "release": "2024-07-10",
+    "img": "./images/82.jpg"
+  },
+  {
+    "id": 83,
+    "title": "永遠のあくる日",
+    "artist": "Ado",
+    "album": "残夢",
+    "release": "2024-07-11",
+    "img": "./images/83.jpg"
+  },
+  {
+    "id": 84,
+    "title": "唱",
+    "artist": "Ado",
+    "album": "残夢",
+    "release": "2024-07-12",
+    "img": "./images/84.jpg"
+  },
+  {
+    "id": 85,
+    "title": "何なんw",
+    "artist": "藤井風",
+    "album": "HELP EVER HURT NEVER",
+    "release": "2020-05-20",
+    "img": "./images/85.jpg"
+  },
+  {
+    "id": 86,
+    "title": "優しさ",
+    "artist": "藤井風",
+    "album": "HELP EVER HURT NEVER",
+    "release": "2020-05-20",
+    "img": "./images/86.jpg"
+  },
+  {
+    "id": 87,
+    "title": "死ぬのがいいわ",
+    "artist": "藤井風",
+    "album": "HELP EVER HURT NEVER",
+    "release": "2020-05-20",
+    "img": "./images/87.jpg"
+  },
+  {
+    "id": 88,
+    "title": "帰ろう",
+    "artist": "藤井風",
+    "album": "HELP EVER HURT NEVER",
+    "release": "2020-05-20",
+    "img": "./images/88.jpg"
+  },
+  {
+    "id": 89,
+    "title": "きらり",
+    "artist": "藤井風",
+    "album": "LOVE ALL SERVE ALL",
+    "release": "2022-03-23",
+    "img": "./images/89.jpg"
+  },
+  {
+    "id": 90,
+    "title": "燃えよ",
+    "artist": "藤井風",
+    "album": "LOVE ALL SERVE ALL",
+    "release": "2022-03-23",
+    "img": "./images/90.jpg"
+  },
+  {
+    "id": 91,
+    "title": "旅路",
+    "artist": "藤井風",
+    "album": "LOVE ALL SERVE ALL",
+    "release": "2022-03-23",
+    "img": "./images/91.jpg"
+  }
+]
