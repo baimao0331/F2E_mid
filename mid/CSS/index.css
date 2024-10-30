@@ -133,7 +133,7 @@ footer{
     padding: 5vh;
 }
 
-footer .container{
+footer .box{
     width: 80%;
     justify-self: center;
     background-color: var(--light-gray);
@@ -315,6 +315,10 @@ body .container{
     transition: 0.5s;
 }
 
+.recommend .card:hover{
+    border: 3px solid white;
+}
+
 .recommend .song-img img{ /*推薦區域圖片設定*/
     position: absolute;
     top: 5%;
@@ -341,8 +345,8 @@ body .container{
     transition: 0.5s;
 }
 .recommend .card a:hover{
-    color: var(--blue);
-    text-decoration: underline;
+    color: white;
+    font-weight: 700;
 }
 
 .recommend .card .song-name{

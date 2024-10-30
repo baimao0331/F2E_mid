@@ -46,6 +46,7 @@ header{
     width: 40vh;
     max-height: 65px;
     max-width: 300px;
+    border-radius: 0;
 }
 
 #back-to-top {
@@ -137,7 +138,7 @@ footer{
     padding: 5vh;
 }
 
-footer .container{
+footer .box{
     width: 80%;
     justify-self: center;
     background-color: var(--light-gray);
