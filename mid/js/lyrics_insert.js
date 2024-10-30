@@ -1,7 +1,9 @@
 // 解析 URL 參數以獲取歌曲 ID
 const urlParams = new URLSearchParams(window.location.search);
 const songId = parseInt(urlParams.get('songId'));
-
+if (songId == 92) {
+    window.location.href = 'storm.html';
+}
 // 根據 ID 載入歌曲資料
 fetch('songs.json')
     .then(response => response.json())
