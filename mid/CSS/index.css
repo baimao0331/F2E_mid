@@ -10,13 +10,14 @@ html {
     --dark-gray: #3E3E3E;
     --gray: #636363;
     --light-gray: #B3B3B3;
+    --artist-text: #202020;
     --blue:#5A97DD;
     --border-rad:30px;
 }
 
 
 body {
-    font-family: "Noto Sans", serif;
+    font-family: "Noto Sans TC","Noto Sans JP", serif;
     background-color: var(--dark-gray);
     display: flex;
     flex-direction: column;
@@ -35,6 +36,7 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .logoimg img{
@@ -93,15 +95,15 @@ nav a{
 
 nav li{
     position: relative;
-    margin: 0 0vh;
-    width: 15vh;
+    margin: 0 3vh;
+    width: 10vh;
     list-style-type: none;
     font-weight: 600;
     font-size: 120%;
     transition: 0.5s;
     overflow: hidden;
     text-align: center;
-    line-height: calc(7vh - 3px);
+    line-height: 4.5vh;
 }
 
 nav li::after {
@@ -134,8 +136,11 @@ footer{
 }
 
 footer .box{
-    width: 80%;
-    justify-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: var(--light-gray);
 }
 
@@ -155,7 +160,6 @@ body .container{
     height: 100%; /* 使容器高度为视口高度 */
     background-color: var(--gray); 
     align-items: center;
-    margin-bottom: 5vh;
 }
 
 /*---------------------搜尋區域-------------------------*/
@@ -168,11 +172,12 @@ body .container{
     width: 80%;
     border-radius: var(--border-rad);
     justify-self: center;
-    transition: 0.5s;   
+    transition: 0.5s;
+
 }
 
 .search:hover{
-    margin: 10vh;
+    margin-bottom: 10vh;
     scale: 1.1;
     box-shadow: 0px 10px 0 var(--blue);
 }
@@ -216,7 +221,6 @@ body .container{
 .buttonarea button:hover{
     border: 2px solid white;
     width: 18%;
-
 }
 /*---------------------搜尋區域-------------------------*/
 /*---------------------推薦區域-------------------------*/
@@ -233,7 +237,7 @@ body .container{
     transition: 0.5s;
 }
 .recommend:hover{
-    margin: 10vh;
+    margin-bottom: 10vh;
     scale: 1.1;
     box-shadow: 0px 10px 0 var(--blue);
 }
@@ -340,6 +344,7 @@ body .container{
 
 .recommend .card a{
     text-decoration: none;
+    font-weight: 500;
     color: black;
     text-align: center;
     transition: 0.5s;
@@ -352,20 +357,20 @@ body .container{
 .recommend .card .song-name{
     line-clamp: 2;
     box-orient: vertical;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.1rem;
     text-align: center;
     height: 3rem;
 }
 
 .recommend.card.song-artist{
-    line-clamp: 2;
-    font-size: 0.8rem;
     height: 2rem;
-    color: var(--dark-gray);
 }
-.recommend.card.song-artist p{
-    color: var(--dark-gray);
+.song-artist p{
+    padding-top: 1vh;
+    color: var(--artist-text);
+    font-weight: 400;
+    font-size: 0.8rem;
 }
 
 button {
@@ -407,8 +412,6 @@ button {
 }
 
 .ranking:hover{
-    margin: 20vh 0;
-    scale: 1.1;
     box-shadow: 0px 10px 0 var(--blue);
 }
 
@@ -421,7 +424,6 @@ button {
     text-align: center;
     background-color: var(--light-gray);
 }
-
 
 .ranking ol{
     padding: 0;
@@ -436,44 +438,81 @@ button {
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height: 100%;
-    padding: 1vh;
+    height: 13vh;
     border-radius: var(--border-rad);
     transition: 0.5s;
 }
-.rankbox .ranking-number{
-    margin-left: 3%;
-    font-size: 1.5rem;
-    color: var(--light-gray);
+
+.rankbox:hover{
+    scale: 1.2;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+    box-shadow: 0px 1vh 0 var(--blue);
+    border-radius: calc(var(--border-rad)/2);
 }
+
+.rankbox .ranking-number{
+    position: relative;
+    left: 2vh;
+    font-size: 1rem;
+    color: var(--light-gray);
+    transition: 0.5s;
+    width: 2rem;
+}
+
 .rankbox .song-img{
-    margin-left: 1vh;
-    border-radius: var(--border-rad);
+    max-width: 15vh;
+    border-radius: calc(var(--border-rad)/2);
+}
+
+.rankbox:hover .song-img{
+    border-radius: 0;
 }
 
 .rankbox img{
-    width: 50%;
-    object-fit:contain;
+    position: relative;
+    left: 3vh;
+    height: 9vh;
+    width: 9vh;
+    object-fit:cover;
     margin: 0.5vh;
+    transition: 0.5s;
+}
+
+.rankbox:hover img{
+    height: 10vh;
+    width: 10vh;
 }
 
 .rankbox .song-name{
-    position: absolute;
-    left: 25%;
-    font-size: large;
-    font-weight: bold;
+    position: relative;
+    left: 5vh;
     transition: 0.5s;
     text-decoration: none;
     color: black;
-    font-weight: 600;
+    font-weight: 500;
+    width: 13rem;
+    font-size: 1.1rem;
+}
+
+.rankbox .song-name:hover{
+    color: white;
 }
 .rankbox .song-artist{
-    position: absolute;
-    left: 55%;
+    position: relative;
+    left: 5vh;
+    width: 10rem;
 }
+.rankbox .song-artist p{
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    color: var(--artist-text);
+}
+
 .rankbox .link-item{
     position: absolute;
-    right: 5%;
+    right: 3vh;
     background-color: var(--blue);
     padding: 1vh 2vh;
     color: white;
@@ -482,9 +521,9 @@ button {
     border-radius: var(--border-rad);
     transition: 0.5s;
 }
-.rankbox:hover{
-    scale: 1.2;
-    margin: 3vh 0vh;
+
+.rankbox:hover .ranking-number{
+    color: white;
 }
 
 .rankbox:hover .rankbox:not(:hover){
@@ -492,6 +531,8 @@ button {
 }
 .rankbox:hover .link-item{
     padding: 1vh 5vh;
+}
+.rankbox .link-item:hover{
     border: 2px solid white;
 }
 

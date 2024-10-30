@@ -29,16 +29,13 @@ p{
     margin: 0;
     padding: 0;
 }
-
-img{
-    border-radius: var(--border-rad);
-}
 /*---------------------頁首&nav區域-------------------------*/
 header{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .logoimg img{
@@ -46,7 +43,6 @@ header{
     width: 40vh;
     max-height: 65px;
     max-width: 300px;
-    border-radius: 0;
 }
 
 #back-to-top {
@@ -60,6 +56,7 @@ header{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
     transition: 0.5s;
 }
 
@@ -123,8 +120,6 @@ nav li:hover::after {
     width: 100%;
 }
 
-
-
 main {
     width: 100%;
     min-width: 1200px;
@@ -152,8 +147,9 @@ footer p{
 }
 /*---------------------頁尾區域-------------------------*/
 
+/*-----------------------------------------------主頁內容開始--------------------------------------------------------*/
 
-.container{
+body .container{
     width: 50%;
     min-width: 1200px;
     display: flex; /* 设置为 Flexbox */
@@ -161,154 +157,99 @@ footer p{
     height: 100%; /* 使容器高度为视口高度 */
     background-color: var(--gray); 
     align-items: center;
-    margin-bottom: 0vh;
-    padding-bottom: 5vh;
 }
 
-.container .song-info-box{
-    padding: 3vh 0;
-    padding-left: 5%;
-    margin-top: 5vh;
-    margin-bottom: 2.5vh;
-    display: flex;
-    align-items: center;
-    background-color: var(--light-gray);
-    border-radius: var(--border-rad);
-    box-shadow: 0 1vh 0 var(--blue);
-    width: 80%;
-}
-.song-info{
-    padding-left: 2vh;
-}
-
-.song-info h1,h2,h3{
-    margin: 0;
-    font-weight: 500;
-}
-
-.main-content{
-    display: flex;
-    width: 80%;
-    justify-self: center;
-}
-
-article{
-    width: 80%;
-}
-
-aside{
-    position: relative;
-    left: 1vh;
-    margin: 0vh 1vh;
-    width: 20%;
-    background-color: var(--light-gray);
-    border-radius: var(--border-rad);
-}
-
-aside h3{
-    margin: 0;
-    padding: 1vh 0;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 500;
-    color: white;
+/*---------------------搜尋區域-------------------------*/
+.search{
+    height: 30vh;
+    margin: 5vh 0;
     background-color: var(--dark-gray);
-    border-top-left-radius: var(--border-rad);
-    border-top-right-radius: var(--border-rad);
-}
-
-.lyric-line{
-    margin: 0;
-    padding: 2vh 5vh;
-    border-bottom: 1px solid var(--gray);
-    background-color: var(--light-gray);
-    font-size: 1.3em;
-    letter-spacing: 0.1rem;
-}
-
-#first-line{
-    margin: 0;
-    padding: 3vh 5vh 2vh;
-    border-bottom: 1px solid var(--gray);
-    background-color: var(--light-gray);
-    font-size: 1.3em;
-    letter-spacing: 0.1rem;
-    border-top-left-radius: var(--border-rad);
-    border-top-right-radius: var(--border-rad);
-}
-
-#last-line{
-    margin: 0;
-    padding: 2vh 5vh 3vh;
-    border-bottom: 1px solid var(--gray);
-    background-color: var(--light-gray);
-    font-size: 1.3em;
-    letter-spacing: 0.1rem;
-    border-bottom-left-radius: var(--border-rad);
-    border-bottom-right-radius: var(--border-rad);
-}
-
-.lyric-line:hover{
-    background-color:#c4c4c4;
-}
-#first-line:hover{
-    background-color:#c4c4c4;
-}
-
-.card {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 80%;
     border-radius: var(--border-rad);
-    background-color: var(--gray);
-    margin: 1vh;
-    padding: 0 2vh;
-    padding-top: 2vh;
-    padding-bottom: 1vh;
+    justify-self: center;
+    transition: 0.5s;
+
+}
+
+.search:hover{
+    margin-bottom: 10vh;
+    scale: 1.1;
+    box-shadow: 0px 10px 0 var(--blue);
+}
+.searchbar{
+    margin-top: 7vh;
+    grid-row:1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 9vh;
+}
+
+.searchbar input{
+    width: 80%;
+    height: 60%;
+    border: none;
+    border-radius: 50px;
+}
+
+.buttonarea{
+    grid-row:2/2;
+    display: flex;
+    justify-content: end;
+    position:relative;
+    right: 10%;
+    max-height: 9vh;
+    margin-top: 2vh;
+}
+
+.buttonarea button{
+    margin-left: 2vh;
+    width: 15%;
+    min-height: 50%;
+    max-height: 5vh;
+    border-radius: var(--border-rad);
+    border: none;
+    background-color: var(--blue);
+    font-weight: 600;
     transition: 0.5s;
 }
+.buttonarea button:hover{
+    border: 2px solid white;
+    width: 18%;
 
-.card:hover{
-    box-shadow: 0px 1vh 0 var(--blue);
-    margin-bottom: 2vh;
+}
+/*---------------------搜尋區域-------------------------*/
+
+.result-header{
+    width: 80%;
+    margin: 0 10%;
+    background-color: var(--light-gray);
 }
 
-.card a img{ /*推薦區域圖片設定*/
+.search-item{
     position: relative;
-    height: 12vh;
-    width: 12vh;
-    object-fit: cover;
-    border-radius: calc(var(--border-rad)/2);
+    width: 80%;
+    margin: 1vh 10%;
+    height: 15vh;
+    background-color: var(--light-gray);
+    display: flex;
+}
+.search-item img{
+    object-fit:contain;
+    max-height: 13vh;
+    margin: 1vh;
+    width: 15vh;
 }
 
-.card .song-info{
-    line-clamp: 2;
-    box-orient: vertical;
+.search-item .song-info{
+    margin: 1.5vh 0;
     display: flex;
     flex-direction: column;
-    width: 8rem;
-    text-align: center;
 }
 
-.card a{
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    transition: 0.5s;
+.search-item .song-info h2{
+    margin: 0;
 }
-.card a:hover{
-    color: white;
-}
-
-.card .song-name{
-    line-clamp: 2;
-    box-orient: vertical;
-    text-align: center;
-    height: 3rem;
-}
-
-.card.song-name h4{
-    font-weight: 600;
-    font-size: 1.1em;
-}
+/*-----------------------------------------------主頁內容結束--------------------------------------------------------*/
