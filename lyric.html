@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tachibi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./CSS/lyric.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logoimg"><img src="./images/logo.png" alt="logo"></a>
+    </header>
+    <button id="back-to-top" onclick="scrollToTop()"><img src="./images/toTop.png" alt="toTop"></button>
+    <nav>
+        <ul class="link">
+            <a href="index.html">
+                <li class="link-item">
+                    首頁
+                </li>
+            </a>
+            <a href="search.html">
+                <li class="link-item">
+                    搜尋
+                </li>
+            </a>
+            <a href="ranking.html">
+                <li class="link-item">
+                    排行
+                </li>
+            </a>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="song-info">
+            <img id="song-img" alt="歌曲封面" />
+            <h1 id="song-title"></h1>
+            <h2 id="song-artist"></h2>
+        </div>
+        <div class="main-content">
+            <article>
+                <div id="lyric-container"></div>
+            </article>
+            <aside>
+                <h3>更多來自該歌手的歌曲</h3>
+                <div id="related-songs-container" class="card-container">
+                    <!-- 卡片內容將動態生成 -->
+                </div>            
+            </aside>
+        </div>
+
+    </div>
+    <footer>
+        <div class="container">
+            <a href="index.html"><img src="./images/logo.png" alt=""></a>
+            <p>© 2024 TACHIBI. All rights reserved.</p>
+            <p>聯繫我們：s111219028@stu.ntue.edu.tw</p>
+            <p>歌詞版權歸歌曲創作者及其相關公司所有。</p>
+        </div>
+
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            console.log("DOM 完全加载和解析");
+        });
+
+        for (let i = 0; i < 1_000_000_000; i++);
+        // 这段同步脚本将会延迟 DOM 解析，
+        // 所以 DOMContentLoaded 事件将会延迟执行。
+    </script>
+    <script src="./js/to_top.js"></script>
+    <script src="./js/lyrics_insert.js"></script>
+</body>
+
+</html>
