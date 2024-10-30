@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tachibi</title>
+    <title>ヨイセイ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/search.css">
 
 </head>
 
@@ -67,14 +71,17 @@
                 </div>
             </div>
 
-            <h1>搜索結果</h1>
 
             <!-- 排序選項 -->
-            <label for="sort-order">排序方式：</label>
-            <select id="sort-order">
-                <option value="newest">從新到舊</option>
-                <option value="oldest">從舊到新</option>
-            </select>
+            <div class="result-header">
+                <h1>搜索結果</h1>
+                <label for="sort-order">排序方式：</label>
+                <select id="sort-order">
+                    <option value="newest">從新到舊</option>
+                    <option value="oldest">從舊到新</option>
+                </select>
+            </div>
+
 
             <div id="search-results"></div>
 
@@ -86,14 +93,18 @@
 
                 let searchResults = [];
 
-                // 移除空白字符和標點符號（可選）
-                // 移除空白字符和標點符號，同時保留漢字
                 function normalizeString(str) {
-                    return str
-                        .toLowerCase()
-                        .trim()
-                        .replace(/\./g, ' ')            // 將點號替換為空格
-                        .replace(/[^\p{L}\p{N}\s]/gu, ''); // 移除所有非字母、數字和空白字符，但保留漢字
+                    return katakanaToHiragana(str)      // 將片假名轉換為平假名
+                        .toLowerCase()                  // 忽略大小寫
+                        .trim()                         // 去除首尾空格
+                        .replace(/[^\p{L}\p{N}\s.]/gu, '') // 移除除字母、數字、空白字符和點號外的其他字符
+                        .replace(/\./g, ' ');           // 將點號替換為空格
+                }
+
+                function katakanaToHiragana(str) {
+                    return str.replace(/[\u30a1-\u30f6]/g, function (match) {
+                        return String.fromCharCode(match.charCodeAt(0) - 0x60);
+                    });
                 }
 
                 // 加載 JSON 數據並篩選結果
@@ -133,12 +144,16 @@
                     if (results.length > 0) {
                         results.forEach(song => {
                             const songElement = document.createElement('div');
+                            songElement.className = "search-item";
                             songElement.innerHTML = `
-                            <div class="">
-                                <h2>${song.title}</h2>
-                                <p>藝人: ${song.artist}</p>
-                                <p>專輯: ${song.album}</p>
-                                <p>發行日期: ${song.release}</p>
+                                <a href="lyric.html?songId=${song.id}" class="song-img">
+                                    <img src="${song.img}" alt="${song.title} 封面圖">
+                                </a>
+                                <div class="song-info">
+                                    <p>${song.album}</p>
+                                    <a href="lyric.html?songId=${song.id}" class="song-name"><h2>${song.title}</h2></a>
+                                    <p>${song.artist}</p>
+                                </div>
                             `;
                             resultsContainer.appendChild(songElement);
                         });

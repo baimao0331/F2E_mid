@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tachibi</title>
+    <title>ヨイセイ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -39,10 +39,14 @@
         </ul>
     </nav>
     <div class="container">
-        <div class="song-info">
+        <div class="song-info-box">
             <img id="song-img" alt="歌曲封面" />
-            <h1 id="song-title"></h1>
-            <h2 id="song-artist"></h2>
+            <div class="song-info">
+                <h1 id="song-title"></h1>
+                <h2 id="song-artist"></h2>
+                <h3 id="album"></h3>
+                <h3 id="release-date"></h3>
+            </div>
         </div>
         <div class="main-content">
             <article>
@@ -52,7 +56,7 @@
                 <h3>更多來自該歌手的歌曲</h3>
                 <div id="related-songs-container" class="card-container">
                     <!-- 卡片內容將動態生成 -->
-                </div>            
+                </div>
             </aside>
         </div>
 
@@ -68,15 +72,6 @@
     </footer>
     <script src="./js/to_top.js"></script>
     <script src="./js/lyrics_insert.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            console.log("DOM 完全加载和解析");
-        });
-
-        for (let i = 0; i < 1_000_000_000; i++);
-        // 这段同步脚本将会延迟 DOM 解析，
-        // 所以 DOMContentLoaded 事件将会延迟执行。
-    </script>
 </body>
 
 </html>
