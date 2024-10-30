@@ -1174,5 +1174,13 @@
     "album": "LOVE ALL SERVE ALL",
     "release": "2022-03-23",
     "img": "./images/91.jpg"
+  },
+  {
+    "id":92,
+    "title":"Motivation",
+    "artist":"???",
+    "album":"???",
+    "release":"???",
+    "img":"./images/92.jpg"
   }
 ]
