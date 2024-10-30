@@ -1,4 +1,4 @@
-const rankingIDs = [30, 10, 7, 22, 51, 4, 10, 9, 6, 8]; // 你希望顯示的前10名歌曲的ID
+const rankingIDs = [30, 10, 7, 22, 51, 4, 10, 92, 6, 8]; // 你希望顯示的前10名歌曲的ID
 
 function displayRanking(data) {
     const rankingList = document.getElementById('ranking-list');

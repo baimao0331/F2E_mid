@@ -1,7 +1,7 @@
 let currentPage = 0;
 const songsPerPage = 15; // 每頁 15 首歌
 
-const songIds = [1, 15, 5, 7, 9, 10, 12, 18, 15, 20, 22, 25, 30, 35, 40]; // 根據需要選擇的歌曲 ID
+const songIds = [1, 15, 5, 7, 9, 10, 12, 18, 15, 20, 22, 25, 92, 35, 40]; // 根據需要選擇的歌曲 ID
 
 function displaySongs_recom(data) {
 
@@ -30,6 +30,7 @@ function displaySongs_recom(data) {
                     <a href="lyric.html?songId=${song.id}" target="_blank" class="song-name">${song.title}</a>
                     <div class="song-artist"><p>${song.artist}</p></div>
                 </div>
+                
             `;
             ul.appendChild(li);
         });
