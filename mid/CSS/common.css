@@ -1,0 +1,152 @@
+html {
+    font-size: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-gray: #3b4050;
+    --gray: #656774;
+    --light-gray: #a5a8b3;
+    --artist-text: #202020;
+    --blue:#5a83dd;
+    --blue-hover: #7193dd;
+    --border-rad:30px;
+}
+
+
+body {
+    font-family: "Noto Sans TC","Noto Sans JP", serif;
+    background-color: var(--dark-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+/*---------------------頁首&nav區域-------------------------*/
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logoimg img{
+    margin-top: 2vh;
+    width: 40vh;
+    max-height: 65px;
+    max-width: 300px;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* 初始為隱藏 */
+    background-color: var(--light-gray);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+#back-to-top img{
+    width: 5vh;
+}
+
+#back-to-top:hover {
+    box-shadow: 0px 5px 0 var(--blue);
+}
+
+nav{
+    margin: 2vh 0;
+    width: 100%;
+    height: 7vh;
+    max-height: 60px;
+    background-color: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+}
+
+nav li{
+    position: relative;
+    margin: 0 3vh;
+    width: 10vh;
+    list-style-type: none;
+    font-weight: 600;
+    font-size: 120%;
+    transition: 0.5s;
+    overflow: hidden;
+    text-align: center;
+    line-height: 4.8vh;
+}
+
+nav li::after {
+    content: ''; /* 生成伪元素 */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0; /* 初始宽度为0 */
+    height: 0.3rem; /* 下边框的高度 */
+    background-color: var(--blue); /* 下边框的颜色 */
+    transition: width 0.5s; /* 控制宽度的过渡效果 */
+}
+
+nav li:hover::after {
+    width: 100%;
+}
+
+
+
+main {
+    width: 100%;
+    min-width: 1200px;
+}
+/*-------------------頁首&nav區域-----------------------*/
+/*---------------------頁尾區域-------------------------*/
+footer{
+    background-color: var(--light-gray);
+    width: 100%;
+    padding: 5vh;
+}
+
+footer .footer-box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-gray);
+}
+
+footer p{
+    margin: 0;
+    line-height: 2rem;
+}
+/*---------------------頁尾區域-------------------------*/
