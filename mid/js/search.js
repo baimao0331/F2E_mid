@@ -1,16 +1,15 @@
                 // 解析 URL 參數
                 const urlParams = new URLSearchParams(window.location.search);
                 const searchType = urlParams.get('type'); // "title" 或 "artist"
-                const query = urlParams.get('query').toLowerCase().trim(); // 忽略大小寫和空白
+                const query = normalizeString(urlParams.get('query') || ''); // 使用 normalizeString 處理用戶輸入
 
                 let searchResults = [];
 
                 function normalizeString(str) {
-                    return katakanaToHiragana(str)      // 將片假名轉換為平假名
-                        .toLowerCase()                  // 忽略大小寫
-                        .trim()                         // 去除首尾空格
-                        .replace(/[^\p{L}\p{N}\s.]/gu, '') // 移除除字母、數字、空白字符和點號外的其他字符
-                        .replace(/\./g, ' ');           // 將點號替換為空格
+                    return katakanaToHiragana(str)
+                        .toLowerCase()
+                        .replace(/\s+/g, '') // 移除所有空白字符
+                        .replace(/[^\p{L}\p{N}]/gu, ''); // 移除所有非字母和數字的字符
                 }
 
                 function katakanaToHiragana(str) {
@@ -71,6 +70,10 @@
                             resultsContainer.appendChild(songElement);
                         });
                     } else {
-                        resultsContainer.innerHTML = '沒有找到相關結果';
+                        resultsContainer.innerHTML = `
+                        <div id="noresult">
+                        <p>沒有找到相關結果</p>
+                        </div>
+                        `;
                     }
                 }
