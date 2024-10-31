@@ -64,6 +64,8 @@ body .container{
     background-color: var(--blue);
     font-weight: 600;
     transition: 0.5s;
+    color: white;
+    size: 1rem;
 }
 .buttonarea button:hover{
     border: 2px solid white;
@@ -367,7 +369,6 @@ button {
     padding: 1vh 2vh;
     color: white;
     text-decoration: none;
-    font-weight: bold;
     border-radius: var(--border-rad);
     transition: 0.5s;
 }
@@ -399,6 +400,7 @@ button {
     border-radius: var(--border-rad);
     border: none;
     transition: 0.5s;
+    font-weight: bold;
 }
 
 .read-more:hover{
