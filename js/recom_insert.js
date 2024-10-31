@@ -1,7 +1,7 @@
 let currentRecommendationPage = 0; // 修改名稱，避免和頁面切換部分衝突
 const songsPerPage = 15; // 每頁 15 首歌
 
-const songIds = [1, 15, 5, 7, 9, 10, 12, 18, 15, 20, 22, 25, 30, 35, 40]; // 根據需要選擇的歌曲 ID
+const songIds = [9, 15, 93, 7, 44, 62, 12, 71, 23, 2, 91, 45, 55, 35, 40]; // 根據需要選擇的歌曲 ID
 
 function displaySongs_recom(data) {
     const recommendationContainer = document.getElementById('song-list');
