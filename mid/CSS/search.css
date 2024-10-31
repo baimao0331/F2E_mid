@@ -188,3 +188,14 @@ body .container{
 .search-item .link-item:hover{
     background-color: var(--blue-hover);
 }
+
+#noresult{
+    background-color: var(--light-gray);
+    margin-top: 1vh;
+    margin-left: 10%;
+    width: 80%;
+    height: 5rem;
+    padding-left: 8%;
+    line-height: 5rem;
+    border-radius: var(--border-rad);
+}
