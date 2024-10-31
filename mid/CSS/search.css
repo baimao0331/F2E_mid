@@ -186,7 +186,7 @@ body .container{
 }
 
 .search-item .link-item:hover{
-    background-color: var(--blue-hover);
+    border: 3px solid white;
 }
 
 #noresult{
