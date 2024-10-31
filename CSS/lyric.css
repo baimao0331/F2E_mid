@@ -1,0 +1,148 @@
+
+.container{
+    width: 50%;
+    min-width: 1200px;
+    display: flex; /* 设置为 Flexbox */
+    flex-direction: column;
+    height: 100%; /* 使容器高度为视口高度 */
+    background-color: var(--gray); 
+    align-items: center;
+    margin-bottom: 0vh;
+    padding-bottom: 5vh;
+}
+
+.container .song-info-box{
+    padding: 3vh 0;
+    padding-left: 5%;
+    margin-top: 5vh;
+    margin-bottom: 2.5vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--light-gray);
+    border-radius: var(--border-rad);
+    box-shadow: 0 1vh 0 var(--blue);
+    width: 80%;
+}
+.song-info{
+    padding-left: 2vh;
+}
+
+.song-info h1,h2,h3{
+    margin: 0.5vh 0;
+    font-weight: 500;
+}
+
+.lyric-line{
+    margin: 0;
+    padding: 2vh 5vh;
+    border-bottom: 1px solid var(--gray);
+    background-color: var(--light-gray);
+    font-size: 1.3em;
+    letter-spacing: 0.1rem;
+    font-weight: 450;
+}
+
+#first-line{
+    padding: 3vh 5vh 2vh;
+    border-top-left-radius: var(--border-rad);
+    border-top-right-radius: var(--border-rad);
+}
+
+#last-line{
+    padding: 2vh 5vh 3vh;
+    border-bottom-left-radius: var(--border-rad);
+    border-bottom-right-radius: var(--border-rad);
+}
+
+.lyric-line:hover{
+    background-color:#d9e0ef;
+}
+
+.main-content{
+    display: flex;
+    width: 80%;
+    justify-self: center;
+}
+
+article{
+    width: 80%;
+}
+
+aside{
+    position: relative;
+    left: 1vh;
+    margin: 0vh 1vh;
+    width: 20%;
+    background-color: var(--light-gray);
+    border-radius: var(--border-rad);
+}
+
+aside h3{
+    margin: 0;
+    padding: 2vh 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 450;
+    color: white;
+    background-color: var(--dark-gray);
+    border-top-left-radius: var(--border-rad);
+    border-top-right-radius: var(--border-rad);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-rad);
+    background-color: var(--gray);
+    margin: 1vh;
+    padding: 0 2vh;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    transition: 0.5s;
+}
+
+.card:hover{
+    box-shadow: 0px 1vh 0 var(--blue);
+    margin-bottom: 2vh;
+}
+
+.card a img{ /*推薦區域圖片設定*/
+    position: relative;
+    height: 12vh;
+    width: 12vh;
+    object-fit: cover;
+    border-radius: calc(var(--border-rad)/2);
+}
+
+.card .song-info{
+    line-clamp: 2;
+    box-orient: vertical;
+    display: flex;
+    flex-direction: column;
+    width: 8rem;
+    text-align: center;
+}
+
+.card a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    transition: 0.5s;
+}
+.card a:hover{
+    color: white;
+}
+
+.card .song-name{
+    line-clamp: 2;
+    box-orient: vertical;
+    text-align: center;
+    height: 3rem;
+}
+
+.card.song-name h4{
+    font-weight: 600;
+    font-size: 1.1em;
+}
