@@ -72,7 +72,7 @@
                     } else {
                         resultsContainer.innerHTML = `
                         <div id="noresult">
-                        <p>沒有找到相關結果&macr;\_(ツ)_/&macr;</p>
+                        <p>沒有找到相關結果&macr;\\_(ツ)_/&macr;</p>
                         </div>
                         `;
                     }
