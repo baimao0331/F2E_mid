@@ -1,5 +1,6 @@
 body .container{
     width: 100%;
+    min-width:1200px;
     display: flex; /* 设置为 Flexbox */
     flex-direction: column;
     height: 100%; /* 使容器高度为视口高度 */
