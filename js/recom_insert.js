@@ -1,9 +1,18 @@
 let currentRecommendationPage = 0; // 修改名稱，避免和頁面切換部分衝突
-const songsPerPage = 15; // 每頁 15 首歌
 
 const songIds = [9, 15, 93, 7, 44, 62, 12, 71, 23, 2, 91, 45, 55, 35, 40]; // 根據需要選擇的歌曲 ID
 
+// 根據螢幕寬度計算每頁顯示的歌曲數量
+function getSongsPerPage() {
+    if (window.innerWidth > 1024) {
+        return 5; // 大螢幕，每頁顯示 5 首歌
+    } else {
+        return 3; // 小螢幕，每頁顯示 3 首歌
+    }
+}
+
 function displaySongs_recom(data) {
+    const songsPerPage = getSongsPerPage();
     const recommendationContainer = document.getElementById('song-list');
     recommendationContainer.innerHTML = ''; // 清空之前的內容
 
@@ -12,13 +21,15 @@ function displaySongs_recom(data) {
         .map(id => data.find(song => song.id === id)) // 找到對應的歌曲資料
         .filter(Boolean); // 只保留找到的歌曲
 
-    // 將當前頁面的 15 首歌分為 3 個 <ul>，每個 <ul> 包含 5 個 <li>
-    for (let i = 0; i < 3; i++) {
+    const totalPages = Math.ceil(currentSongs.length / songsPerPage);
+
+    // 將當前頁面的歌曲分為 <ul>，每個 <ul> 包含 songsPerPage 個 <li>
+    for (let i = 0; i < totalPages; i++) {
         const ul = document.createElement('ul');
         ul.className = 'page';
 
-        // 取得 5 首歌並創建 <li>
-        currentSongs.slice(i * 5, i * 5 + 5).forEach(song => {
+        // 取得 songsPerPage 首歌並創建 <li>
+        currentSongs.slice(i * songsPerPage, i * songsPerPage + songsPerPage).forEach(song => {
             const li = document.createElement('li');
             li.className = 'card';
             li.innerHTML = `
@@ -37,7 +48,7 @@ function displaySongs_recom(data) {
     }
 
     // 當歌曲顯示完成後，啟動頁面切換功能
-    runSecondScript();  // 確保 DOM 完成後調用
+    runSecondScript(); // 確保 DOM 完成後調用
 }
 
 // JSON 載入並初始化
@@ -47,6 +58,15 @@ fetch('songs.json')
         displaySongs_recom(data); // 將歌曲資料傳入顯示函數
     })
     .catch(error => console.error('無法載入 JSON:', error));
+
+// 確保在螢幕大小改變時重新渲染歌曲
+window.addEventListener('resize', () => {
+    fetch('songs.json')
+        .then(response => response.json())
+        .then(data => {
+            displaySongs_recom(data); // 重新顯示歌曲
+        });
+});
 
 function runSecondScript() {
     const pages = document.querySelectorAll('.page');  // 確保在內容生成後選取 .page
