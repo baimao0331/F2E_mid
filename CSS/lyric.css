@@ -1,27 +1,15 @@
 
-.container{
-    width: 50%;
-    min-width: 1200px;
-    display: flex; /* 设置为 Flexbox */
-    flex-direction: column;
-    height: 100%; /* 使容器高度为视口高度 */
-    background-color: var(--gray); 
-    align-items: center;
-    margin-bottom: 0vh;
-    padding-bottom: 5vh;
-}
-
-.container .song-info-box{
+.song-info-box{
     padding: 3vh 0;
     padding-left: 5%;
     margin-top: 5vh;
     margin-bottom: 2.5vh;
     display: flex;
-    align-items: center;
     background-color: var(--light-gray);
     border-radius: var(--border-rad);
     box-shadow: 0 1vh 0 var(--blue);
-    width: 80%;
+    width: clamp(400px, 60vw, 80%);
+    justify-self: center;
 }
 .song-info{
     padding-left: 2vh;
@@ -60,7 +48,7 @@
 
 .main-content{
     display: flex;
-    width: 80%;
+    width: clamp(400px, 60vw, 80%);
     justify-self: center;
 }
 
@@ -145,4 +133,21 @@ aside h3{
 .card.song-name h4{
     font-weight: 600;
     font-size: 1.1em;
+}
+
+@media screen and (max-width:840px){
+    .main-content{
+        flex-direction: column;
+    }
+    article{
+        width: 100%;
+    }
+    aside{
+        width: 100% ;
+        margin: 2vh 0;
+    }
+    .card-container{
+        display: flex;
+        overflow: hidden;
+    }
 }
