@@ -3,13 +3,12 @@
 /*---------------------搜尋區域-------------------------*/
 .search{
     height: clamp(150px, 300px, 30vh);
-    width: clamp(400px, 60vw, 80%);
+    width: clamp(var(--min-width), 60vw, 80%);
     margin: 4vh 0;
     background-color: var(--dark-gray);
     display: grid;
     grid-template-rows: 1fr 1fr;
     border-radius: var(--border-rad);
-    justify-self: center;
     transition: 0.5s;
 }
 
@@ -65,7 +64,8 @@
 /*---------------------搜尋區域-------------------------*/
 /*---------------------推薦區域-------------------------*/
 .recommend {
-    width: clamp(400px, 60vw, 80%);
+    position: relative;
+    width: clamp(var(--min-width), 60vw, 80%);
     margin: 4vh 0;
     display: flex;
     align-items: center;
@@ -73,11 +73,10 @@
     background-color: var(--dark-gray);
     padding-bottom: 5vh;
     border-radius: var(--border-rad);
-    justify-self: center;
     transition: 0.5s;
 }
 .recommend:hover{
-    margin: 3vh 0 5vh;
+    margin: 3vh 0 6vh;
     scale: 1.1;
     box-shadow: 0px 10px 0 var(--blue);
 }
@@ -129,34 +128,29 @@
 .song-list .active {
     display: flex;
     transition: 0.5s;
+    flex: 1;
 }
 
 .page{
     padding: 0;
-    width: calc(100% - 2.5vh);
+    width: calc(100% - 2.5vw);
     display: none;
-}
-
-.page .active{
-    display: flex;
-    flex: 1;
 }
 
 .recommend .card {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0.25vh;
     border-radius: calc(var(--border-rad)/2);
     background-color: var(--light-gray);
-    min-width: 20%;
-    height: clamp(150px, 18vh, 30vh);
+    height: clamp(150px, 350px, 30vh);
+    flex: 1;
     padding: 0.5vh;
-    padding-top: 30%;
     overflow: hidden;
     padding-bottom: 1vh;
-    flex: 1;
     transition: 0.5s;
 }
 
@@ -164,22 +158,28 @@
     box-shadow: 0px 0.5vh 0 var(--blue);
 }
 
+.recommend .song-img{
+    position: relative;
+    top: 0;
+    height: clamp(66px,8vw,200px);
+    width: clamp(66px,8vw,200px);
+}
+
 .recommend .song-img img{ /*推薦區域圖片設定*/
-    position: absolute;
-    top: 5%;
-    right: 10%;
-    width: 80%;
-    max-height: 50%;
+    position: relative;
+    right: 0;
+    width: 100%;
     object-fit: cover;
     border-radius: calc(var(--border-rad)/2);
 }
 
 .recommend .song-info{
-    position: absolute;
-    top: 55%;
+    position: relative;
+    top:2vh;
     display: flex;
     flex-direction: column;
     text-align: center;
+    width: 100%;
 }
 
 .recommend .card a{
@@ -195,24 +195,26 @@
 }
 
 .recommend .card .song-name{
-    line-clamp: 2;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
     font-weight: 500;
-    font-size: clamp(6px, 1rem, 1.2rem);
-    padding: 0 1vw;
+    font-size: 1rem;
     text-align: center;
-    height: clamp(2.5vh, 3rem, 3.5rem);
+    padding: 0 1vw;
+    align-items: center;
 }
 
 .recommend.card.song-artist{
-    padding-top: 1vh;
     height: 2rem;
 }
 .song-artist p{
-    padding-top: 1vh;
     color: var(--artist-text);
     font-weight: 400;
     font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 button {
@@ -243,11 +245,10 @@ button {
 .ranking{
     margin:5vh 0;
     padding-bottom: 10vh;
-    width: clamp(400px, 60vw, 80%);
+    width: clamp(var(--min-width), 60vw, 80%);
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-self: center;
     border-radius: var(--border-rad);
     background-color: var(--dark-gray);
     transition: 0.5s;
@@ -328,6 +329,11 @@ button {
     width: 10vh;
 }
 
+.rankbox .text-info{
+    display: flex;
+    flex-direction: row;
+}
+
 .rankbox .song-name{
     position: relative;
     left: 5vh;
@@ -402,3 +408,33 @@ button {
 }
 /*---------------------排名區域-------------------------*/
 /*-----------------------------------------------主頁內容結束--------------------------------------------------------*/
+
+@media screen and (max-width:1100px) {
+    .recommend .card .song-name{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .recommend .card .song-artist{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    #pagination{
+        display: none;
+    }
+    .rankbox .link-item{
+        opacity: 0;
+    }
+    .search:hover{
+        scale: 1;
+        margin: 4vh 0;
+    }
+    .recommend:hover{
+        scale: 1;
+        margin: 4vh 0;
+    }
+    .ranking .text-info{
+        flex-direction: column;
+    }
+}
