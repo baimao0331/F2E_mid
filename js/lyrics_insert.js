@@ -1,6 +1,7 @@
 // 解析 URL 參數以獲取歌曲 ID
 const urlParams = new URLSearchParams(window.location.search);
 const songId = parseInt(urlParams.get('songId'));
+let player;
 if (songId == 92) {
     window.location.href = 'storm.html';
 }
@@ -15,6 +16,17 @@ fetch('songs.json')
             document.getElementById('song-title').textContent = song.title;
             document.getElementById('song-artist').textContent = song.artist;
             document.getElementById('song-img').src = song.img;
+
+            // 使用 IFrame API 創建 YouTube 播放器
+            player = new YT.Player('video-container', {
+                height: '315',
+                width: '560',
+                videoId: song.ytid, // 使用 JSON 中的 youtubeId
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
 
             const lyricContainer = document.getElementById('lyric-container');
             const japaneseLyrics = song.lyrics.japanese;
@@ -94,4 +106,13 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]]; // ES6 解構賦值交換
     }
     return array;
+}
+
+function onPlayerReady(event) {
+    // 可以在這裡控制播放器，比如自動播放
+    // event.target.playVideo();
+}
+
+function onPlayerStateChange(event) {
+    // 可以處理播放器狀態變化
 }
