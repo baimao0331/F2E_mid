@@ -146,7 +146,7 @@
     margin: 0.25vh;
     border-radius: calc(var(--border-rad)/2);
     background-color: var(--light-gray);
-    height: clamp(150px, 350px, 30vh);
+    height: clamp(200px, 20vh, 30vh);
     flex: 1;
     padding: 0.5vh;
     overflow: hidden;
@@ -161,8 +161,8 @@
 .recommend .song-img{
     position: relative;
     top: 0;
-    height: clamp(66px,8vw,200px);
-    width: clamp(66px,8vw,200px);
+    height: clamp(66px,100%,130px);
+    width: clamp(66px,100%,130px);
 }
 
 .recommend .song-img img{ /*推薦區域圖片設定*/
@@ -361,17 +361,6 @@ button {
     color: var(--artist-text);
 }
 
-.rankbox .link-item{
-    position: absolute;
-    right: 3vh;
-    background-color: var(--blue);
-    padding: 1vh 2vh;
-    color: white;
-    text-decoration: none;
-    border-radius: var(--border-rad);
-    transition: 0.5s;
-}
-
 .rankbox:hover .ranking-number{
     color: white;
 }
@@ -381,9 +370,6 @@ button {
 }
 .rankbox:hover .link-item{
     padding: 1vh 2vw 1vh 3vh;
-}
-.rankbox .link-item:hover{
-    border: 2px solid white;
 }
 
 .read-more{
@@ -423,12 +409,12 @@ button {
     #pagination{
         display: none;
     }
-    .rankbox .link-item{
-        opacity: 0;
-    }
     .search:hover{
         scale: 1;
         margin: 4vh 0;
+    }
+    .rankbox .ranking-number{
+        display: none;
     }
     .recommend:hover{
         scale: 1;
@@ -436,5 +422,11 @@ button {
     }
     .ranking .text-info{
         flex-direction: column;
+    }
+}
+@media screen and (max-width:500px){
+
+    #prev-btn,#next-btn{
+        display: none;
     }
 }

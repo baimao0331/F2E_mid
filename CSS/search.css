@@ -100,10 +100,14 @@
     border-radius: var(--border-rad);
 }
 
+#search-results{
+    width: clamp(400px, 60vw, 80%);
+}
+
 .search-item{
     position: relative;
     margin: 1vh 0;
-    width: clamp(400px, 60vw, 80%);
+    width: 100%;
     justify-self: center;
     max-height: 10%;
     padding-left: 8%;
@@ -184,10 +188,16 @@
 #noresult{
     background-color: var(--light-gray);
     margin: 1vh 0 4vh;
-    width: clamp(400px, 60vw, 80%);
+    width: clamp(400px, 60vw, 100%);
     justify-self: center;
     height: 5rem;
     padding-left: 8%;
     line-height: 5rem;
     border-radius: var(--border-rad);
+}
+
+@media screen and (max-width:1100px){
+    .search-item .link-item{
+        opacity: 0;
+    }
 }
