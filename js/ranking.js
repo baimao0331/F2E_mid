@@ -7,7 +7,7 @@ function displayRanking(data) {
 
     // 根據 popularity 將歌曲按熱門度降序排序，並選取前 maxSongs 名
     const topSongs = data
-        .sort((a, b) => b.popularity - a.popularity)  // 按熱門度降序排序
+        .sort((a, b) => b.CurViews - a.CurViews)  // 按熱門度降序排序
         .slice(0, maxSongs);  // 根據 maxSongs 選取前 N 首
 
     // 循環選取的歌曲，填入歌曲資料
@@ -17,9 +17,10 @@ function displayRanking(data) {
         li.innerHTML = `
             <span class="ranking-number">${index + 1} </span> <!-- 顯示排名 -->
             <a href="lyric.html?songId=${song.id}"  target="_self" class="song-img"><img src="${song.img}" alt="${song.title} 封面圖" class="song-img" /></a>
-            <a href="lyric.html?songId=${song.id}"  target="_self" class="song-name">${song.title}</a>
-            <div class="song-artist"><p>${song.artist}</p></div>
-            <a href="lyric.html?songId=${song.id}" class="link-item">看歌詞</a>
+            <div class="text-info">
+                <a href="lyric.html?songId=${song.id}"  target="_self" class="song-name">${song.title}</a>
+                <div class="song-artist"><p>${song.artist}</p></div>
+            </div>
         `;
         rankingList.appendChild(li);
     });
