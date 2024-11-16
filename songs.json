@@ -6,7 +6,7 @@
     "album": "Speaking",
     "release": "2015/12/16",
     "img": "./images/1.jpg",
-    "url": "https://www.youtube.com/watch?v=4KUA-1DvQZk",
+    "ytid": "4KUA-1DvQZk",
     "popularity": 26036289,
     "lyrics": {
       "japanese": [
@@ -116,7 +116,7 @@
     "album": "WanteD! WanteD!",
     "release": "2017/8/30",
     "img": "./images/2.jpg",
-    "url": "https://www.youtube.com/watch?v=PbISczErpKY",
+    "ytid": "PbISczErpKY",
     "popularity": 58891051,
     "lyrics": {
       "japanese": [
@@ -218,7 +218,7 @@
     "album": "Love me, Love you",
     "release": "2018/2/14",
     "img": "./images/3.jpg",
-    "url": "https://www.youtube.com/watch?v=k1Ci-5lr-DA",
+    "ytid": "k1Ci-5lr-DA",
     "popularity": 54665248,
     "lyrics": {
       "japanese": [
@@ -310,7 +310,7 @@
     "album": "青と夏",
     "release": "2018/8/1",
     "img": "./images/4.jpg",
-    "url": "https://www.youtube.com/watch?v=m34DPnRUfMU",
+    "ytid": "m34DPnRUfMU",
     "popularity": 172625525,
     "lyrics": {
       "japanese": [
@@ -408,7 +408,7 @@
     "album": "青と夏",
     "release": "2018/8/1",
     "img": "./images/5.jpg",
-    "url": "https://www.youtube.com/watch?v=sL-yJIyuEaM",
+    "ytid": "sL-yJIyuEaM",
     "popularity": 40815516,
     "lyrics": {
       "japanese": [
@@ -502,7 +502,7 @@
     "album": "僕のこと",
     "release": "2019/1/9",
     "img": "./images/6.jpg",
-    "url": "https://www.youtube.com/watch?v=xefpHEg5UIA",
+    "ytid": "xefpHEg5UIA",
     "popularity": 112814740,
     "lyrics": {
       "japanese": [
@@ -602,7 +602,7 @@
     "album": "ANTENNA",
     "release": "2023/7/5",
     "img": "./images/7.jpg",
-    "url": "https://www.youtube.com/watch?v=XiSa_VIrGKE",
+    "ytid": "XiSa_VIrGKE",
     "popularity": 17337597,
     "lyrics": {
       "japanese": [
@@ -692,7 +692,7 @@
     "album": "Soranji",
     "release": "2022/11/9",
     "img": "./images/8.jpg",
-    "url": "https://www.youtube.com/watch?v=44cICMd3jW4",
+    "ytid": "44cICMd3jW4",
     "popularity": 63866401,
     "lyrics": {
       "japanese": [
@@ -852,7 +852,7 @@
     "album": "Unity",
     "release": "2022/7/8",
     "img": "./images/9.jpg",
-    "url": "https://www.youtube.com/watch?v=E7YAf0O02Ms",
+    "ytid": "E7YAf0O02Ms",
     "popularity": 22789333,
     "lyrics": {
       "japanese": [
@@ -942,7 +942,7 @@
     "album": "正解",
     "release": "2024/2/28",
     "img": "./images/10.jpg",
-    "url": "https://www.youtube.com/watch?v=ow5FBOBAdhU",
+    "ytid": "ow5FBOBAdhU",
     "popularity": 36725746,
     "lyrics": {
       "japanese": [
@@ -1056,7 +1056,7 @@
     "album": "余命10年 ～Original Soundtrack～",
     "release": "2022/3/4",
     "img": "./images/11.jpg",
-    "url": "https://www.youtube.com/watch?v=W0C_VJqjtpw",
+    "ytid": "W0C_VJqjtpw",
     "popularity": 15427644,
     "lyrics": {
       "japanese": [
@@ -1132,7 +1132,7 @@
     "album": "天気の子 complete version",
     "release": "2019/11/27",
     "img": "./images/12.jpg",
-    "url": "https://www.youtube.com/watch?v=0JuI1v1eIuM",
+    "ytid": "0JuI1v1eIuM",
     "popularity": 4674661,
     "lyrics": {
       "japanese": [
@@ -1176,7 +1176,7 @@
     "album": "天気の子 complete version",
     "release": "2019/11/27",
     "img": "./images/13.jpg",
-    "url": "https://www.youtube.com/watch?v=EQ94zflNqn4",
+    "ytid": "EQ94zflNqn4",
     "popularity": 127814069,
     "lyrics": {
       "japanese": [
@@ -1290,7 +1290,7 @@
     "album": "君の名は。",
     "release": "2019/11/27",
     "img": "./images/14.jpg",
-    "url": "https://www.youtube.com/watch?v=MtLHwqbE1eI",
+    "ytid": "MtLHwqbE1eI",
     "popularity": 12613006,
     "lyrics": {
       "japanese": [
@@ -1336,7 +1336,7 @@
     "album": "君の名は。",
     "release": "2019/11/27",
     "img": "./images/15.jpg",
-    "url": "https://www.youtube.com/watch?v=PDSkFeMVNFs",
+    "ytid": "PDSkFeMVNFs",
     "popularity": 324248552,
     "lyrics": {
       "japanese": [
@@ -1408,7 +1408,7 @@
     "album": "君の名は。",
     "release": "2019/11/27",
     "img": "./images/16.jpg",
-    "url": "https://www.youtube.com/watch?v=a2GujJZfXpg",
+    "ytid": "a2GujJZfXpg",
     "popularity": 206300287,
     "lyrics": {
       "japanese": [
@@ -1502,7 +1502,7 @@
     "album": "絶体絶命",
     "release": "2011/3/9",
     "img": "./images/17.jpg",
-    "url": "https://www.youtube.com/watch?v=K1u_MwT6zV8",
+    "ytid": "K1u_MwT6zV8",
     "popularity": 40982707,
     "lyrics": {
       "japanese": [
@@ -1559,7 +1559,7 @@
     "album": "RADWIMPS 4～おかずのごはん～",
     "release": "2006/12/6",
     "img": "./images/18.jpg",
-    "url": "https://www.youtube.com/watch?v=aV3Fq1mvY6o",
+    "ytid": "aV3Fq1mvY6o",
     "popularity": 12685585,
     "lyrics": {
       "japanese": [
@@ -1643,7 +1643,7 @@
     "album": "RADWIMPS 4～おかずのごはん～",
     "release": "2006/12/6",
     "img": "./images/19.jpg",
-    "url": "https://www.youtube.com/watch?v=wvvItrHEfRA",
+    "ytid": "wvvItrHEfRA",
     "popularity": 41004354,
     "lyrics": {
       "japanese": [
@@ -1730,7 +1730,7 @@
     "album": "RADWIMPS 4～おかずのごはん～",
     "release": "2006/12/6",
     "img": "./images/20.jpg",
-    "url": "https://www.youtube.com/watch?v=c2y8Ba3WwPY",
+    "ytid": "c2y8Ba3WwPY",
     "popularity": 46134062,
     "lyrics": {
       "japanese": [
@@ -1836,7 +1836,7 @@
     "album": "創作(Type A)",
     "release": "2021/1/27",
     "img": "./images/21.jpg",
-    "url": "https://www.youtube.com/watch?v=Sw1Flgub9s8",
+    "ytid": "Sw1Flgub9s8",
     "popularity": 100837374,
     "lyrics": {
       "japanese": [
@@ -1952,7 +1952,7 @@
     "album": "創作(Type A)",
     "release": "2021/1/27",
     "img": "./images/22.jpg",
-    "url": "https://www.youtube.com/watch?v=GVrRXhS0mLs",
+    "ytid": "GVrRXhS0mLs",
     "popularity": 15495108,
     "lyrics": {
       "japanese": [
@@ -2048,7 +2048,7 @@
     "album": "盗作",
     "release": "2020/7/29",
     "img": "./images/23.jpg",
-    "url": "https://www.youtube.com/watch?v=9lVPAWLWtWc",
+    "ytid": "9lVPAWLWtWc",
     "popularity": 135637979,
     "lyrics": {
       "japanese": [
@@ -2122,7 +2122,7 @@
     "album": "負け犬にアンコールはいらない",
     "release": "2018/5/9",
     "img": "./images/24.jpg",
-    "url": "https://www.youtube.com/watch?v=-VKIqrvVOpo",
+    "ytid": "-VKIqrvVOpo",
     "popularity": 229980832,
     "lyrics": {
       "japanese": [
@@ -2218,7 +2218,7 @@
     "album": "だから僕は音楽を辞めた",
     "release": "2019/4/10",
     "img": "./images/25.jpg",
-    "url": "none",
+    "ytid": "4MoRLTAJY_0",
     "popularity": 44418691,
     "lyrics": {
       "japanese": [
@@ -2306,7 +2306,7 @@
     "album": "だから僕は音楽を辞めた",
     "release": "2019/4/10",
     "img": "./images/26.jpg",
-    "url": "none",
+    "ytid": "KTZ-y85Erus",
     "popularity": 182266178,
     "lyrics": {
       "japanese": [
@@ -2430,7 +2430,7 @@
     "album": "夏草が邪魔をする",
     "release": "2017/6/28",
     "img": "./images/27.jpg",
-    "url": "none",
+    "ytid": "F64yFFnZfkI",
     "popularity": 166049737,
     "lyrics": {
       "japanese": [
@@ -2512,7 +2512,7 @@
     "album": "夏草が邪魔をする",
     "release": "2017/6/28",
     "img": "./images/28.jpg",
-    "url": "none",
+    "ytid": "JJaCwW4HyVs",
     "popularity": 45975786,
     "lyrics": {
       "japanese": [
@@ -2598,7 +2598,7 @@
     "album": "夏草が邪魔をする",
     "release": "2017/6/28",
     "img": "./images/29.jpg",
-    "url": "none",
+    "ytid": "BCt9lS_Uv_Y",
     "popularity": 44894844,
     "lyrics": {
       "japanese": [
@@ -2698,7 +2698,7 @@
     "album": "地球儀",
     "release": "2023/7/26",
     "img": "./images/30.jpg",
-    "url": "none",
+    "ytid": "VUsURj_OYdA",
     "popularity": 35002526,
     "lyrics": {
       "japanese": [
@@ -2762,7 +2762,7 @@
     "album": "KICK BACK",
     "release": "2022/11/23",
     "img": "./images/31.jpg",
-    "url": "none",
+    "ytid": "M2cckDmNLMI",
     "popularity": 177738194,
     "lyrics": {
       "japanese": [
@@ -2870,7 +2870,7 @@
     "album": "M八七",
     "release": "2022/7/10",
     "img": "./images/32.jpg",
-    "url": "none",
+    "ytid": "Zhx1n6uvgUE",
     "popularity": 59594080,
     "lyrics": {
       "japanese": [
@@ -2938,7 +2938,7 @@
     "album": "Pale Blue",
     "release": "2021/6/16",
     "img": "./images/33.jpg",
-    "url": "none",
+    "ytid": "7WZ1Kt3zraY",
     "popularity": 73150410,
     "lyrics": {
       "japanese": [
@@ -3044,7 +3044,7 @@
     "album": "Pale Blue",
     "release": "2021/6/16",
     "img": "./images/34.jpg",
-    "url": "none",
+    "ytid": "8nxaZ69ElEc",
     "popularity": 45032295,
     "lyrics": {
       "japanese": [
@@ -3130,7 +3130,7 @@
     "album": "馬と鹿",
     "release": "2019/9/11",
     "img": "./images/35.jpg",
-    "url": "none",
+    "ytid": "ptnYBctoexk",
     "popularity": 206929290,
     "lyrics": {
       "japanese": [
@@ -3225,7 +3225,7 @@
     "album": "馬と鹿",
     "release": "2019/9/11",
     "img": "./images/36.jpg",
-    "url": "none",
+    "ytid": "1s84rIhPuhk",
     "popularity": 116810210,
     "lyrics": {
       "japanese": [
@@ -3313,7 +3313,7 @@
     "album": "Lemon",
     "release": "2018/3/14",
     "img": "./images/37.jpg",
-    "url": "none",
+    "ytid": "SX_ViT4Ra7k",
     "popularity": 888624690,
     "lyrics": {
       "japanese": [
@@ -3403,7 +3403,7 @@
     "album": "orion",
     "release": "2017/2/15",
     "img": "./images/38.jpg",
-    "url": "none",
+    "ytid": "lzAyrgSqeeE",
     "popularity": 184729622,
     "lyrics": {
       "japanese": [
@@ -3495,7 +3495,7 @@
     "album": "LOSER/ナンバーナイン",
     "release": "2016/9/28",
     "img": "./images/39.jpg",
-    "url": "none",
+    "ytid": "Dx_fKPBPYUI",
     "popularity": 338873038,
     "lyrics": {
       "japanese": [
@@ -3658,7 +3658,7 @@
     "album": "SPECIALZ",
     "release": "2023/9/6",
     "img": "./images/40.jpg",
-    "url": "none",
+    "ytid": "fhzKLBZJC3w",
     "popularity": 129740053,
     "lyrics": {
       "japanese": [
@@ -3806,7 +3806,7 @@
     "album": "Stardom",
     "release": "2022/11/30",
     "img": "./images/41.jpg",
-    "url": "none",
+    "ytid": "C47K1TX9PAA",
     "popularity": 29413813,
     "lyrics": {
       "japanese": [
@@ -3892,7 +3892,7 @@
     "album": "カメレオン",
     "release": "2022/3/16",
     "img": "./images/42.jpg",
-    "url": "none",
+    "ytid": "BOrdMrh4uKg",
     "popularity": 64245657,
     "lyrics": {
       "japanese": [
@@ -4002,7 +4002,7 @@
     "album": "一途/逆夢",
     "release": "2021/12/29",
     "img": "./images/43.jpg",
-    "url": "none",
+    "ytid": "hm1na9R2uYA",
     "popularity": 116457065,
     "lyrics": {
       "japanese": [
@@ -4084,7 +4084,7 @@
     "album": "一途/逆夢",
     "release": "2021/12/29",
     "img": "./images/44.jpg",
-    "url": "none",
+    "ytid": "M6gcoDN9jBc",
     "popularity": 130649534,
     "lyrics": {
       "japanese": [
@@ -4229,7 +4229,7 @@
     "album": "Prayer X",
     "release": "2018/9/19",
     "img": "./images/45.jpg",
-    "url": "none",
+    "ytid": "L-Bzhpm8h0o",
     "popularity": 47595405,
     "lyrics": {
       "japanese": [
@@ -4303,7 +4303,7 @@
     "album": "CEREMONY",
     "release": "2020/1/15",
     "img": "./images/46.jpg",
-    "url": "none",
+    "ytid": "XPUN-w543bc",
     "popularity": 70173890,
     "lyrics": {
       "japanese": [
@@ -4401,7 +4401,7 @@
     "album": "CEREMONY",
     "release": "2020/1/15",
     "img": "./images/47.jpg",
-    "url": "none",
+    "ytid": "ony539T074w",
     "popularity": 497681911,
     "lyrics": {
       "japanese": [
@@ -4561,7 +4561,7 @@
     "album": "CIRCUS",
     "release": "2024/4/3",
     "img": "./images/48.jpg",
-    "url": "none",
+    "ytid": "ZdXq1Nm7xbQ",
     "popularity": 3851041,
     "lyrics": {
       "japanese": [
@@ -4655,7 +4655,7 @@
     "album": "CIRCUS",
     "release": "2024/4/3",
     "img": "./images/49.jpg",
-    "url": "none",
+    "ytid": "aLgPe4Scnvs",
     "popularity": 8279556,
     "lyrics": {
       "japanese": [
@@ -4745,7 +4745,7 @@
     "album": "Assort",
     "release": "2022/5/18",
     "img": "./images/50.jpg",
-    "url": "none",
+    "ytid": "Q5JytNgQzqk",
     "popularity": 54296738,
     "lyrics": {
       "japanese": [
@@ -4819,7 +4819,7 @@
     "album": "開幕宣言",
     "release": "2021/4/28",
     "img": "./images/51.jpg",
-    "url": "none",
+    "ytid": "dw_0ijhy0T0",
     "popularity": 5421829,
     "lyrics": {
       "japanese": [
@@ -4921,7 +4921,7 @@
     "album": "開幕宣言",
     "release": "2021/4/28",
     "img": "./images/52.jpg",
-    "url": "none",
+    "ytid": "KFtN6OmVkRg",
     "popularity": 7155574,
     "lyrics": {
       "japanese": [
@@ -4996,7 +4996,7 @@
     "album": "開幕宣言",
     "release": "2021/4/28",
     "img": "./images/53.jpg",
-    "url": "none",
+    "ytid": "WAMxwRtNrPY",
     "popularity": 88856610,
     "lyrics": {
       "japanese": [
@@ -5080,7 +5080,7 @@
     "album": "WONDERLAND",
     "release": "2020/5/27",
     "img": "./images/54.jpg",
-    "url": "none",
+    "ytid": "3xiqogy4tWY",
     "popularity": 7617386,
     "lyrics": {
       "japanese": [
@@ -5160,7 +5160,7 @@
     "album": "Chessboard/日常",
     "release": "2023/9/13",
     "img": "./images/55.jpg",
-    "url": "none",
+    "ytid": "qo55wGLXcOQ",
     "popularity": 11588007,
     "lyrics": {
       "japanese": [
@@ -5261,7 +5261,7 @@
     "album": "ミックスナッツ EP",
     "release": "2022/6/22",
     "img": "./images/56.jpg",
-    "url": "none",
+    "ytid": "CbH2F0kXgTY",
     "popularity": 128650931,
     "lyrics": {
       "japanese": [
@@ -5353,7 +5353,7 @@
     "album": "I LOVE...",
     "release": "2020/2/12",
     "img": "./images/57.jpg",
-    "url": "none",
+    "ytid": "bt8wNQJaKAk",
     "popularity": 207097106,
     "lyrics": {
       "japanese": [
@@ -5452,7 +5452,7 @@
     "album": "宿命",
     "release": "2019/7/31",
     "img": "./images/58.jpg",
-    "url": "none",
+    "ytid": "-kgOFJG881I",
     "popularity": 160408635,
     "lyrics": {
       "japanese": [
@@ -5536,7 +5536,7 @@
     "album": "Pretender",
     "release": "2019/5/15",
     "img": "./images/59.jpg",
-    "url": "none",
+    "ytid": "TQ8WlA2GXbk",
     "popularity": 535430398,
     "lyrics": {
       "japanese": [
@@ -5688,7 +5688,7 @@
     "album": "Rejoice",
     "release": "2024/7/31",
     "img": "./images/60.jpg",
-    "url": "none",
+    "ytid": "Ssj-NhrKOdg",
     "popularity": 4876507,
     "lyrics": {
       "japanese": [
@@ -5758,7 +5758,7 @@
     "album": "Rejoice",
     "release": "2024/7/31",
     "img": "./images/61.jpg",
-    "url": "none",
+    "ytid": "-H_k7iwrWVY",
     "popularity": 12644334,
     "lyrics": {
       "japanese": [
@@ -5851,7 +5851,7 @@
     "album": "Editorial",
     "release": "2021/8/18",
     "img": "./images/62.jpg",
-    "url": "none",
+    "ytid": "O1bhZgkC4Gw",
     "popularity": 157029239,
     "lyrics": {
       "japanese": [
@@ -5922,7 +5922,7 @@
     "album": "Editorial",
     "release": "2021/8/18",
     "img": "./images/63.jpg",
-    "url": "none",
+    "ytid": "kff_DXor7jc",
     "popularity": 51270610,
     "lyrics": {
       "japanese": [
@@ -6002,7 +6002,7 @@
     "album": "Traveler",
     "release": "2019/10/9",
     "img": "./images/64.jpg",
-    "url": "none",
+    "ytid": "DuMqFknYHBs",
     "popularity": 189139412,
     "lyrics": {
       "japanese": [
@@ -6088,7 +6088,7 @@
     "album": "裸の勇者",
     "release": "2022/2/23",
     "img": "./images/65.jpg",
-    "url": "none",
+    "ytid": "FT0GKCuSaW0",
     "popularity": 48001660,
     "lyrics": {
       "japanese": [
@@ -6176,7 +6176,7 @@
     "album": "strobo",
     "release": "2020/5/27",
     "img": "./images/66.jpg",
-    "url": "none",
+    "ytid": "nrLZ-vTiQa4",
     "popularity": 4362164,
     "lyrics": {
       "japanese": [
@@ -6306,7 +6306,7 @@
     "album": "strobo",
     "release": "2020/5/27",
     "img": "./images/67.jpg",
-    "url": "none",
+    "ytid": "UM9XNpgrqVk",
     "popularity": 133004198,
     "lyrics": {
       "japanese": [
@@ -6426,7 +6426,7 @@
     "album": "strobo",
     "release": "2020/5/27",
     "img": "./images/68.jpg",
-    "url": "none",
+    "ytid": "SIuF37EWaLU",
     "popularity": 84776567,
     "lyrics": {
       "japanese": [
@@ -6522,7 +6522,7 @@
     "album": "strobo",
     "release": "2020/5/27",
     "img": "./images/69.jpg",
-    "url": "none",
+    "ytid": "Gbz2C2gQREI",
     "popularity": 113037748,
     "lyrics": {
       "japanese": [
@@ -6648,7 +6648,7 @@
     "album": "strobo",
     "release": "2020/5/27",
     "img": "./images/70.jpg",
-    "url": "none",
+    "ytid": "LKyx3EYVlkA",
     "popularity": 11514478,
     "lyrics": {
       "japanese": [
@@ -6776,7 +6776,7 @@
     "album": "replica",
     "release": "2023/11/15",
     "img": "./images/71.jpg",
-    "url": "none",
+    "ytid": "xFoTFCHU70s",
     "popularity": 22922863,
     "lyrics": {
       "japanese": [
@@ -6882,7 +6882,7 @@
     "album": "replica",
     "release": "2023/11/15",
     "img": "./images/72.jpg",
-    "url": "none",
+    "ytid": "V-gxqhWEbxI",
     "popularity": 26052119,
     "lyrics": {
       "japanese": [
@@ -7008,7 +7008,7 @@
     "album": "replica",
     "release": "2023/11/15",
     "img": "./images/73.jpg",
-    "url": "none",
+    "ytid": "onhBN0qkUcE",
     "popularity": 39896350,
     "lyrics": {
       "japanese": [
@@ -7126,7 +7126,7 @@
     "album": "replica",
     "release": "2023/11/15",
     "img": "./images/74.jpg",
-    "url": "none",
+    "ytid": "FL1QjjkZVm4",
     "popularity": 16040724,
     "lyrics": {
       "japanese": [
@@ -7270,7 +7270,7 @@
     "album": "狂言",
     "release": "2022/1/26",
     "img": "./images/75.jpg",
-    "url": "none",
+    "ytid": "YnSW8ian29w",
     "popularity": 212495903,
     "lyrics": {
       "japanese": [
@@ -7354,7 +7354,7 @@
     "album": "狂言",
     "release": "2022/1/26",
     "img": "./images/76.jpg",
-    "url": "none",
+    "ytid": "sOiMD45QGLs",
     "popularity": 179112474,
     "lyrics": {
       "japanese": [
@@ -7460,7 +7460,7 @@
     "album": "狂言",
     "release": "2022/1/26",
     "img": "./images/77.jpg",
-    "url": "none",
+    "ytid": "Qp3b-RXtz4w",
     "popularity": 350419488,
     "lyrics": {
       "japanese": [
@@ -7582,7 +7582,7 @@
     "album": "ウタの歌 ONE PIECE FILM RED",
     "release": "2023/6/14",
     "img": "./images/78.jpg",
-    "url": "none",
+    "ytid": "1FliVTcX8bQ",
     "popularity": 173013512,
     "lyrics": {
       "japanese": [
@@ -7664,7 +7664,7 @@
     "album": "ウタの歌 ONE PIECE FILM RED",
     "release": "2023/6/14",
     "img": "./images/79.jpg",
-    "url": "none",
+    "ytid": "sk1Z-Hqwwog",
     "popularity": 95301891,
     "lyrics": {
       "japanese": [
@@ -7780,7 +7780,7 @@
     "album": "ウタの歌 ONE PIECE FILM RED",
     "release": "2023/6/14",
     "img": "./images/80.jpg",
-    "url": "none",
+    "ytid": "gt-v_YCkaMY",
     "popularity": 134985479,
     "lyrics": {
       "japanese": [
@@ -7882,7 +7882,7 @@
     "album": "ウタの歌 ONE PIECE FILM RED",
     "release": "2023/6/14",
     "img": "./images/81.jpg",
-    "url": "none",
+    "ytid": "V9_ZpqfqHFI",
     "popularity": 95443782,
     "lyrics": {
       "japanese": [
@@ -7982,7 +7982,7 @@
     "album": "残夢",
     "release": "2024/7/10",
     "img": "./images/82.jpg",
-    "url": "none",
+    "ytid": "aOKa-5AHCtU",
     "popularity": 28480792,
     "lyrics": {
       "japanese": [
@@ -8096,7 +8096,7 @@
     "album": "残夢",
     "release": "2024/7/11",
     "img": "./images/83.jpg",
-    "url": "none",
+    "ytid": "ZHAnZTVF_10",
     "popularity": 13906324,
     "lyrics": {
       "japanese": [
@@ -8174,7 +8174,7 @@
     "album": "残夢",
     "release": "2024/7/12",
     "img": "./images/84.jpg",
-    "url": "none",
+    "ytid": "pgXpM4l_MwI",
     "popularity": 200773282,
     "lyrics": {
       "japanese": [
@@ -8306,7 +8306,7 @@
     "album": "HELP EVER HURT NEVER",
     "release": "2020/5/20",
     "img": "./images/85.jpg",
-    "url": "none",
+    "ytid": "Nt6ZwuVzOS4",
     "popularity": 42853699,
     "lyrics": {
       "japanese": [
@@ -8417,7 +8417,7 @@
     "album": "HELP EVER HURT NEVER",
     "release": "2020/5/20",
     "img": "./images/86.jpg",
-    "url": "none",
+    "ytid": "vzhTpIIQR5I",
     "popularity": 35190135,
     "lyrics": {
       "japanese": [
@@ -8481,7 +8481,7 @@
     "album": "HELP EVER HURT NEVER",
     "release": "2020/5/20",
     "img": "./images/87.jpg",
-    "url": "none",
+    "ytid": "dawrQnvwMTY",
     "popularity": 89625238,
     "lyrics": {
       "japanese": [
@@ -8597,7 +8597,7 @@
     "album": "HELP EVER HURT NEVER",
     "release": "2020/5/20",
     "img": "./images/88.jpg",
-    "url": "none",
+    "ytid": "goU1Ei8I8uk",
     "popularity": 39432273,
     "lyrics": {
       "japanese": [
@@ -8706,7 +8706,7 @@
     "album": "LOVE ALL SERVE ALL",
     "release": "2022/3/23",
     "img": "./images/89.jpg",
-    "url": "none",
+    "ytid": "TcLLpZBWsck",
     "popularity": 134647669,
     "lyrics": {
       "japanese": [
@@ -8796,7 +8796,7 @@
     "album": "LOVE ALL SERVE ALL",
     "release": "2022/3/23",
     "img": "./images/90.jpg",
-    "url": "none",
+    "ytid": "rZxR9bpsYLU",
     "popularity": 15610602,
     "lyrics": {
       "japanese": [
@@ -8898,7 +8898,7 @@
     "album": "LOVE ALL SERVE ALL",
     "release": "2022/3/23",
     "img": "./images/91.jpg",
-    "url": "none",
+    "ytid": "29p8FvT_puU",
     "popularity": 27834287,
     "lyrics": {
       "japanese": [
@@ -9000,7 +9000,7 @@
     "album": "???",
     "release": "???",
     "img": "./images/92.jpg",
-    "url": "none",
+    "ytid": "none",
     "popularity": 206929290
   },
   {
@@ -9008,9 +9008,9 @@
     "title": "酸欠少女",
     "artist": "さユり",
     "album": "酸欠少女",
-    "release": "2022-8-10",
+    "release": "2022/8/10",
     "img": "./images/93.jpg",
-    "url": "none",
+    "ytid": "L72R8VFVNEY",
     "popularity": 1798259,
     "lyrics": {
       "japanese": [
