@@ -56,11 +56,6 @@
     justify-self: center;
 }
 
-.video-container iframe{
-    height: 50vh;
-    width: 50vw;
-}
-
 aside{
     position: relative;
     left: 1vh;

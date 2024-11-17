@@ -19,6 +19,8 @@ fetch('songs.json')
 
             // 使用 IFrame API 創建 YouTube 播放器
             player = new YT.Player('video-container', {
+                height: '315',
+                width: '560',
                 videoId: song.ytid, // 使用 JSON 中的 youtubeId
                 events: {
                     'onReady': onPlayerReady,
