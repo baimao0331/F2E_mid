@@ -40,7 +40,7 @@
     justify-content: end;
     position:relative;
     right: 10%;
-    max-height: 9vh;
+    max-height: 5vh;
     margin-top: 2vh;
 }
 
@@ -48,7 +48,7 @@
     margin-left: 2vh;
     width: clamp(100px, 15%, 20vw);
     min-height: auto;
-    max-height: 5vh;
+    max-height: 4vh;
     border-radius: var(--border-rad);
     border: none;
     background-color: var(--blue);
@@ -175,7 +175,6 @@
 
 .recommend .song-info{
     position: relative;
-    top:2vh;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -243,7 +242,7 @@ button {
 /*---------------------推薦區域-------------------------*/
 /*---------------------排名區域-------------------------*/
 .ranking{
-    margin:5vh 0;
+    margin:4vh 0;
     padding-bottom: 10vh;
     width: clamp(var(--min-width), 60vw, 80%);
     display: flex;
@@ -283,7 +282,7 @@ button {
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height: 13vh;
+    height: 8vw;
     border-radius: var(--border-rad);
     transition: 0.5s;
 }
@@ -306,32 +305,27 @@ button {
 }
 
 .rankbox .song-img{
-    max-width: 15vh;
     border-radius: calc(var(--border-rad)/2);
-}
-
-.rankbox:hover .song-img{
-    border-radius: 0;
 }
 
 .rankbox img{
     position: relative;
     left: 3vh;
-    height: 9vh;
-    width: 9vh;
-    object-fit:cover;
-    margin: 0.5vh;
+    top:0;
+    height: clamp(60px,6vw,7vw);
+    width: clamp(60px,6vw,7vw);
+    object-fit: cover;
     transition: 0.5s;
 }
 
 .rankbox:hover img{
-    height: 10vh;
-    width: 10vh;
+    scale: 1.1;
 }
 
 .rankbox .text-info{
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 .rankbox .song-name{
@@ -341,7 +335,7 @@ button {
     text-decoration: none;
     color: black;
     font-weight: 500;
-    width: 13rem;
+    width: 10rem;
     font-size: 1rem;
 }
 
@@ -350,7 +344,7 @@ button {
 }
 .rankbox .song-artist{
     position: relative;
-    left: 5vh;
+    left: 5vw;
     width: 10rem;
 }
 .rankbox .song-artist p{
@@ -367,9 +361,6 @@ button {
 
 .rankbox:hover .rankbox:not(:hover){
     scale: 0.9;
-}
-.rankbox:hover .link-item{
-    padding: 1vh 2vw 1vh 3vh;
 }
 
 .read-more{
@@ -406,9 +397,6 @@ button {
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    #pagination{
-        display: none;
-    }
     .search:hover{
         scale: 1;
         margin: 4vh 0;
@@ -420,12 +408,54 @@ button {
         scale: 1;
         margin: 4vh 0;
     }
+    .ranking:hover{
+        scale: 1;
+        margin: 4vh 0;
+    }
     .ranking .text-info{
         flex-direction: column;
+        overflow: hidden;
+    }
+    .rankbox .song-name{
+        left: 7vw;
+    }
+    .rankbox .song-artist{
+        left: 7vw;
     }
 }
-@media screen and (max-width:500px){
-
+@media screen and (max-width:768px){
+    .search{
+        width: 100vw;
+    }
+    .recommend{
+        width: 100vw;
+    }
+    .ranking{
+        width: 100vw;
+    }
+    .rankbox{
+        height: 10vh;
+    }
+    .rankbox:hover{
+        scale: 1;
+        margin: 1vh;
+    }
+    .rankbox .song-img{
+        height: 100%;
+        width: 10vh;
+        left: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .rankbox:hover img{
+        scale: 1;
+    }
+    .rankbox .song-name{
+        left: 3vw;
+    }
+    .rankbox .song-artist{
+        left: 3vw;
+    }
     #prev-btn,#next-btn{
         display: none;
     }

@@ -1,5 +1,5 @@
 html {
-    font-size: 1.5vh;
+    font-size: 100%;
 }
 
 * {
@@ -13,7 +13,7 @@ html {
     --artist-text: #202020;
     --blue:#5a83dd;
     --blue-hover: #7193dd;
-    --border-rad:clamp(10px,30px,5vw);
+    --border-rad:clamp(10px,3vw,5vw);
     --min-width:320px;
 }
 
@@ -57,15 +57,16 @@ header{
     color: white;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-rad);
     cursor: pointer;
     font-size: 16px;
     transition: 0.5s;
     z-index: 1;
+    opacity: 0.8;
 }
 
 #back-to-top img{
-    width: 5vh;
+    width: 4vh;
 }
 
 #back-to-top:hover {
@@ -125,7 +126,7 @@ nav li:hover::after {
 }
 
 body .container{
-    width: clamp(600px, 1200px, 80vw);
+    width: clamp(768px, 1200px, 80vw);
     display: flex; /* 设置为 Flexbox */
     flex-direction: column;
     justify-self: center;
@@ -164,17 +165,8 @@ footer p{
 }
 /*---------------------頁尾區域-------------------------*/
 
-@media screen and (max-width:760px) {
-    main{
+@media screen and (max-width:768px) {
+    main,.container{
         width: 100vw;
-    }
-    .container{
-        width: 100vw;
-    }
-    #back-to-top{
-        opacity: 0;
-    }
-    *:hover{
-        scale: 1;
     }
 }

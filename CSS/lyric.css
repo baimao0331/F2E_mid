@@ -18,6 +18,10 @@
 .song-info h1,h2,h3{
     margin: 0.5vh 0;
     font-weight: 500;
+    font-size: 1rem;
+}
+.song-info h1{
+    font-size: 1.5rem;
 }
 
 .lyric-line{
@@ -52,17 +56,22 @@
     justify-self: center;
 }
 
-article{
-    width: 80%;
+.video-container iframe{
+    height: 50vh;
+    width: 50vw;
 }
 
 aside{
     position: relative;
     left: 1vh;
     margin: 0vh 1vh;
-    width: 20%;
+    width: clamp(400px, 60vw, 80%);
     background-color: var(--light-gray);
     border-radius: var(--border-rad);
+}
+
+.card-container{
+    display: flex;
 }
 
 aside h3{
@@ -78,6 +87,7 @@ aside h3{
 }
 
 .card {
+    flex: 1;
     position: relative;
     display: flex;
     align-items: center;
@@ -135,7 +145,7 @@ aside h3{
     font-size: 1.1em;
 }
 
-@media screen and (max-width:840px){
+@media screen and (max-width:768px){
     .main-content{
         flex-direction: column;
     }
