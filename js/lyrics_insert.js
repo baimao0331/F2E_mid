@@ -11,8 +11,8 @@ fetch('songs.json')
     .then(data => {
         const song = data.find(s => s.id === songId);
         if (song) {
-            document.getElementById('release-date').textContent = `於 ${song.release}發行`;
-            document.getElementById('album').textContent = `收錄於 ${song.album}`;
+            document.getElementById('release-date').textContent = song.release;
+            document.getElementById('album').textContent = song.album;
             document.getElementById('song-title').textContent = song.title;
             document.getElementById('song-artist').textContent = song.artist;
             document.getElementById('song-img').src = song.img;
