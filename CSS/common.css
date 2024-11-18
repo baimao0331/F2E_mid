@@ -13,7 +13,7 @@ html {
     --artist-text: #202020;
     --blue:#5a83dd;
     --blue-hover: #7193dd;
-    --border-rad:clamp(10px,3vw,5vw);
+    --border-rad:clamp(10px,30px,5vw);
     --min-width:320px;
 }
 
@@ -100,7 +100,7 @@ nav a{
 nav li{
     position: relative;
     margin: 0 1vw;
-    width: 10vh;
+    width: 10vw;
     list-style-type: none;
     font-weight: 600;
     font-size: 1.2rem;
@@ -142,7 +142,7 @@ main{
 /*---------------------頁尾區域-------------------------*/
 footer{
     background-color: var(--light-gray);
-    width: 100%;
+    width: 100vw;
     padding: 5vh;
 }
 
@@ -156,7 +156,7 @@ footer .footer-box{
 }
 
 footer img{
-    width: clamp(40px, 40vh, 60vw);
+    width: clamp(40px, 40vw, 300px);
 }
 
 footer p{

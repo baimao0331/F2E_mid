@@ -24,6 +24,11 @@
     font-size: 1.5rem;
 }
 
+.iframe_player{
+    position: relative;
+    width: 50%;
+}
+
 .lyric-line{
     margin: 0;
     padding: 2vh 5vh;

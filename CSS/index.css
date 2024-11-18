@@ -1,4 +1,6 @@
-
+.container{
+    flex-direction: column;
+}
 
 /*---------------------搜尋區域-------------------------*/
 .search{
@@ -458,5 +460,25 @@ button {
     }
     #prev-btn,#next-btn{
         display: none;
+    }
+}
+@media screen and (max-width:384px){
+    .buttonarea{
+        right: 10%;
+        width: 100%;
+    }
+    .buttonarea button{
+        width: 40%;
+        margin: 0;
+    }
+    #search-artist{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 1px solid white;
+    }
+    #search-title{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 1px solid white;
     }
 }

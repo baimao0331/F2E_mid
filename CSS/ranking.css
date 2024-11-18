@@ -40,7 +40,7 @@
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height: 13vh;
+    height: 8vw;
     border-radius: var(--border-rad);
     transition: 0.5s;
 }
@@ -48,8 +48,8 @@
 .rankbox:hover{
     scale: 1.2;
     margin-top: 2vh;
-    margin-bottom: 4vh;
-    box-shadow: 0px 1vh 0 var(--blue);
+    margin-bottom: 3vh;
+    box-shadow: 0px 0.5vh 0 var(--blue);
     border-radius: calc(var(--border-rad)/2);
 }
 
@@ -62,43 +62,42 @@
     width: 2rem;
 }
 
-.rankbox .song-img a{
-    height: 100%;
-}
-
 .rankbox .song-img{
-    max-width: 15vh;
     border-radius: calc(var(--border-rad)/2);
-}
-
-.rankbox:hover .song-img{
-    border-radius: 0;
 }
 
 .rankbox img{
     position: relative;
     left: 3vh;
-    height: 9vh;
-    width: 9vh;
-    object-fit:cover;
-    margin: 0.5vh;
+    top:0;
+    height: clamp(60px,6vw,7vw);
+    width: clamp(60px,6vw,7vw);
+    object-fit: cover;
     transition: 0.5s;
 }
 
 .rankbox:hover img{
-    height: 10vh;
-    width: 10vh;
+    scale: 1.1;
+}
+
+.rankbox .text-info{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 .rankbox .song-name{
     position: relative;
-    left: 4vh;
+    left: 5vh;
     transition: 0.5s;
     text-decoration: none;
     color: black;
     font-weight: 500;
-    width: 13rem;
-    font-size: 1.1rem;
+    width: 10rem;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .rankbox .song-name:hover{
@@ -106,7 +105,7 @@
 }
 .rankbox .song-artist{
     position: relative;
-    left: 5vh;
+    left: 5vw;
     width: 10rem;
 }
 .rankbox .song-artist p{
@@ -115,6 +114,9 @@
     font-weight: 400;
     font-size: 1rem;
     color: var(--artist-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .rankbox .link-item{
@@ -166,3 +168,56 @@
 }
 /*---------------------排名區域-------------------------*/
 /*-----------------------------------------------主頁內容結束--------------------------------------------------------*/
+
+
+@media screen and (max-width:1100px) {
+
+    .recommend:hover{
+        scale: 1;
+        margin: 4vh 0;
+    }
+    .ranking:hover{
+        scale: 1;
+        margin: 4vh 0;
+    }
+    .ranking .text-info{
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .rankbox .song-name{
+        left: 7vw;
+    }
+    .rankbox .song-artist{
+        left: 7vw;
+    }
+}
+@media screen and (max-width:768px){
+    .ranking{
+        width: 100vw;
+    }
+    .rankbox{
+        height: 10vh;
+    }
+    .rankbox:hover{
+        scale: 1;
+        margin: 1vh;
+    }
+    .rankbox .song-img{
+        height: 100%;
+        width: 10vh;
+        left: 3vw;
+        border-radius: 0;
+    }
+    .rankbox:hover img{
+        scale: 1;
+    }
+    .rankbox .song-name{
+        left: 5vw;
+    }
+    .rankbox .song-artist{
+        left: 5vw;
+    }
+    #prev-btn,#next-btn{
+        display: none;
+    }
+}
