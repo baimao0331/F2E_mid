@@ -41,27 +41,32 @@
     </nav>
     <main>
         <div class="container">
-            <div class="song-info-box">
-                <img id="song-img" alt="歌曲封面" />
-                <div class="song-info">
-                    <h1 id="song-title"></h1>
-                    <h2 id="song-artist"></h2>
-                    <h3 id="album"></h3>
-                    <h3 id="release-date"></h3>
+            <div id="float-box">
+                <div class="box-left">
+                    <div class="song-info-box">
+                        <img id="song-img" alt="歌曲封面" />
+                        <div class="song-info">
+                            <h1 id="song-title"></h1>
+                            <h2 id="song-artist"></h2>
+                            <h3 id="album"></h3>
+                            <h3 id="release-date"></h3>
+                        </div>
+                    </div>
+                    <div class="iframe_player">
+                        <div id="video-container"></div>
+                    </div>
+                    <h3 class="related-title">相同藝人的歌曲</h3>
+                    <aside>
+                        <div id="related-songs-container" class="card-container">
+                            <!-- 卡片內容將動態生成 -->
+                        </div>
+                    </aside>
+                </div>
+                <div class="main-content">
+                    <div id="lyric-container"></div>
                 </div>
             </div>
-            <div class="iframe_player">
-                <div id="video-container"></div>
-            </div>
-            <div class="main-content">
-                <div id="lyric-container"></div>
-            </div>
-            <aside>
-                <h3>相同藝人的歌曲</h3>
-                <div id="related-songs-container" class="card-container">
-                    <!-- 卡片內容將動態生成 -->
-                </div>
-            </aside>
+
         </div>
     </main>
     <footer>
@@ -76,7 +81,7 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="./js/to_top.js"></script>
     <script src="./js/lyrics_insert.js"></script>
-
+    </script>
 </body>
 
 </html>

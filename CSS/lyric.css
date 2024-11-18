@@ -1,7 +1,19 @@
+#float-box {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1vw;
+    padding: 1vw;
+    justify-content:space-around;
+}
 
-.song-info-box{
-    position: sticky;
-    top: 5vh;
+#left-box{
+    max-width: 30vw;
+    height: 100vh;
+}
+
+.song-info-box {
     padding: 3vh 0;
     padding-left: 5%;
     margin-top: 5vh;
@@ -10,33 +22,36 @@
     background-color: var(--light-gray);
     border-radius: var(--border-rad);
     box-shadow: 0 1vh 0 var(--blue);
-    width: clamp(400px, 60vw, 80%);
-    justify-self: center;
+    width: clamp(320px, 30vw, 1280px);
 }
-.song-info{
+
+.song-info {
     padding-left: 2vh;
 }
 
-.song-info h1,h2,h3{
+.song-info h1,
+h2,
+h3 {
     margin: 0.5vh 0;
     font-weight: 500;
     font-size: 1rem;
 }
-.song-info h1{
+
+.song-info h1 {
     font-size: 1.5rem;
 }
 
-.iframe_player{
-    position: sticky;
-    top: 5vh;
+.iframe_player {
+    position: relative;
+    margin-top: 5vh;
 }
 
-.iframe_player iframe{
-    width: 32rem;
-    height: 18rem;
+.iframe_player iframe {
+    width: clamp(320px, 30vw, 1280px);
+    height: clamp(180px, 40vh, 720px);
 }
 
-.lyric-line{
+.lyric-line {
     margin: 0;
     padding: 2vh 5vh;
     border-bottom: 1px solid var(--gray);
@@ -46,43 +61,90 @@
     font-weight: 450;
 }
 
-#first-line{
-    padding: 3vh 5vh 2vh;
-    border-top-left-radius: var(--border-rad);
-    border-top-right-radius: var(--border-rad);
+.lyric-line:hover {
+    background-color: #d9e0ef;
 }
 
-#last-line{
-    padding: 2vh 5vh 3vh;
+.main-content {
+    margin-top: 5vh;
+    border-radius: var(--border-rad);
+    display: flex;
+    width: clamp(400px, 30vw, 80%);
+    height: 100vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    /* 隱藏水平滾動條 */
+}
+
+#lyric-container{
+    width: 100%;
+}
+
+/* 滾動條的整體 */
+.main-content::-webkit-scrollbar {
+    width: 8px;
+    /* 垂直滾動條寬度 */
+    height: 0px;
+    /* 水平滾動條高度 */
+}
+
+/* 滾動條軌道 */
+.main-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* 滾動條的滑塊 */
+.main-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* 滑鼠懸停時的滾動條 */
+.main-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+aside {
+    left: 1vh;
+    width: clamp(320px, 30vw, 1280px);
+    background-color: var(--light-gray);
     border-bottom-left-radius: var(--border-rad);
     border-bottom-right-radius: var(--border-rad);
+    overflow: scroll;
 }
 
-.lyric-line:hover{
-    background-color:#d9e0ef;
+/* 滾動條的整體 */
+aside::-webkit-scrollbar {
+    width: 0px;
+    /* 垂直滾動條寬度 */
+    height: 8px;
+    /* 水平滾動條高度 */
 }
 
-.main-content{
+/* 滾動條軌道 */
+aside::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* 滾動條的滑塊 */
+aside::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* 滑鼠懸停時的滾動條 */
+aside::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.card-container {
     display: flex;
-    width: clamp(400px, 60vw, 80%);
-    justify-self: center;
 }
 
-aside{
-    position: relative;
-    left: 1vh;
-    margin: 0vh 1vh;
-    width: clamp(400px, 60vw, 80%);
-    background-color: var(--light-gray);
-    border-radius: var(--border-rad);
-}
-
-.card-container{
-    display: flex;
-}
-
-aside h3{
-    margin: 0;
+.related-title{
+    margin: 5vh 0 0 0;
     padding: 2vh 0;
     text-align: center;
     font-size: 1rem;
@@ -94,7 +156,6 @@ aside h3{
 }
 
 .card {
-    flex: 1;
     position: relative;
     display: flex;
     align-items: center;
@@ -108,20 +169,20 @@ aside h3{
     transition: 0.5s;
 }
 
-.card:hover{
+.card:hover {
     box-shadow: 0px 1vh 0 var(--blue);
     margin-bottom: 2vh;
 }
 
-.card a img{ /*推薦區域圖片設定*/
+.card a img {
+    /*推薦區域圖片設定*/
     position: relative;
-    height: 12vh;
-    width: 12vh;
-    object-fit: cover;
+    height: clamp(30px,6vw,7vw);
+    width: clamp(30px,6vw,7vw);
     border-radius: calc(var(--border-rad)/2);
 }
 
-.card .song-info{
+.card .song-info {
     line-clamp: 2;
     box-orient: vertical;
     display: flex;
@@ -130,40 +191,48 @@ aside h3{
     text-align: center;
 }
 
-.card a{
+.card a {
     text-decoration: none;
     color: black;
     text-align: center;
     transition: 0.5s;
+    width: 5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.card a:hover{
+
+.card a:hover {
     color: white;
 }
 
-.card .song-name{
+.card .song-name {
     line-clamp: 2;
     box-orient: vertical;
     text-align: center;
     height: 3rem;
 }
 
-.card.song-name h4{
+.card.song-name h4 {
     font-weight: 600;
     font-size: 1.1em;
 }
 
-@media screen and (max-width:768px){
-    .main-content{
+@media screen and (max-width:768px) {
+    .main-content {
         flex-direction: column;
     }
-    article{
+
+    article {
         width: 100%;
     }
-    aside{
-        width: 100% ;
+
+    aside {
+        width: 100%;
         margin: 2vh 0;
     }
-    .card-container{
+
+    .card-container {
         display: flex;
         overflow: hidden;
     }
