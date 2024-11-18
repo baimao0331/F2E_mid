@@ -1,5 +1,7 @@
 
 .song-info-box{
+    position: sticky;
+    top: 5vh;
     padding: 3vh 0;
     padding-left: 5%;
     margin-top: 5vh;
@@ -25,8 +27,13 @@
 }
 
 .iframe_player{
-    position: relative;
-    width: 50%;
+    position: sticky;
+    top: 5vh;
+}
+
+.iframe_player iframe{
+    width: 32rem;
+    height: 18rem;
 }
 
 .lyric-line{
