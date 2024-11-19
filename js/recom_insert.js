@@ -2,33 +2,9 @@ let currentRecommendationPage = 0; // 修改名稱，避免和頁面切換部分
 
 const songIds = [9, 15, 93, 7, 44, 62, 12, 71, 23, 2, 91, 45, 55, 35, 40]; // 根據需要選擇的歌曲 ID
 
-function getSongsPerPage() {
-    if (window.innerWidth > 1024) {
-        return 5; // 大螢幕，每頁顯示 5 首歌
-    } else {
-        return 3; // 小螢幕，每頁顯示 3 首歌
-    }
-}
-
-function createPaginationDots(totalPages) {
-    const paginationContainer = document.getElementById('pagination');
-    paginationContainer.innerHTML = ''; // 清空之前的內容
-
-    // 根據頁面寬度決定點的數量
-    const dotsCount = window.innerWidth > 1024 ? 3 : 5; // 小於 768px 顯示 3 個點，否則顯示 5 個點
-
-    // 確保顯示的點數量不超過頁數
-    const finalDotsCount = Math.min(dotsCount, totalPages);
-
-    for (let i = 0; i < finalDotsCount; i++) {
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        paginationContainer.appendChild(dot);
-    }
-}
 
 function displaySongs_recom(data) {
-    const songsPerPage = getSongsPerPage();
+    const songsPerPage = 5;
     const recommendationContainer = document.getElementById('song-list');
     recommendationContainer.innerHTML = ''; // 清空之前的內容
 
@@ -59,22 +35,12 @@ function displaySongs_recom(data) {
             `;
             ul.appendChild(li);
         });
-
         recommendationContainer.appendChild(ul);
     }
-
-    // 創建對應頁數的點
-    createPaginationDots(totalPages);
-
     // 當歌曲顯示完成後，啟動頁面切換功能
     runSecondScript(); // 確保 DOM 完成後調用
 }
 
-// 當頁面大小變化時，重新生成點
-window.addEventListener('resize', function() {
-    const totalPages = document.querySelectorAll('.page').length;
-    createPaginationDots(totalPages);
-});
 
 // JSON 載入並初始化
 fetch('songs.json')
@@ -94,56 +60,46 @@ window.addEventListener('resize', () => {
 });
 
 function runSecondScript() {
-    const pages = document.querySelectorAll('.page');  // 確保在內容生成後選取 .page
-    const dots = document.querySelectorAll('#pagination .dot');
-    let currentRecommendationPage = 0;
-    let totalPages = pages.length;
+    const songListContainer = document.getElementById('song-list');
+    let songWidth = songListContainer.querySelector('.page').offsetWidth;
 
-    console.log('Total pages:', totalPages);
-
-    if (totalPages === 0) {
-        console.error('未找到任何頁面，確保內容已正確生成');
-        return;
-    }
-
-    function updatePage(newPage) {
-        if (newPage < 0 || newPage >= totalPages) return; // 檢查範圍
-        // 隱藏所有頁面
-        pages.forEach((page, index) => {
-            page.classList.remove('active');
-            if (dots[index]) dots[index].classList.remove('active');  // 檢查 dot 存在
-        });
-        // 顯示當前頁
-        pages[newPage].classList.add('active');
-        if (dots[newPage]) dots[newPage].classList.add('active');
-    }
-
-    // 初始化顯示第一頁
-    updatePage(currentRecommendationPage);
-
-    // 點擊下一頁按鈕
-    document.getElementById('next-btn').addEventListener('click', function() {
-        currentRecommendationPage = (currentRecommendationPage + 1) % totalPages; // 循環到下一頁
-        updatePage(currentRecommendationPage);
+    // 每次窗口調整大小時重新計算 songWidth
+    window.addEventListener('resize', function() {
+        songWidth = songListContainer.querySelector('.page').offsetWidth; // 重新計算每頁寬度
+        songListContainer.scrollTo({ left: 0, behavior: 'smooth' });
     });
 
-    // 點擊上一頁按鈕
-    document.getElementById('prev-btn').addEventListener('click', function() {
-        currentRecommendationPage = (currentRecommendationPage - 1 + totalPages) % totalPages; // 循環到上一頁
-        updatePage(currentRecommendationPage);
+    // 自動切換頁面的功能
+    setInterval(function () {
+        if (songListContainer.scrollLeft + songListContainer.offsetWidth >= (songListContainer.scrollWidth - 1)) {
+            // 如果已經滾動到最右邊，則回到開頭
+            songListContainer.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            // 否則平移到下一頁
+            songListContainer.scrollBy({ left: songWidth, behavior: 'smooth' });
+        }
+    }, 30000); // 每 20 秒自動切換
+
+
+    // 監聽「下一頁」按鈕
+    document.getElementById('next-btn').addEventListener('click', function () {
+        if (songListContainer.scrollLeft + songListContainer.offsetWidth >= (songListContainer.scrollWidth - 1)) {
+            // 如果已經滾動到最右邊，則回到開頭
+            songListContainer.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            // 否則平移到下一頁
+            songListContainer.scrollBy({ left: songWidth, behavior: 'smooth' });
+        }
     });
 
-    // 點擊頁碼指示點
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
-            currentRecommendationPage = index;
-            updatePage(currentRecommendationPage);
-        });
+    // 監聽「上一頁」按鈕
+    document.getElementById('prev-btn').addEventListener('click', function () {
+        if (songListContainer.scrollLeft === 0) {
+            // 如果在最左邊，則跳到最右邊
+            songListContainer.scrollTo({ left: songListContainer.scrollWidth, behavior: 'smooth' });
+        } else {
+            // 否則平移到上一頁
+            songListContainer.scrollBy({ left: -songWidth, behavior: 'smooth' });
+        }
     });
-
-    // 自動切換頁面
-    setInterval(function() {
-        currentRecommendationPage = (currentRecommendationPage + 1) % totalPages;
-        updatePage(currentRecommendationPage);
-    }, 20000); // 每20秒自動切換
 }

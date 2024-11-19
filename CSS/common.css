@@ -126,7 +126,7 @@ nav li:hover::after {
 }
 
 body .container{
-    width: clamp(768px, 1200px, 80vw);
+    width: clamp(10px, 1200px, 80vw);
     display: flex; /* 设置为 Flexbox */
     flex-direction: column;
     justify-self: center;
