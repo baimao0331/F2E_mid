@@ -45,8 +45,7 @@
 .buttonarea button{
     margin-left: 2vh;
     width: clamp(100px, 15%, 20vw);
-    min-height: auto;
-    max-height: 4vh;
+    height: 6vh;
     border-radius: var(--border-rad);
     border: none;
     background-color: var(--blue);

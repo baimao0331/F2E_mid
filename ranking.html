@@ -21,7 +21,7 @@
 
 </head>
 
-<body>
+<body data-page="ranking">
     <header>
         <a href="index.html" class="logoimg"><img src="./images/logo.png" alt="logo"></a>
     </header>
@@ -49,10 +49,16 @@
         <main>
             <div class="ranking">
                 <h2 class="title">
-                    熱門排行
+                    排行榜
                 </h2>
+                <div class="buttonarea">
+                    <button id="View-grow-btn">觀看成長數</button>
+                    <button id="View-total-btn">總觀看次數</button>
+                </div>
                 <ol>
-                    <div id="ranking-list" class="ranking-list">
+                    <div id="ranking-list-total" class="ranking-list">
+                    </div>
+                    <div id="ranking-list-grow" class="ranking-list">
                     </div>
                 </ol>
             </div>

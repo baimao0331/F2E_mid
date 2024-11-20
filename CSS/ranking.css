@@ -1,11 +1,11 @@
 
 /*---------------------排名區域-------------------------*/
 .ranking{
+    position: relative;
     margin:5vh 0;
     padding-bottom: 10vh;
-    width: clamp(400px, 60vw, 80%);
+    width: clamp(320px, 60vw, 80%);
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-self: center;
     border-radius: var(--border-rad);
@@ -27,28 +27,54 @@
     background-color: var(--light-gray);
 }
 
+.ranking .buttonarea{
+    position: relative;
+    left: clamp(1px, 75px ,5vw);
+    margin-top: 1vh;
+}
+
+.ranking .buttonarea button{
+    cursor: pointer;
+    background-color: var(--light-gray);
+    border-radius: var(--border-rad);
+    border: 0;
+    width: clamp(100px, 15%, 20vw);
+    height: 5vh;
+}
+
+.ranking .buttonarea button.active{
+    background-color: var(--blue);
+}
+
 .ranking ol{
+    display: flex;
     padding: 0;
-    width: 80%;
+    justify-content: center;
+}
+
+.ranking-list{
+    display: none;
+}
+
+.ranking-list.active{
+    display: flex;
+    flex-direction: column;
 }
 
 .rankbox{
     position: relative;
-    margin: 1vh;
+    margin: 1vh 0;
     background-color: var(--light-gray);
     display: flex;
     align-items: center;
     flex-direction: row;
-    width: 100%;
+    width: clamp(10px, 800px, 50vw);
     height: 8vw;
     border-radius: var(--border-rad);
     transition: 0.5s;
 }
 
 .rankbox:hover{
-    scale: 1.2;
-    margin-top: 2vh;
-    margin-bottom: 3vh;
     box-shadow: 0px 0.5vh 0 var(--blue);
     border-radius: calc(var(--border-rad)/2);
 }
@@ -93,8 +119,9 @@
     text-decoration: none;
     color: black;
     font-weight: 500;
-    width: 10rem;
-    font-size: 1rem;
+    width: 8rem;
+    font-size: 1.1rem;
+    line-height: 2rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -105,30 +132,25 @@
 }
 .rankbox .song-artist{
     position: relative;
-    left: 5vw;
+    left: 5vh;
     width: 10rem;
+    line-height: 2rem;
 }
-.rankbox .song-artist p{
+.rankbox p{
     margin: 0;
     padding: 0;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    line-height: 2rem;
     color: var(--artist-text);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.rankbox .link-item{
-    position: absolute;
-    right: 3vh;
-    background-color: var(--blue);
-    padding: 1vh 2vh;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: var(--border-rad);
-    transition: 0.5s;
+.rankbox .text-info img{
+    width: clamp(1px,1.5rem,30px);
+    height: clamp(1px,1.5rem,30px);
 }
 
 .rankbox:hover .ranking-number{
@@ -139,12 +161,6 @@
 
 .rankbox:hover .rankbox:not(:hover){
     scale: 0.9;
-}
-.rankbox:hover .link-item{
-    padding: 1vh 5vh;
-}
-.rankbox .link-item:hover{
-    border: 2px solid white;
 }
 
 .read-more{
