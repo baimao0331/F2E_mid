@@ -36,6 +36,11 @@ p{
     margin: 0;
     padding: 0;
 }
+
+h1,h2,h3,h4{
+    margin: 0;
+}
+
 /*---------------------頁首&nav區域-------------------------*/
 header{
     width: 100vw;
@@ -126,7 +131,7 @@ nav li:hover::after {
 }
 
 body .container{
-    width: clamp(10px, 1200px, 80vw);
+    width: clamp(10px, 1000px, 100%);
     display: flex; /* 设置为 Flexbox */
     flex-direction: column;
     justify-self: center;
@@ -164,6 +169,12 @@ footer p{
     line-height: 2rem;
 }
 /*---------------------頁尾區域-------------------------*/
+
+@media screen and (max-width:1024px) {
+    main,.container{
+        width: 80vw;
+    }
+}
 
 @media screen and (max-width:768px) {
     main,.container{

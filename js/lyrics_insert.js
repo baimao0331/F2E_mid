@@ -52,7 +52,7 @@ fetch('songs.json')
                 lyricContainer.appendChild(lyricLine);
             }
 
-            // 顯示同一位藝術家的三首最新歌曲
+            // 顯示同一位藝術家的隨機五首歌曲
             displayRelatedSongs(song.artist, data);
         } else {
             console.error('找不到歌曲');
@@ -71,7 +71,7 @@ function displayRelatedSongs(artist, data) {
 
     // 如果相關歌曲不足五首，顯示所有可用的歌曲
     if (relatedSongs.length === 0) {
-        relatedSongsContainer.innerHTML = '<p>沒有更多該歌手的歌曲。</p>';
+        relatedSongsContainer.innerHTML = '<p>尚沒有更多該歌手的歌曲。</p>';
         return;
     }
 
@@ -114,3 +114,4 @@ function onPlayerReady(event) {
 function onPlayerStateChange(event) {
     // 可以處理播放器狀態變化
 }
+

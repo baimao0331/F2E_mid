@@ -1,6 +1,7 @@
 const rankingList_grow = document.getElementById('ranking-list-grow');
 const rankingList_total = document.getElementById('ranking-list-total');
 const page = document.body.getAttribute("data-page");
+const view_num_header = document.getElementById("view-num");
 
 function displayRanking(data) {
     rankingList_grow.innerHTML = ''; // 清空之前的內容
@@ -24,8 +25,8 @@ function displayRanking(data) {
             <a href="lyric.html?songId=${song.id}"  target="_self" class="song-img"><img src="${song.img}" alt="${song.title} 封面圖" class="song-img" /></a>
             <div class="text-info">
                 <a href="lyric.html?songId=${song.id}"  target="_self" class="song-name">${song.title}</a>
-                <div class="song-artist"><p>${song.artist}</p></div>
-                <img src="./images/eye.svg" alt="views"><p>${song.ViewsGrow}</p>
+                <p class="song-artist">${song.artist}</p>
+                <img src="./images/eye.svg" alt="views"  class="view-icon"><p class="view-num">${song.ViewsGrow}</p>
             </div>
         `;
         rankingList_grow.appendChild(li);
@@ -41,8 +42,8 @@ function displayRanking(data) {
                 <a href="lyric.html?songId=${song.id}"  target="_self" class="song-img"><img src="${song.img}" alt="${song.title} 封面圖" class="song-img" /></a>
                 <div class="text-info">
                     <a href="lyric.html?songId=${song.id}"  target="_self" class="song-name">${song.title}</a>
-                    <div class="song-artist"><p>${song.artist}</p></div>
-                    <img src="./images/eye.svg" alt="views"><p>${song.CurViews}</p>
+                    <p class="song-artist">${song.artist}</p>
+                    <img src="./images/eye.svg" alt="views" class="view-icon"><p class="view-num">${song.CurViews}</p>
                 </div>
             `;
             rankingList_total.appendChild(li);
@@ -64,16 +65,19 @@ if(page === "ranking"){
     const total_btn = document.getElementById('View-total-btn');
     grow_btn.classList.add("active");
     rankingList_grow.classList.add("active");
+    view_num_header.innerHTML = "觀看成長量";
     grow_btn.addEventListener('click', function () {
         grow_btn.classList.add("active");
         total_btn.classList.remove("active");
         rankingList_grow.classList.add("active");
         rankingList_total.classList.remove("active");
+        view_num_header.innerHTML = "觀看成長量";
     });
     total_btn.addEventListener('click', function () {
         total_btn.classList.add("active");
         grow_btn.classList.remove("active");
         rankingList_total.classList.add("active");
         rankingList_grow.classList.remove("active");
+        view_num_header.innerHTML = "總觀看次數";
     });
 }

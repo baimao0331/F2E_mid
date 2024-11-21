@@ -4,7 +4,7 @@ const songIds = [9, 15, 93, 7, 44, 62, 12, 71, 23, 2, 91, 45, 55, 35, 40]; // �
 
 
 function displaySongs_recom(data) {
-    const songsPerPage = 5;
+    const songsPerPage = window.innerWidth < 768 ? 3 : 5; // 寬度小於 768px 時每頁 3 首，否則 5 首
     const recommendationContainer = document.getElementById('song-list');
     recommendationContainer.innerHTML = ''; // 清空之前的內容
 
@@ -41,7 +41,6 @@ function displaySongs_recom(data) {
     runSecondScript(); // 確保 DOM 完成後調用
 }
 
-
 // JSON 載入並初始化
 fetch('songs.json')
     .then(response => response.json())
@@ -60,26 +59,28 @@ window.addEventListener('resize', () => {
 });
 
 function runSecondScript() {
-    const songListContainer = document.getElementById('song-list');
+    let songListContainer = document.getElementById('song-list');
     let songWidth = songListContainer.querySelector('.page').offsetWidth;
 
     // 每次窗口調整大小時重新計算 songWidth
     window.addEventListener('resize', function() {
+        songListContainer = document.getElementById('song-list');
         songWidth = songListContainer.querySelector('.page').offsetWidth; // 重新計算每頁寬度
         songListContainer.scrollTo({ left: 0, behavior: 'smooth' });
     });
 
     // 自動切換頁面的功能
     setInterval(function () {
-        if (songListContainer.scrollLeft + songListContainer.offsetWidth >= (songListContainer.scrollWidth - 1)) {
-            // 如果已經滾動到最右邊，則回到開頭
-            songListContainer.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-            // 否則平移到下一頁
-            songListContainer.scrollBy({ left: songWidth, behavior: 'smooth' });
+        if (window.innerWidth > 768) {
+            if (songListContainer.scrollLeft + songListContainer.offsetWidth >= (songListContainer.scrollWidth - 1)) {
+                // 如果已經滾動到最右邊，則回到開頭
+                songListContainer.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                // 否則平移到下一頁
+                songListContainer.scrollBy({ left: songWidth, behavior: 'smooth' });
+            }
         }
     }, 30000); // 每 20 秒自動切換
-
 
     // 監聽「下一頁」按鈕
     document.getElementById('next-btn').addEventListener('click', function () {
