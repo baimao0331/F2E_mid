@@ -18,31 +18,35 @@
 <body>
     <header>
         <a href="index.html" class="logoimg"><img src="./images/logo.png" alt="logo"></a>
+        <nav>
+            <ul class="link">
+                <a href="index.html">
+                    <li class="link-item">
+                        首頁
+                    </li>
+                </a>
+                <a href="search.html">
+                    <li class="link-item">
+                        搜尋
+                    </li>
+                </a>
+                <a href="ranking.html">
+                    <li class="link-item">
+                        排行
+                    </li>
+                </a>
+            </ul>
+        </nav>
     </header>
     <button id="back-to-top" onclick="scrollToTop()"><img src="./images/toTop.png" alt="toTop"></button>
-    <nav>
-        <ul class="link">
-            <a href="index.html">
-                <li class="link-item">
-                    首頁
-                </li>
-            </a>
-            <a href="search.html">
-                <li class="link-item">
-                    搜尋
-                </li>
-            </a>
-            <a href="ranking.html">
-                <li class="link-item">
-                    排行
-                </li>
-            </a>
-        </ul>
-    </nav>
+
     <main>
         <div class="container">
             <div id="main">
                 <div class="box-left">
+                    <div class="iframe_player">
+                        <div id="video-container"></div>
+                    </div>
                     <div class="song-info-box">
                         <img id="song-img" alt="歌曲封面" />
                         <div class="song-info">
@@ -57,9 +61,6 @@
                                 <h3 id="release-date"></h3>
                             </div>
                         </div>
-                    </div>
-                    <div class="iframe_player">
-                        <div id="video-container"></div>
                     </div>
                     <div class="related-songs">
                         <h3 class="related-title">相同藝人的歌曲</h3>

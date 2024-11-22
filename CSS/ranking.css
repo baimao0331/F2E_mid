@@ -194,6 +194,25 @@
     font-size: 1.5rem;
 }
 
+#rank-list-header .song-artist{
+    font-size: 1rem;
+    height: auto;
+    font-weight: 500;
+}
+
+#rank-list-header .view-num{
+    position: relative;
+    left: 70%;
+    font-size: 1rem;
+    height: auto;
+    font-weight: 500;
+}
+
+#view-num-header{
+    position: relative;
+    left: 70%;
+}
+
 .read-more{
     font-size: 1rem;
     line-height: 1rem;

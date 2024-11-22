@@ -24,27 +24,28 @@
 <body>
     <header>
         <a href="index.html" class="logoimg"><img src="./images/logo.png" alt="logo"></a>
+        <nav>
+            <ul class="link">
+                <a href="index.html">
+                    <li class="link-item">
+                        首頁
+                    </li>
+                </a>
+                <a href="search.html">
+                    <li class="link-item">
+                        搜尋
+                    </li>
+                </a>
+                <a href="ranking.html">
+                    <li class="link-item">
+                        排行
+                    </li>
+                </a>
+            </ul>
+        </nav>
     </header>
     <button id="back-to-top" onclick="scrollToTop()"><img src="./images/toTop.png" alt="toTop"></button>
-    <nav>
-        <ul class="link">
-            <a href="index.html">
-                <li class="link-item">
-                    首頁
-                </li>
-            </a>
-            <a href="search.html">
-                <li class="link-item">
-                    搜尋
-                </li>
-            </a>
-            <a href="ranking.html">
-                <li class="link-item">
-                    排行
-                </li>
-            </a>
-        </ul>
-    </nav>
+
     <main>
         <div class="container">
 
@@ -95,7 +96,7 @@
                         <div class="text-info">
                             <div class="song-name">曲名</div>
                             <p class="song-artist">藝人</p>
-                            <p class="view-num">觀看成長量</p>
+                            <p id="view-num-header">觀看成長量</p>
                         </div>
                     </div>
                     <div id="ranking-list-grow" class="ranking-list">

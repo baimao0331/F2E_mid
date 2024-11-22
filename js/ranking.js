@@ -15,7 +15,6 @@ function displayRanking(data) {
     const topSongs_total = data
         .sort((a, b) => b.CurViews - a.CurViews)  // 按總觀看降序排序
         .slice(0, maxSongs);  // 根據 maxSongs 選取前 N 首
-
     // 循環選取的歌曲，填入歌曲資料
     topSongs_grow.forEach((song, index) => {
         const li = document.createElement('li');
@@ -26,8 +25,9 @@ function displayRanking(data) {
             <div class="text-info">
                 <a href="lyric.html?songId=${song.id}"  target="_self" class="song-name">${song.title}</a>
                 <p class="song-artist">${song.artist}</p>
-                <img src="./images/eye.svg" alt="views"  class="view-icon"><p class="view-num">${song.ViewsGrow}</p>
-            </div>
+                </div>
+            <div class=view-num><img src="./images/eye.svg" alt="views" class="icon"><p class="num">${song.ViewsGrow}</p></div>
+            
         `;
         rankingList_grow.appendChild(li);
     });
@@ -43,7 +43,7 @@ function displayRanking(data) {
                 <div class="text-info">
                     <a href="lyric.html?songId=${song.id}"  target="_self" class="song-name">${song.title}</a>
                     <p class="song-artist">${song.artist}</p>
-                    <img src="./images/eye.svg" alt="views" class="view-icon"><p class="view-num">${song.CurViews}</p>
+                    <div class=view-num><img src="./images/eye.svg" alt="views" class="icon"><p class="num">${song.CurViews}</p></div>
                 </div>
             `;
             rankingList_total.appendChild(li);
