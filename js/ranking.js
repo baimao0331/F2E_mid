@@ -12,6 +12,8 @@ function displayRanking(data) {
     const topSongs_grow = data
         .sort((a, b) => b.ViewsGrow - a.ViewsGrow)  // 按觀看成長降序排序
         .slice(0, maxSongs);  // 根據 maxSongs 選取前 N 首
+        console.log(topSongs_grow);
+        //.toSpliced(8,0,)
     const topSongs_total = data
         .sort((a, b) => b.CurViews - a.CurViews)  // 按總觀看降序排序
         .slice(0, maxSongs);  // 根據 maxSongs 選取前 N 首

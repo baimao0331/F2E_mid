@@ -1,36 +1,17 @@
-#main {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    gap: 1vw;
-    padding: 1vw;
-    justify-content: space-around;
-    height: 100vh;
-}
-
-.box-left{
-    margin-top: 5vh;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
+/*---------------------資訊區域-------------------------*/
 .song-info-box {
+    margin: 4vh 0;
+    width: 90%;
     padding: 3vh;
     display: flex;
     background-color: var(--light-gray);
     border-radius: var(--border-rad);
     box-shadow: 0 1vh 0 var(--blue);
-    width: clamp(320px, 20vw, 1280px);
-    height: 28%;
 }
 
 #song-img {
-    width: clamp(60px, 8vw, 100%);
-    height:100%;
-    border-radius: calc(var(--border-rad)/2);
+    width: clamp(60px, 8vw, 100px);
+    height:clamp(60px, 8vw, 100px);
 }
 
 .song-info {
@@ -45,7 +26,7 @@ h3 {
 }
 
 #title-scroll {
-    width: 10rem;
+    width: 20rem;
     height: 1.5rem;
     overflow: hidden;
     white-space: nowrap;
@@ -61,32 +42,117 @@ h3 {
     transition: transform 0.3s ease-out; /* 滑鼠移開時的平滑過渡 */
 }
 
+#song-artist{
+    font-size: 0.9rem;
+}
+
 .album,
 .release-date {
     display: flex;
+    align-items: center;
 }
 
+.song-info-box img{
+    width: clamp(1px,1.2rem,30px);
+    height: clamp(1px,1.5rem,30px);
+}
+/*---------------------資訊區域-------------------------*/
+/*----------------------大框架--------------------------*/
+
+#main {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    gap: 1vw;
+    justify-content: center;
+    height: 100vh;
+}
+
+.box-left{
+    height: 50vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box-right {
+    border-radius: var(--border-rad);
+    display: flex;
+    width: 50%;
+    height: 90%;
+    overflow: scroll;
+    overflow-x: hidden;
+    /* 隱藏水平滾動條 */
+}
+/*----------------------大框架--------------------------*/
+/*---------------------影片區域-------------------------*/
 .iframe_player {
     position: relative;
-    height: 35%;
+    height: 60%;
+    width: 100%;
 }
 
 .iframe_player iframe {
-    width: clamp(320px, 20vw, 1280px);
-    height: 100%;
+    width: 100%;
+    border-radius: var(--border-rad);
+}
+/*---------------------影片區域-------------------------*/
+/*---------------------歌詞區域-------------------------*/
+#lyric-container {
+    position: relative;
+    width: 100%;
+}
+
+.lyric-line {
+    margin: 0;
+    padding: 2vh 5vh;
+    border-bottom: 1px solid var(--gray);
+    background-color: var(--light-gray);
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 450;
+}
+
+.lyric-line:hover {
+    background-color: #d9e0ef;
+    max-height: 50vh;
+}
+
+/* 滾動條的整體 */
+.box-right::-webkit-scrollbar {
+    width: 0px;
+    /* 垂直滾動條寬度 */
+    height: 0px;
+    /* 水平滾動條高度 */
+}
+
+.lyric-line ruby{
+    margin: 0 0.2vw;
+}
+
+.lyric-line rt{
+    margin-bottom: 0.05rem;
+    font-size: 0.8rem;
+    letter-spacing: 0rem;
+}
+/*---------------------歌詞區域-------------------------*/
+/*---------------------相關區域-------------------------*/
+.related-songs{
+    position: relative;
+    width: 90%;
+    margin: 4vh 0;
 }
 
 .card-container {
     display: flex;
 }
 
-.related-songs{
-    height: 32%;
-}
-
 .related-title {
     margin: 0;
     font-size: 1rem;
+    line-height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,7 +161,6 @@ h3 {
     background-color: var(--dark-gray);
     border-top-left-radius: var(--border-rad);
     border-top-right-radius: var(--border-rad);
-    height: 20%;
 }
 
 aside {
@@ -104,7 +169,7 @@ aside {
     justify-content: center;
     margin-top: 0vh;
     left: 1vh;
-    width: clamp(320px, 20vw, 1280px);
+    width: 100%;
     background-color: var(--light-gray);
     border-bottom-left-radius: var(--border-rad);
     border-bottom-right-radius: var(--border-rad);
@@ -204,43 +269,7 @@ aside {
 .card .card-info h4:hover {
     font-weight: 500;
 }
-
-.lyric-line {
-    margin: 0;
-    padding: 2vh 5vh;
-    border-bottom: 1px solid var(--gray);
-    background-color: var(--light-gray);
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
-    font-weight: 450;
-}
-
-.lyric-line:hover {
-    background-color: #d9e0ef;
-}
-
-.box-right {
-    margin-top: 5vh;
-    border-radius: var(--border-rad);
-    display: flex;
-    width: clamp(400px, 35vw, 100vw);
-    height: 90%;
-    overflow: scroll;
-    overflow-x: hidden;
-    /* 隱藏水平滾動條 */
-}
-
-#lyric-container {
-    position: relative;
-}
-
-/* 滾動條的整體 */
-.box-right::-webkit-scrollbar {
-    width: 0px;
-    /* 垂直滾動條寬度 */
-    height: 0px;
-    /* 水平滾動條高度 */
-}
+/*---------------------相關區域-------------------------*/
 
 @media screen and (max-width:768px) {
     .main-content {

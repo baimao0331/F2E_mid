@@ -7,9 +7,10 @@ html {
 }
 
 :root {
-    --dark-gray: #3b4050;
-    --gray: #656774;
-    --light-gray: #cbced8;
+    --dark-gray: #3c3e46;
+    --backgrond: #25272e;
+    --gray: #56575f;
+    --light-gray: #c8cacf;
     --artist-text: #202020;
     --blue:#5a83dd;
     --blue-hover: #7193dd;
@@ -20,7 +21,7 @@ html {
 body {
     width: 100vw;
     font-family: "Noto Sans TC","Noto Sans JP", serif;
-    background-color: var(--dark-gray);
+    background-color: var(--backgrond);
     margin: 0;
     padding: 0;
     display: flex;
@@ -43,16 +44,19 @@ h1,h2,h3,h4,ol,ul{
 
 /*---------------------頁首&nav區域-------------------------*/
 header{
-    min-width: 100vw;
-
+    width: clamp(10px, 1200px, 100vw);
     display: flex;
 }
 header .logoimg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh 0;
     margin-top: 3vh;
     position: relative;
-    width: calc(20% - 5vw);
-    left: 5vw;
+    width: 15%;
     transition: 0.3s ease;
+    border-radius: var(--border-rad);
 }
 
 header .logoimg:hover{
@@ -60,7 +64,7 @@ header .logoimg:hover{
 }
 
 .logoimg img{
-    width: 100%;
+    width: 90%;
     justify-self: center;
 }
 
@@ -91,15 +95,13 @@ header .logoimg:hover{
 
 nav{
     position: relative;
-    margin-top: 2vh;
-    margin-left: 3vw;
+    margin-top: 2.5vh;
+    margin-left: 2vw;
     align-self: center;
     width: 80%;
-    left: 5vw;
     height: 7vh;
     max-height: 60px;
     display: flex;
-
     align-items: center;
 }
 
@@ -146,7 +148,7 @@ nav li:hover::after {
 }
 
 body .container{
-    margin-top: 5vh;
+    margin: 2vh 0;
     width: clamp(10px, 1200px, 100%);
     display: flex; /* 设置为 Flexbox */
     flex-direction: column;
@@ -154,6 +156,7 @@ body .container{
     align-items: center;
     height: 100%; /* 使容器高度为视口高度 */
     background-color: var(--gray); 
+    border-radius: var(--border-rad);
 }
 
 main{

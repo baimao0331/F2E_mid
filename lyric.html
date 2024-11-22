@@ -42,42 +42,41 @@
 
     <main>
         <div class="container">
+            <div class="song-info-box">
+                <img id="song-img" alt="歌曲封面" />
+                <div class="song-info">
+                    <div id="title-scroll">
+                        <h1 id="song-title"></h1>
+                    </div>
+                    <h2 id="song-artist"></h2>
+                    <div class="album"><img src="./images/album.svg" alt="album_icon">
+                        <h3 id="album"></h3>
+                    </div>
+                    <div class="release-date"><img src="./images/calendar.svg" alt="release_date_icon">
+                        <h3 id="release-date"></h3>
+                    </div>
+                </div>
+            </div>
             <div id="main">
                 <div class="box-left">
                     <div class="iframe_player">
                         <div id="video-container"></div>
-                    </div>
-                    <div class="song-info-box">
-                        <img id="song-img" alt="歌曲封面" />
-                        <div class="song-info">
-                            <div id="title-scroll">
-                                <h1 id="song-title"></h1>
-                            </div>
-                            <h2 id="song-artist"></h2>
-                            <div class="album"><img src="./images/album.svg" alt="album_icon">
-                                <h3 id="album"></h3>
-                            </div>
-                            <div class="release-date"><img src="./images/calendar.svg" alt="release_date_icon">
-                                <h3 id="release-date"></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="related-songs">
-                        <h3 class="related-title">相同藝人的歌曲</h3>
-                        <aside>
-                            <div class="scroll-box">
-                                <div id="related-songs-container" class="card-container">
-                                    <!-- 卡片內容將動態生成 -->
-                                </div>
-                            </div>
-                        </aside>
                     </div>
                 </div>
                 <div class="box-right">
                     <div id="lyric-container"></div>
                 </div>
             </div>
-
+            <div class="related-songs">
+                <h3 class="related-title">相同藝人的歌曲</h3>
+                <aside>
+                    <div class="scroll-box">
+                        <div id="related-songs-container" class="card-container">
+                            <!-- 卡片內容將動態生成 -->
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </div>
     </main>
     <footer>
