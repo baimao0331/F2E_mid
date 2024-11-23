@@ -13,7 +13,8 @@ html {
     --light-gray: #c8cacf;
     --artist-text: #202020;
     --blue:#5a83dd;
-    --blue-hover: #7193dd;
+    --blue-hover: #5475bd;
+    --white:#e3e3e4;
     --border-rad:clamp(10px,30px,5vw);
     --min-width:320px;
 }
@@ -74,7 +75,7 @@ header .logoimg:hover{
     right: 20px;
     display: none; /* 初始為隱藏 */
     background-color: var(--light-gray);
-    color: white;
+    color: var(--white);
     padding: 10px;
     border: none;
     border-radius: var(--border-rad);
@@ -116,7 +117,7 @@ nav ul{
 
 nav a{
     text-decoration: none;
-    color: white;
+    color: var(--white);
 }
 
 nav li{
@@ -165,18 +166,18 @@ main{
 /*-------------------頁首&nav區域-----------------------*/
 /*---------------------頁尾區域-------------------------*/
 footer{
-    background-color: var(--light-gray);
+    background-color: var(--backgrond);
     width: 100vw;
-    padding: 5vh;
+    padding: 5vh 0;
 }
 
 footer .footer-box{
+    padding: 2vh 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--light-gray);
 }
 
 footer img{
@@ -186,6 +187,7 @@ footer img{
 footer p{
     margin: 0;
     line-height: 2rem;
+    color: var(--white);
 }
 /*---------------------頁尾區域-------------------------*/
 

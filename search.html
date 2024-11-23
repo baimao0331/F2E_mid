@@ -52,41 +52,35 @@
                 <div class="searchbar">
                     <input type="text" name="search-content" id="search-content" placeholder="請輸入搜尋內容">
                 </div>
-                <div class="buttonarea">
-                    <button class="search-artist" id="search-artist">依藝人名搜尋</button>
-                    <button class="search-title" id="search-title">依歌曲名搜尋</button>
-                    <script>
-                        // 監聽按鈕點擊事件
-                        document.getElementById('search-title').addEventListener('click', function () {
-                            const query = document.getElementById('search-content').value;
-                            if (query.trim()) {
-                                window.location.href = `search.html?type=song&query=${encodeURIComponent(query)}`;
-                            }
-                        });
+                <button class="search-btn" id="search-btn">搜尋</button>
+                <script>
+                    // 監聽按鈕點擊事件
+                    document.getElementById('search-btn').addEventListener('click', function () {
+                        const query = document.getElementById('search-content').value;
+                        if (query.trim()) {
+                            window.location.href = `search.html?type=song&query=${encodeURIComponent(query)}`;
+                        }
+                    });
+                </script>
+        </div>
 
-                        document.getElementById('search-artist').addEventListener('click', function () {
-                            const query = document.getElementById('search-content').value;
-                            if (query.trim()) {
-                                window.location.href = `search.html?type=artist&query=${encodeURIComponent(query)}`;
-                            }
-                        });
-                    </script>
-                </div>
+        <!-- 排序選項 -->
+        <div class="result-header" id="result-header">
+            <div class="buttonarea">
+                <button id="title-btn"></button>
+                <button id="artist-btn"></button>
+            </div>
+            <div class="sort-box">
+                <label for="sort-order">排序：</label>
+                <select id="sort-order">
+                    <option value="popularity">依熱門程度</option>
+                    <option value="newest">從新到舊</option>
+                    <option value="oldest">從舊到新</option>
+                </select>
             </div>
 
-            <!-- 排序選項 -->
-            <div class="result-header">
-                <h3>搜索結果</h3>
-                <div class="sort-box">
-                    <label for="sort-order">排序：</label>
-                    <select id="sort-order">
-                        <option value="popularity">依熱門程度</option>
-                        <option value="newest">從新到舊</option>
-                        <option value="oldest">從舊到新</option>
-                    </select>
-                </div>
-            </div>
-            <div id="search-results"></div>
+        </div>
+        <div id="search-results"></div>
         </div>
     </main>
     <footer>

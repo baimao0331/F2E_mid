@@ -78,8 +78,7 @@ function displayRelatedSongs(artist, data) {
     // 隨機打亂歌曲陣列順序
     relatedSongs = shuffleArray(relatedSongs);
 
-    // 取出前五首隨機歌曲
-    const songsToDisplay = relatedSongs.slice(0, 5);
+    const songsToDisplay = relatedSongs.slice(0, 9);
 
     songsToDisplay.forEach(song => {
         const card = document.createElement('div');

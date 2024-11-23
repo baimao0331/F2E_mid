@@ -3,7 +3,18 @@ const urlParams = new URLSearchParams(window.location.search);
 const searchType = urlParams.get('type'); // "title" 或 "artist"
 const query = normalizeString(urlParams.get('query') || ''); // 使用 normalizeString 處理用戶輸入
 
-let searchResults = [];
+const header = document.getElementById('result-header');
+const result = document.getElementById('search-results');
+const title_btn = document.getElementById('title-btn');
+const artist_btn = document.getElementById('artist-btn');
+
+let searchResults_title = [];
+let searchResults_artist = [];
+
+if(query != ""){
+    header.classList.add("active");
+    result.classList.add("active");
+}
 
 function normalizeString(str) {
     return katakanaToHiragana(str)
@@ -22,33 +33,42 @@ function katakanaToHiragana(str) {
 fetch('songs.json')
     .then(response => response.json())
     .then(data => {
-        if (searchType === 'song') {
-            // 搜索歌名，忽略大小寫和空白字符
-            searchResults = data.filter(song => normalizeString(song.title).includes(query));
-        } else if (searchType === 'artist') {
-            // 搜索藝人，忽略大小寫和空白字符
-            searchResults = data.filter(song => normalizeString(song.artist).includes(query));
-        }
+        searchResults_title = data.filter(song => normalizeString(song.title).includes(query));
+        searchResults_artist = data.filter(song => normalizeString(song.artist).includes(query));
         // 初始化顯示結果
-        searchResults.sort((a, b) => b.ViewsGrow - a.ViewsGrow);
-        displayResults(searchResults); // 顯示已按人氣排序的結果
+        searchResults_title.sort((a, b) => b.ViewsGrow - a.ViewsGrow);
+        searchResults_artist.sort((a, b) => b.ViewsGrow - a.ViewsGrow);
+        if(searchResults_title.length > searchResults_artist.length || searchResults_title.length===1){
+            title_btn.classList.add("active");
+            displayResults(searchResults_title);
+        }else if(searchResults_title.length < searchResults_artist.length || searchResults_artist.length===1){
+            artist_btn.classList.add("active");
+            displayResults(searchResults_artist);
+        }
+        artist_btn.innerHTML = `藝人名匹配結果 (${searchResults_artist.length})`;
+        title_btn.innerHTML = `歌名匹配結果 (${searchResults_title.length})`;
     })
     .catch(error => console.error('無法載入 JSON:', error));
 
 // 根據排序選項顯示結果
 document.getElementById('sort-order').addEventListener('change', function () {
     const sortOrder = this.value;
-    if (sortOrder === 'newest') {
-        // 按發行日期從新到舊排序s
-        searchResults.sort((a, b) => new Date(b.release) - new Date(a.release));
-    } else if (sortOrder === 'oldest') {
-        // 按發行日期從舊到新排序
-        searchResults.sort((a, b) => new Date(a.release) - new Date(b.release));
-    } else if (sortOrder === 'popularity') {
-        searchResults.sort((a, b) => b.ViewsGrow - a.ViewsGrow);
-    }
-    displayResults(searchResults);
+    sortResult(searchResults, sortOrder);
 });
+
+function sortResult(results, sortorder){
+    if (sortorder === 'newest') {
+        // 按發行日期從新到舊排序
+        results.sort((a, b) => new Date(b.release) - new Date(a.release));
+    } else if (sortorder === 'oldest') {
+        // 按發行日期從舊到新排序
+        results.sort((a, b) => new Date(a.release) - new Date(b.release));
+    } else if (sortorder === 'popularity') {
+        // 按觀看成長從低到高排序
+        results.sort((a, b) => b.ViewsGrow - a.ViewsGrow);
+    }
+    displayResults(results);
+}
 
 // 顯示篩選後的結果
 function displayResults(results) {
@@ -80,3 +100,16 @@ function displayResults(results) {
                         `;
     }
 }
+
+
+title_btn.addEventListener('click', function () {
+    displayResults(searchResults_title);
+    title_btn.classList.add("active");
+    artist_btn.classList.remove("active");
+});
+artist_btn.addEventListener('click', function () {
+    displayResults(searchResults_artist);
+    artist_btn.classList.add("active");
+    title_btn.classList.remove("active");
+});
+

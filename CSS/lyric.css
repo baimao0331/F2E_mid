@@ -1,17 +1,26 @@
 /*---------------------資訊區域-------------------------*/
 .song-info-box {
-    margin: 4vh 0;
+    margin: 4vh 0 calc(1vh + 1vw);
     width: 90%;
-    padding: 3vh;
+    padding: 2vh 1vw;
     display: flex;
     background-color: var(--light-gray);
     border-radius: var(--border-rad);
     box-shadow: 0 1vh 0 var(--blue);
 }
 
+.song-img-box{
+    width: clamp(60px, 7vw, 100px);
+    height:clamp(60px, 7vw, 100px);
+    box-shadow: 1vh 1vh 0 var(--gray);
+    border-radius: calc(var(--border-rad)/2);
+}
+
 #song-img {
-    width: clamp(60px, 8vw, 100px);
-    height:clamp(60px, 8vw, 100px);
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius: calc(var(--border-rad)/2);
 }
 
 .song-info {
@@ -20,12 +29,13 @@
 
 .song-info h2,
 h3 {
-    margin: 0.5vh 0;
     font-weight: 500;
     font-size: 0.8rem;
+    margin-bottom: 0.5vh;
 }
 
 #title-scroll {
+    margin-bottom: 0.5vh;
     width: 20rem;
     height: 1.5rem;
     overflow: hidden;
@@ -53,8 +63,8 @@ h3 {
 }
 
 .song-info-box img{
-    width: clamp(1px,1.2rem,30px);
-    height: clamp(1px,1.5rem,30px);
+    width: clamp(1px,1rem,30px);
+    height: clamp(1px,1.2rem,30px);
 }
 /*---------------------資訊區域-------------------------*/
 /*----------------------大框架--------------------------*/
@@ -81,10 +91,9 @@ h3 {
     border-radius: var(--border-rad);
     display: flex;
     width: 50%;
-    height: 90%;
-    overflow: scroll;
-    overflow-x: hidden;
-    /* 隱藏水平滾動條 */
+    height: 100%;
+    background-color: var(--light-gray);
+    padding: 2vh 1vw;
 }
 /*----------------------大框架--------------------------*/
 /*---------------------影片區域-------------------------*/
@@ -100,6 +109,40 @@ h3 {
 }
 /*---------------------影片區域-------------------------*/
 /*---------------------歌詞區域-------------------------*/
+.box-right .scroll-box{
+    width: 100%;
+    height: 100%;
+    padding-right: 1vw;
+    overflow: scroll;
+    overflow-x: hidden;
+    /* 隱藏水平滾動條 */
+}
+
+/* 滾動條的整體 */
+.box-right .scroll-box::-webkit-scrollbar {
+    width: 8px;
+    /* 垂直滾動條寬度 */
+    height: 0px;
+    /* 水平滾動條高度 */
+}
+
+/* 滾動條軌道 */
+.box-right .scroll-box::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 10px;
+}
+
+/* 滾動條的滑塊 */
+.box-right .scroll-box::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 10px;
+}
+
+/* 滑鼠懸停時的滾動條 */
+.box-right .scroll-box::-webkit-scrollbar-thumb:hover {
+    background: var(--blue);
+}
+
 #lyric-container {
     position: relative;
     width: 100%;
@@ -107,7 +150,7 @@ h3 {
 
 .lyric-line {
     margin: 0;
-    padding: 2vh 5vh;
+    padding: 2vh 1vw;
     border-bottom: 1px solid var(--gray);
     background-color: var(--light-gray);
     font-size: 1.2rem;
@@ -115,17 +158,20 @@ h3 {
     font-weight: 450;
 }
 
+#first-line{
+    border-top-left-radius: var(--border-rad);
+    border-top-right-radius: var(--border-rad);
+}
+
+#last-line{
+    border-bottom-left-radius: var(--border-rad);
+    border-bottom-right-radius: var(--border-rad);
+    border: none;
+}
+
 .lyric-line:hover {
     background-color: #d9e0ef;
     max-height: 50vh;
-}
-
-/* 滾動條的整體 */
-.box-right::-webkit-scrollbar {
-    width: 0px;
-    /* 垂直滾動條寬度 */
-    height: 0px;
-    /* 水平滾動條高度 */
 }
 
 .lyric-line ruby{
@@ -157,7 +203,7 @@ h3 {
     align-items: center;
     justify-content: center;
     font-weight: 450;
-    color: white;
+    color: var(--white);
     background-color: var(--dark-gray);
     border-top-left-radius: var(--border-rad);
     border-top-right-radius: var(--border-rad);
@@ -174,9 +220,10 @@ aside {
     border-bottom-left-radius: var(--border-rad);
     border-bottom-right-radius: var(--border-rad);
     height: 80%;
+    padding-bottom: 1vh;
 }
 
-.scroll-box {
+.related-songs .scroll-box {
     width: 90%;
     height: 100%;
     overflow: scroll;
@@ -184,7 +231,7 @@ aside {
 }
 
 /* 滾動條的整體 */
-.scroll-box::-webkit-scrollbar {
+.related-songs .scroll-box::-webkit-scrollbar {
     width: 0px;
     /* 垂直滾動條寬度 */
     height: 8px;
@@ -192,19 +239,19 @@ aside {
 }
 
 /* 滾動條軌道 */
-.scroll-box::-webkit-scrollbar-track {
+.related-songs .scroll-box::-webkit-scrollbar-track {
     background: var(--light-gray);
     border-radius: 10px;
 }
 
 /* 滾動條的滑塊 */
-.scroll-box::-webkit-scrollbar-thumb {
+.related-songs .scroll-box::-webkit-scrollbar-thumb {
     background: var(--gray);
     border-radius: 10px;
 }
 
 /* 滑鼠懸停時的滾動條 */
-.scroll-box::-webkit-scrollbar-thumb:hover {
+.related-songs .scroll-box::-webkit-scrollbar-thumb:hover {
     background: var(--blue);
 }
 
@@ -241,7 +288,7 @@ aside {
 
 .card a {
     text-decoration: none;
-    color: white;
+    color: var(--white);
     text-align: center;
     transition: 0.5s;
     width: 5rem;
@@ -251,7 +298,7 @@ aside {
 }
 
 .card a:hover {
-    color: white;
+    color: var(--white);
 }
 
 .card .song-name {

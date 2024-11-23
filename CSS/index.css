@@ -51,11 +51,11 @@
     background-color: var(--blue);
     font-weight: 600;
     transition: 0.5s;
-    color: white;
+    color: var(--white);
     size: 1rem;
 }
 .buttonarea button:hover{
-    border: 2px solid white;
+    border: 2px solid var(--white);
     width: clamp(120px, 18%, 25vw);
 }
 /*---------------------搜尋區域-------------------------*/
@@ -101,7 +101,7 @@
     border: none;
     height: 10vh;
     border-radius: var(--border-rad);
-    color: white;
+    color: var(--white);
     font-weight: 900;
     margin: 0.25vh;
     transition: 0.5s;
@@ -184,7 +184,7 @@
     width: 100%;
 }
 .recommend .card a:hover{
-    color: white;
+    color: var(--white);
     font-weight: 700;
 }
 
@@ -282,7 +282,7 @@ button {
     left: 2vh;
     font-size: 1rem;
     color: var(--artist-text);
-    transition: 0.5s;
+    transition: 0.5s ease;
     width: 2rem;
     z-index: 1;
 }
@@ -325,7 +325,8 @@ button {
 }
 
 .rankbox .song-name:hover{
-    color: white;
+    color: var(--blue);
+    text-decoration:underline;
     font-weight: 500;
 }
 
@@ -374,9 +375,7 @@ button {
 }
 
 .rankbox:hover .ranking-number{
-    color: white;
     font-weight: 600;
-    font-size: 1.5rem;
 }
 
 .read-more{
@@ -386,7 +385,7 @@ button {
     width: 20vh;
     background-color: var(--blue);
     padding: 0 2vh;
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
     border-radius: var(--border-rad);
@@ -397,7 +396,7 @@ button {
 
 .read-more:hover{
     width: 30vh;
-    border: 2px solid white;
+    border: 2px solid var(--white);
 }
 /*---------------------排名區域-------------------------*/
 /*-----------------------------------------------主頁內容結束--------------------------------------------------------*/
@@ -525,11 +524,11 @@ button {
     #search-artist{
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
-        border-right: 1px solid white;
+        border-right: 1px solid var(--white);
     }
     #search-title{
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
-        border-left: 1px solid white;
+        border-left: 1px solid var(--white);
     }
 }

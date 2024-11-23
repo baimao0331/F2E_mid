@@ -54,20 +54,13 @@
                     <input type="text" name="search-content" id="search-content" placeholder="請輸入搜尋內容">
                 </div>
                 <div class="buttonarea">
-                    <button class="search-artist" id="search-artist">依藝人名搜尋</button>
-                    <button class="search-title" id="search-title">依歌曲名搜尋</button>
+                    <button class="search-btn" id="search-btn">搜尋</button>
                     <script>
                         // 監聽按鈕點擊事件
-                        document.getElementById('search-title').addEventListener('click', function () {
+                        document.getElementById('search-btn').addEventListener('click', function () {
                             const query = document.getElementById('search-content').value;
                             if (query.trim()) {
                                 window.location.href = `search.html?type=song&query=${encodeURIComponent(query)}`;
-                            }
-                        });
-                        document.getElementById('search-artist').addEventListener('click', function () {
-                            const query = document.getElementById('search-content').value;
-                            if (query.trim()) {
-                                window.location.href = `search.html?type=artist&query=${encodeURIComponent(query)}`;
                             }
                         });
                     </script>
