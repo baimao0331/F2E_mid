@@ -43,28 +43,56 @@
                 </a>
             </ul>
         </nav>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <button id="hamburger-btn"><img src="./images/menu.svg" alt="menu.svg"></button>
+            <div id="hamberger-nav">
+                <button id="hamburger-btn-close"><img src="./images/close.svg" alt="close.svg"></button>
+                <ul class="link">
+                    <a href="index.html">
+                        <li class="link-item">
+                            首頁
+                        </li>
+                    </a>
+                    <a href="search.html">
+                        <li class="link-item">
+                            搜尋
+                        </li>
+                    </a>
+                    <a href="ranking.html">
+                        <li class="link-item">
+                            排行
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
     </header>
     <button id="back-to-top" onclick="scrollToTop()"><img src="./images/toTop.png" alt="toTop"></button>
 
     <main>
         <div class="container">
-
             <div class="search">
                 <div class="searchbar">
                     <input type="text" name="search-content" id="search-content" placeholder="請輸入搜尋內容">
-                </div>
-                <div class="buttonarea">
                     <button class="search-btn" id="search-btn">搜尋</button>
-                    <script>
-                        // 監聽按鈕點擊事件
-                        document.getElementById('search-btn').addEventListener('click', function () {
-                            const query = document.getElementById('search-content').value;
-                            if (query.trim()) {
-                                window.location.href = `search.html?type=song&query=${encodeURIComponent(query)}`;
-                            }
-                        });
-                    </script>
                 </div>
+                <script>
+                    function performsearch() {
+                        const query = document.getElementById('search-content').value;
+                        if (query.trim()) {
+                            window.location.href = `search.html?type=song&query=${encodeURIComponent(query)}`;
+                        }
+                    }
+                    // 監聽按鈕點擊事件
+                    document.getElementById('search-btn').addEventListener('click', function () {
+                        performsearch();
+                    });
+                    document.getElementById('search-content').addEventListener('keydown', function (event) {
+                        if (event.key === 'Enter') {
+                            performsearch();
+                        }
+                    });
+                </script>
             </div>
             <div class="recommend">
                 <h2 class="title">

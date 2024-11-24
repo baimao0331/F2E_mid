@@ -10,6 +10,7 @@ const artist_btn = document.getElementById('artist-btn');
 
 let searchResults_title = [];
 let searchResults_artist = [];
+let searchResults = [];
 
 if(query != ""){
     header.classList.add("active");
@@ -40,13 +41,14 @@ fetch('songs.json')
         searchResults_artist.sort((a, b) => b.ViewsGrow - a.ViewsGrow);
         if(searchResults_title.length > searchResults_artist.length || searchResults_title.length===1){
             title_btn.classList.add("active");
-            displayResults(searchResults_title);
+            searchResults = searchResults_title;
         }else if(searchResults_title.length < searchResults_artist.length || searchResults_artist.length===1){
             artist_btn.classList.add("active");
-            displayResults(searchResults_artist);
+            searchResults = searchResults_artist;
         }
         artist_btn.innerHTML = `藝人名匹配結果 (${searchResults_artist.length})`;
         title_btn.innerHTML = `歌名匹配結果 (${searchResults_title.length})`;
+        displayResults(searchResults);
     })
     .catch(error => console.error('無法載入 JSON:', error));
 
@@ -103,12 +105,14 @@ function displayResults(results) {
 
 
 title_btn.addEventListener('click', function () {
-    displayResults(searchResults_title);
+    searchResults = searchResults_title;
+    displayResults(searchResults);
     title_btn.classList.add("active");
     artist_btn.classList.remove("active");
 });
 artist_btn.addEventListener('click', function () {
-    displayResults(searchResults_artist);
+    searchResults = searchResults_artist;
+    displayResults(searchResults);
     artist_btn.classList.add("active");
     title_btn.classList.remove("active");
 });

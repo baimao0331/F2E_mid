@@ -37,6 +37,29 @@
                 </a>
             </ul>
         </nav>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <button id="hamburger-btn"><img src="./images/menu.svg" alt="menu.svg"></button>
+            <div id="hamberger-nav">
+                <button id="hamburger-btn-close"><img src="./images/close.svg" alt="close.svg"></button>
+                <ul class="link">
+                    <a href="index.html">
+                        <li class="link-item">
+                            首頁
+                        </li>
+                    </a>
+                    <a href="search.html">
+                        <li class="link-item">
+                            搜尋
+                        </li>
+                    </a>
+                    <a href="ranking.html">
+                        <li class="link-item">
+                            排行
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
     </header>
     <button id="back-to-top" onclick="scrollToTop()"><img src="./images/toTop.png" alt="toTop"></button>
 
@@ -62,9 +85,17 @@
                     <div class="iframe_player">
                         <div id="video-container"></div>
                     </div>
+                    <script>
+                        // 通知 API 載入完成
+                        function onYouTubeIframeAPIReady() {
+                            console.log('YouTube IFrame API 已載入完成');
+                        }
+                    </script>
                 </div>
                 <div class="box-right">
-                    <div class="scroll-box"><div id="lyric-container"></div></div>
+                    <div class="scroll-box">
+                        <div id="lyric-container"></div>
+                    </div>
                 </div>
             </div>
             <div class="related-songs">

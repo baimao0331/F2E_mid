@@ -3,6 +3,23 @@ const rankingList_total = document.getElementById('ranking-list-total');
 const page = document.body.getAttribute("data-page");
 const view_num_header = document.getElementById("view-num");
 
+function view_num_check(views){
+    let view_num;
+    if (views === "???") {
+        view_num = views; // 如果是未知數值，直接顯示 "???"
+    } else if (views >= 1000000) {
+        // 如果大於或等於 1,000,000，轉為百萬單位（m）
+        view_num = (views / 1000000).toFixed(1) + "M";
+    } else if (views >= 1000) {
+        // 如果大於或等於 1,000，轉為千單位（k）
+        view_num = (views / 1000).toFixed(1) + "k";
+    } else {
+        // 小於 1,000，顯示原始數值
+        view_num = views.toString();
+    }
+    return view_num;
+}
+
 function displayRanking(data) {
     rankingList_grow.innerHTML = ''; // 清空之前的內容
     // 根據當前頁面 URL 動態決定顯示的歌曲數量
@@ -33,9 +50,8 @@ function displayRanking(data) {
             <div class="text-info">
                 <a href="lyric.html?songId=${song.id}"  target="_self" class="song-name">${song.title}</a>
                 <p class="song-artist">${song.artist}</p>
-                </div>
-            <div class=view-num><img src="./images/eye.svg" alt="views" class="icon"><p class="num">${song.ViewsGrow}</p></div>
-            
+                <div class=view-num><img src="./images/eye.svg" alt="views" class="icon"><p class="num">${view_num_check(song.ViewsGrow)}</p></div>
+            </div>
         `;
         rankingList_grow.appendChild(li);
     });
@@ -51,7 +67,7 @@ function displayRanking(data) {
                 <div class="text-info">
                     <a href="lyric.html?songId=${song.id}"  target="_self" class="song-name">${song.title}</a>
                     <p class="song-artist">${song.artist}</p>
-                    <div class=view-num><img src="./images/eye.svg" alt="views" class="icon"><p class="num">${song.CurViews}</p></div>
+                    <div class=view-num><img src="./images/eye.svg" alt="views" class="icon"><p class="num">${view_num_check(song.CurViews)}</p></div>
                 </div>
             `;
             rankingList_total.appendChild(li);

@@ -5,6 +5,7 @@ let player;
 if (songId == 92) {
     window.location.href = 'storm.html';
 }
+
 // 根據 ID 載入歌曲資料
 fetch('songs.json')
     .then(response => response.json())
@@ -17,6 +18,7 @@ fetch('songs.json')
             document.getElementById('song-artist').textContent = song.artist;
             document.getElementById('song-img').src = song.img;
 
+            console.log("使用 IFrame API 創建 YouTube 播放器");
             // 使用 IFrame API 創建 YouTube 播放器
             player = new YT.Player('video-container', {
                 videoId: song.ytid, // 使用 JSON 中的 youtubeId

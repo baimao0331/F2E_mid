@@ -43,6 +43,29 @@
                 </a>
             </ul>
         </nav>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <button id="hamburger-btn"><img src="./images/menu.svg" alt="menu.svg"></button>
+            <div id="hamberger-nav">
+                <button id="hamburger-btn-close"><img src="./images/close.svg" alt="close.svg"></button>
+                <ul class="link">
+                    <a href="index.html">
+                        <li class="link-item">
+                            首頁
+                        </li>
+                    </a>
+                    <a href="search.html">
+                        <li class="link-item">
+                            搜尋
+                        </li>
+                    </a>
+                    <a href="ranking.html">
+                        <li class="link-item">
+                            排行
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
     </header>
     <button id="back-to-top" onclick="scrollToTop()"><img src="./images/toTop.png" alt="toTop"></button>
 
@@ -51,36 +74,43 @@
             <div class="search">
                 <div class="searchbar">
                     <input type="text" name="search-content" id="search-content" placeholder="請輸入搜尋內容">
+                    <button class="search-btn" id="search-btn">搜尋</button>
                 </div>
-                <button class="search-btn" id="search-btn">搜尋</button>
                 <script>
-                    // 監聽按鈕點擊事件
-                    document.getElementById('search-btn').addEventListener('click', function () {
+                    function performsearch() {
                         const query = document.getElementById('search-content').value;
                         if (query.trim()) {
                             window.location.href = `search.html?type=song&query=${encodeURIComponent(query)}`;
                         }
+                    }
+                    // 監聽按鈕點擊事件
+                    document.getElementById('search-btn').addEventListener('click', function () {
+                        performsearch();
+                    });
+                    document.getElementById('search-content').addEventListener('keydown', function (event) {
+                        if (event.key === 'Enter') {
+                            performsearch();
+                        }
                     });
                 </script>
-        </div>
-
-        <!-- 排序選項 -->
-        <div class="result-header" id="result-header">
-            <div class="buttonarea">
-                <button id="title-btn"></button>
-                <button id="artist-btn"></button>
-            </div>
-            <div class="sort-box">
-                <label for="sort-order">排序：</label>
-                <select id="sort-order">
-                    <option value="popularity">依熱門程度</option>
-                    <option value="newest">從新到舊</option>
-                    <option value="oldest">從舊到新</option>
-                </select>
             </div>
 
-        </div>
-        <div id="search-results"></div>
+            <!-- 排序選項 -->
+            <div class="result-header" id="result-header">
+                <div class="sort-box">
+                    <label for="sort-order">排序：</label>
+                    <select id="sort-order">
+                        <option value="popularity">依熱門程度</option>
+                        <option value="newest">從新到舊</option>
+                        <option value="oldest">從舊到新</option>
+                    </select>
+                </div>
+                <div class="buttonarea">
+                    <button id="title-btn"></button>
+                    <button id="artist-btn"></button>
+                </div>
+            </div>
+            <div id="search-results"></div>
         </div>
     </main>
     <footer>
