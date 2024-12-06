@@ -6,7 +6,7 @@ const view_num_header = document.getElementById("view-num");
 function view_num_check(views){
     let view_num;
     if (views === "???") {
-        view_num = views; // 如果是未知數值，直接顯示 "???"
+        view_num = "SSS"; // 如果是未知數值，直接顯示 "???"
     } else if (views >= 1000000) {
         // 如果大於或等於 1,000,000，轉為百萬單位（m）
         view_num = (views / 1000000).toFixed(1) + "M";
