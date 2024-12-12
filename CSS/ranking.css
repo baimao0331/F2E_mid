@@ -30,7 +30,7 @@
 .ranking .buttonarea{
     position: relative;
     left: clamp(1px, 75px ,5vw);
-    margin: 2vh 0;
+    margin: 2vh 0 1vh;
 }
 
 .ranking .buttonarea button{
@@ -81,7 +81,8 @@
 }
 
 #rank-list-header{
-    height: 4vh;
+    height: 2rem;
+    margin-top: 0;
 }
 
 #rank-list-header:hover{
@@ -181,7 +182,9 @@
     font-weight: 500;
 }
 
-#view-num-header{
+#view-num {
+    font-size: 1rem;
+    font-weight: 500;
     position: relative;
     left: 40%;
     white-space: nowrap;

@@ -1,6 +1,6 @@
 /*---------------------搜尋區域-------------------------*/
 .search {
-    height: clamp(150px, 300px, 30vh);
+    height: clamp(100px, 300px, 30vh);
     width: clamp(400px, 60vw, 80%);
     margin: 4vh 0;
     background-color: var(--dark-gray);
@@ -57,6 +57,7 @@
     size: 1rem;
     cursor: pointer;
 }
+
 /*---------------------搜尋區域-------------------------*/
 /*---------------------推薦區域-------------------------*/
 .recommend {
@@ -71,12 +72,13 @@
     border-radius: var(--border-rad);
     transition: 0.5s;
 }
-.recommend:hover{
+
+.recommend:hover {
     scale: 1.1;
     box-shadow: 0px 10px 0 var(--blue);
 }
 
-.recommend .title{
+.recommend .title {
     width: 100%;
     flex: 0;
     margin-top: 0;
@@ -86,7 +88,7 @@
     background-color: var(--light-gray);
 }
 
-.recommend-box{
+.recommend-box {
     width: 100%;
     margin-top: 2vh;
     display: flex;
@@ -95,7 +97,7 @@
     justify-content: center;
 }
 
-.recommend-box button{
+.recommend-box button {
     background-color: var(--blue);
     border: none;
     height: 10vh;
@@ -106,7 +108,7 @@
     transition: 0.5s;
 }
 
-.recommend-box button:hover{
+.recommend-box button:hover {
     height: 12vh;
 }
 
@@ -127,7 +129,7 @@
     /* 水平滾動條高度 */
 }
 
-.page{
+.page {
     position: relative;
     display: flex;
     padding: 0;
@@ -150,14 +152,16 @@
     padding-bottom: 1vh;
     transition: 0.5s;
 }
-.recommend .song-img{
+
+.recommend .song-img {
     position: relative;
     top: 0;
-    height: clamp(66px,10vw,130px);
-    width: clamp(66px,10vw,130px);
+    height: clamp(70px, 10vh, 130px);
+    width: 100%;
 }
 
-.recommend img{ /*推薦區域圖片設定*/
+.recommend img {
+    /*推薦區域圖片設定*/
     position: relative;
     right: 0;
     max-height: 90%;
@@ -166,7 +170,7 @@
     border-radius: calc(var(--border-rad)/2);
 }
 
-.recommend .song-info{
+.recommend .song-info {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -174,7 +178,7 @@
     width: 100%;
 }
 
-.recommend .card a{
+.recommend .card a {
     text-decoration: none;
     font-weight: 500;
     color: black;
@@ -182,12 +186,13 @@
     transition: 0.5s;
     width: 100%;
 }
-.recommend .card a:hover{
+
+.recommend .card a:hover {
     color: var(--white);
     font-weight: 700;
 }
 
-.recommend .card .song-name{
+.recommend .card .song-name {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -198,10 +203,11 @@
     align-items: center;
 }
 
-.recommend.card.song-artist{
+.recommend.card.song-artist {
     height: 2rem;
 }
-.song-artist p{
+
+.recommend .song-artist p {
     color: var(--artist-text);
     font-weight: 400;
     font-size: 0.8rem;
@@ -216,8 +222,8 @@ button {
 
 /*---------------------推薦區域-------------------------*/
 /*---------------------排名區域-------------------------*/
-.ranking{
-    margin:4vh 0;
+.ranking {
+    margin: 4vh 0;
     padding-bottom: 10vh;
     width: clamp(var(--min-width), 60vw, 80%);
     display: flex;
@@ -228,13 +234,13 @@ button {
     transition: 0.5s;
 }
 
-.ranking:hover{
+.ranking:hover {
     margin: 12vh 0;
     scale: 1.1;
     box-shadow: 0px 10px 0 var(--blue);
 }
 
-.ranking .title{
+.ranking .title {
     flex: 0;
     margin-top: 0;
     margin-bottom: 2.5vh;
@@ -244,33 +250,34 @@ button {
     background-color: var(--light-gray);
 }
 
-.ranking ol{
+.ranking ol {
     padding: 0;
     width: 80%;
 }
 
-.rankbox{
+.rankbox {
     position: relative;
-    margin: 0.5vh 0;
+    margin: 0.25vh 0;
     background-color: var(--light-gray);
     display: flex;
     align-items: center;
     flex-direction: row;
     width: 100%;
     height: 15vh;
-    border-radius: var(--border-rad);
     transition: 0.5s;
 }
 
-#rank-list-header{
-    height: 4vh;
+#rank-list-header {
+    height: 3rem;
+    border-top-left-radius: var(--border-rad);
+    border-top-right-radius: var(--border-rad);
 }
 
-#rank-list-header:hover{
+#rank-list-header:hover {
     box-shadow: 0px 0 0 var(--blue);
 }
 
-.rankbox .ranking-number{
+.rankbox .ranking-number {
     position: absolute;
     left: 2vh;
     font-size: 1rem;
@@ -280,32 +287,32 @@ button {
     z-index: 1;
 }
 
-.rankbox img.song-img{
+.rankbox img.song-img {
     border-radius: calc(var(--border-rad)/2);
     position: relative;
     left: 4vw;
-    top:0;
-    height: clamp(60px,6vw,7vw);
-    width: clamp(60px,6vw,7vw);
+    top: 0;
+    height: clamp(60px, 6vw, 7vw);
+    width: clamp(60px, 6vw, 7vw);
     object-fit: cover;
     transition: 0.5s;
 }
 
-.rankbox:hover img.song-img{
+.rankbox:hover img.song-img {
     scale: 1.1;
 }
 
-.rankbox .text-info{
+.rankbox .text-info {
     position: absolute;
     left: 6vw;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
     width: 55%;
     height: 2rem;
 }
 
-.rankbox .song-name{
+.rankbox .song-name {
     position: relative;
     left: 5vw;
     transition: 0.5s;
@@ -319,167 +326,223 @@ button {
     text-overflow: ellipsis;
 }
 
-.rankbox .song-name:hover{
+.rankbox .song-name:hover {
     color: var(--blue);
-    text-decoration:underline;
+    text-decoration: underline;
     font-weight: 500;
 }
 
-.rankbox .song-artist{
+.rankbox .song-artist {
     position: relative;
-    left: clamp(10px,6vw,100%);
+    left: clamp(10px, 6vw, 100%);
     width: 10rem;
     margin: 0;
     padding: 0;
     font-weight: 400;
     font-size: 0.8rem;
-    height: 1rem;
+    line-height: 1.7rem;
+    height: 2rem;
     color: var(--artist-text);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-#rank-list-header .song-name:hover{
+#rank-list-header .song-name:hover {
     color: black;
 }
 
-.rankbox .view-num{
+.rankbox .view-num {
     position: relative;
     display: flex;
     align-items: center;
     left: 40%;
-    line-height: clamp(1px,1.8rem,30px);
     width: 6rem;
     height: 2rem;
     font-size: 0.8rem;
     font-weight: 400;
     white-space: nowrap;
 }
+.rankbox .view-num .num {
+    line-height: 1rem;
+}
 
-#rank-list-header .song-artist{
+#rank-list-header .song-artist {
     font-size: 1rem;
     height: auto;
     font-weight: 500;
 }
 
-#view-num-header{
+#view-num-header {
     position: relative;
     left: 40%;
     white-space: nowrap;
 }
 
-.rankbox .view-num .icon{
+.rankbox .view-num .icon {
     opacity: 0.5;
-    width: clamp(1px,1.5rem,30px);
-    height: clamp(1px,1.8rem,30px);
+    width: clamp(1px, 1.5rem, 30px);
+    height: clamp(1px, 1.8rem, 30px);
 }
 
-.rankbox:hover .ranking-number{
+.rankbox:hover .ranking-number {
     font-weight: 600;
     scale: 1.1;
 }
 
-.read-more{
+.read-more {
     font-size: 1rem;
     line-height: 1rem;
     height: 5vh;
-    width: 20vh;
+    width: 100%;
     background-color: var(--blue);
     padding: 0 2vh;
     color: var(--white);
     text-decoration: none;
     font-weight: bold;
-    border-radius: var(--border-rad);
+    border-bottom-left-radius: var(--border-rad);
+    border-bottom-right-radius: var(--border-rad);
     border: none;
     transition: 0.5s;
     font-weight: bold;
 }
 
-
-.read-more:hover{
-    width: 30vh;
+.read-more:hover {
     border: 2px solid var(--white);
 }
+
 /*---------------------排名區域-------------------------*/
 /*-----------------------------------------------主頁內容結束--------------------------------------------------------*/
 
 @media screen and (max-width:1200px) {
-    .recommend .card .song-name{
+    .recommend .card .song-name {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    .recommend .card .song-artist{
+
+    .recommend .card .song-artist {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    .search:hover{
+
+    .search:hover {
         scale: 1;
         margin: 4vh 0;
     }
-    .rankbox{
+
+    .rankbox {
         height: 18vh;
     }
-    .rankbox .ranking-number{
+
+    .rankbox .ranking-number {
         display: none;
     }
-    .recommend:hover{
+
+    .recommend:hover {
         scale: 1;
         margin: 4vh 0;
     }
-    .ranking:hover{
+
+    .ranking:hover {
         scale: 1;
         margin: 4vh 0;
     }
-    .ranking .text-info{
+
+    .ranking .text-info {
         flex-direction: column;
-        overflow: hidden;
         left: 25%;
+        height: 15vh;
+    }
+    .rankbox{
+        height: 12vh;
+    }
+    .rankbox img.song-img{
+        height: 10vh;
+        width: 10vh;
     }
     .rankbox .song-name{
         left: 0;
     }
-    .rankbox .song-artist{
+
+    .rankbox .song-artist {
         left: 0;
     }
-    .rankbox .view-num{
+
+    .rankbox .view-num {
         left: 50%;
     }
-    #rank-list-header .text-info{
+
+    #rank-list-header .text-info {
         flex-direction: row;
+        height: 2rem;
     }
-    #rank-list-header .song-name{
+
+    #rank-list-header .song-name {
         width: auto;
         margin-right: 1vw;
     }
-    #view-num-header{
+
+    #view-num-header {
         left: 40%;
     }
 }
-@media screen and (max-width:768px){
-    .search{
+
+@media screen and (max-width:768px) {
+    .search {
         width: 100vw;
     }
-    .recommend{
+
+    .recommend {
         width: 100vw;
     }
-    .recommend .card{
+
+    .recommend .card {
         width: 33%;
     }
-    .ranking{
+
+    /* 滾動條的整體 */
+    .song-list::-webkit-scrollbar {
+        width: 0px;
+        /* 垂直滾動條寬度 */
+        height: 8px;
+        /* 水平滾動條高度 */
+    }
+
+    /* 滾動條軌道 */
+    .song-list::-webkit-scrollbar-track {
+        background: var(--light-gray);
+        border-radius: 10px;
+    }
+
+    /* 滾動條的滑塊 */
+    .song-list::-webkit-scrollbar-thumb {
+        background: var(--gray);
+        border-radius: 10px;
+    }
+
+    /* 滑鼠懸停時的滾動條 */
+    .song-list::-webkit-scrollbar-thumb:hover {
+        background: var(--blue);
+    }
+
+    .ranking {
         width: 100vw;
     }
-    .rankbox{
+
+    .rankbox {
         height: 15vh;
         width: 100%;
+        border-radius: calc(var(--border-rad)/2);
     }
-    .rankbox:hover{
+
+    .rankbox:hover {
         scale: 1;
         margin: 1vh;
     }
-    .rankbox .song-img{
+
+    .rankbox .song-img {
         display: flex;
         align-items: center;
         height: 100%;
@@ -488,50 +551,56 @@ button {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
-    .rankbox .song-img img{
+
+    .rankbox .song-img img {
         left: 0;
         height: 15vh;
         width: 15vh;
     }
-    .rankbox:hover img{
+
+    .rankbox:hover img {
         scale: 1;
     }
-    .rankbox .text-info{
-        left: 20vw;
+
+    .rankbox .text-info {
+        left: 18vh;
+        display: flex;
     }
-    .rankbox .song-name{
+
+    .rankbox .song-name {
         left: 0;
     }
-    .rankbox .song-artist{
+
+    .rankbox .song-artist {
         left: 0;
-        align-self:flex-start;
     }
-    .rankbox .view-num{
+
+    .rankbox .view-num {
         position: relative;
         left: 0;
         z-index: 1;
     }
-    #prev-btn,#next-btn{
+    #rank-list-header{
+        display: none;
+    }
+    #prev-btn,
+    #next-btn {
         display: none;
     }
 }
-@media screen and (max-width:384px){
-    .buttonarea{
-        right: 10%;
-        width: 100%;
+
+@media screen and (max-width:384px) {
+    .search{
+        height: 150px;
     }
-    .buttonarea button{
-        width: 40%;
-        margin: 0;
+    .searchbar{
+        max-height: 40px;
     }
-    #search-artist{
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        border-right: 1px solid var(--white);
+    .recommend{
+        height: 280px;
     }
-    #search-title{
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-left: 1px solid var(--white);
+    .recommend .card{
+        height: 150px;
     }
+
 }
