@@ -138,16 +138,16 @@ function updateLyrics() {
 
     // 如果找到對應的歌詞行，滾動並高亮
     if (currentIndex !== -1) {
-        console.log("找到對應歌詞");
         lyricLines.forEach((line, index) => {
             line.classList.toggle('highlight', index === currentIndex);
         });
-
         const currentLine = document.getElementById(`lyric-${currentIndex}`);
         // 僅滾動 scroll-box 中的歌詞行
         scrollBox.scrollTo({
             top: currentLine.offsetTop - scrollBox.offsetHeight / 2, // 滾動到中心位置
             behavior: 'smooth', // 平滑滾動
+            console.log(currentLine.offsetTop);
+            console.log(scrollBox.offsetHeight);
         });
     }
 }
