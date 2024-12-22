@@ -27,11 +27,11 @@ fetch('songs.json')
             for (let i = 0; i < japaneseLyrics.length; i++) {
                 const japaneseLine = japaneseLyrics[i];
                 const chineseLine = chineseLyrics[i];
-
                 const lyricLine = document.createElement('div');
                 lyricLine.classList.add('lyric-line');
                 lyricLine.id = `lyric-${i}`;
                 lyricLine.dataset.time = lyricTimes; // 將時間戳保存到 data 屬性
+
                 if (i === 0) {
                     lyricLine.classList.add('first-line');
                 }
@@ -123,7 +123,7 @@ function onPlayerStateChange(event) {
 
 // 更新歌詞滾動同步
 function updateLyrics() {
-    
+    console.log("執行歌詞同步");
     const currentTime = Math.floor(player.getCurrentTime()); // 獲取當前播放時間
     const lyricLines = document.querySelectorAll('.lyric-line');
     console.log(currentTime);
