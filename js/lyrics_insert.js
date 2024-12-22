@@ -27,10 +27,11 @@ fetch('songs.json')
             for (let i = 0; i < japaneseLyrics.length; i++) {
                 const japaneseLine = japaneseLyrics[i];
                 const chineseLine = chineseLyrics[i];
+                const lyricTime = song.lyrics.time[i]; // 獲取當前行的時間戳
                 const lyricLine = document.createElement('div');
                 lyricLine.classList.add('lyric-line');
                 lyricLine.id = `lyric-${i}`;
-                lyricLine.dataset.time = lyricTimes; // 將時間戳保存到 data 屬性
+                lyricLine.dataset.time = lyricTime; // 將單一的時間戳分配到 data-time
 
                 if (i === 0) {
                     lyricLine.classList.add('first-line');
@@ -139,19 +140,14 @@ function updateLyrics() {
     // 如果找到對應的歌詞行，滾動並高亮
     if (currentIndex !== -1) {
         lyricLines.forEach((line, index) => {
-            line.classList.toggle('highlight', index === currentIndex); // 高亮當前歌詞
+            line.classList.toggle('highlight', index === currentIndex);
         });
 
         const currentLine = document.getElementById(`lyric-${currentIndex}`);
-        if (currentLine && scrollBox) {
-            // 計算當前行相對於 scrollBox 的滾動位置
-            const lineOffsetTop = currentLine.offsetTop - scrollBox.offsetTop;
-
-            // 滾動 scrollBox 到正確位置
-            scrollBox.scrollTo({
-                top: lineOffsetTop - scrollBox.clientHeight / 2, // 滾動到容器中間
-                behavior: 'smooth', // 平滑滾動
-            });
-        }
+        // 僅滾動 scroll-box 中的歌詞行
+        scrollBox.scrollTo({
+            top: currentLine.offsetTop - scrollBox.offsetHeight / 2, // 滾動到中心位置
+            behavior: 'smooth', // 平滑滾動
+        });
     }
 }
