@@ -31,7 +31,7 @@ fetch('songs.json')
                 const lyricLine = document.createElement('div');
                 lyricLine.classList.add('lyric-line');
                 lyricLine.id = `lyric-${i}`;
-                lyricLine.dataset.time = lyricTime; // 將時間戳保存到 data 屬性
+                lyricLine.dataset.time = lyricTimes; // 將時間戳保存到 data 屬性
                 if (i === 0) {
                     lyricLine.classList.add('first-line');
                 }
