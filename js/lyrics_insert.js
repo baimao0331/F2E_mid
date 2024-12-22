@@ -63,7 +63,9 @@ fetch('songs.json')
         }
     })
     .catch(error => {
-        console.error('無法載入 JSON:', error)});
+        location.reload();
+        console.error('無法載入 JSON:', error)
+    });
 
 // 顯示同一位藝術家的隨機五首歌曲
 function displayRelatedSongs(artist, data) {
@@ -125,6 +127,7 @@ function updateLyrics() {
     console.log("執行歌詞同步");
     const currentTime = Math.floor(player.getCurrentTime()); // 獲取當前播放時間
     const lyricLines = document.querySelectorAll('.lyric-line');
+    const scrollBox = document.getElementById('scroll-box'); // 獲取右側的歌詞滾動區塊
     console.log(currentTime);
     // 找到對應的歌詞行
     let currentIndex = Array.from(lyricLines).findIndex(line => {
@@ -140,9 +143,10 @@ function updateLyrics() {
         });
 
         const currentLine = document.getElementById(`lyric-${currentIndex}`);
-        currentLine.scrollIntoView({
+        // 僅滾動 scroll-box 中的歌詞行
+        scrollBox.scrollTo({
+            top: currentLine.offsetTop - scrollBox.offsetHeight / 2, // 滾動到中心位置
             behavior: 'smooth', // 平滑滾動
-            block: 'center',   // 滾動到容器中間
         });
     }
 }
