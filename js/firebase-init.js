@@ -81,11 +81,11 @@ async function updateMenu(user) {
       // 使用者未登入
       const loginLi = document.createElement('li');
       loginLi.className = 'dynamic-item';
-      loginLi.innerHTML = `<a href="./account.html?type=login">登入</a>`;
+      loginLi.innerHTML = `<a href="account.html?type=login">登入</a>`;
 
       const registerLi = document.createElement('li');
       registerLi.className = 'dynamic-item';
-      registerLi.innerHTML = `<a href="./account.html?type=register">註冊</a>`;
+      registerLi.innerHTML = `<a href="account.html?type=register">註冊</a>`;
 
       menu.appendChild(loginLi);
       menu.appendChild(registerLi);
