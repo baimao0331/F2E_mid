@@ -121,6 +121,7 @@ function onPlayerStateChange(event) {
 
 // 更新歌詞滾動同步
 function updateLyrics() {
+    console.log("執行歌詞同步");
     const currentTime = player.getCurrentTime(); // 獲取當前播放時間
     const lyricLines = document.querySelectorAll('.lyric-line');
 
