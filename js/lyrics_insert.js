@@ -139,15 +139,19 @@ function updateLyrics() {
     // 如果找到對應的歌詞行，滾動並高亮
     if (currentIndex !== -1) {
         lyricLines.forEach((line, index) => {
-            line.classList.toggle('highlight', index === currentIndex);
+            line.classList.toggle('highlight', index === currentIndex); // 高亮當前歌詞
         });
+
         const currentLine = document.getElementById(`lyric-${currentIndex}`);
-        // 僅滾動 scroll-box 中的歌詞行
-        scrollBox.scrollTo({
-            top: currentLine.offsetTop - scrollBox.offsetHeight / 2, // 滾動到中心位置
-            behavior: 'smooth', // 平滑滾動
-            console.log(currentLine.offsetTop);
-            console.log(scrollBox.offsetHeight);
-        });
+        if (currentLine && scrollBox) {
+            // 計算當前行相對於 scrollBox 的滾動位置
+            const lineOffsetTop = currentLine.offsetTop - scrollBox.offsetTop;
+
+            // 滾動 scrollBox 到正確位置
+            scrollBox.scrollTo({
+                top: lineOffsetTop - scrollBox.clientHeight / 2, // 滾動到容器中間
+                behavior: 'smooth', // 平滑滾動
+            });
+        }
     }
 }
