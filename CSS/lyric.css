@@ -156,7 +156,7 @@ h3 {
 }
 /*---------------------影片區域-------------------------*/
 /*---------------------歌詞區域-------------------------*/
-.box-right .scroll-box{
+.box-right #scroll-box{
     width: 100%;
     height: 100%;
     padding-right: 1vw;
@@ -166,7 +166,7 @@ h3 {
 }
 
 /* 滾動條的整體 */
-.box-right .scroll-box::-webkit-scrollbar {
+.box-right #scroll-box::-webkit-scrollbar {
     width: 8px;
     /* 垂直滾動條寬度 */
     height: 0px;
@@ -174,19 +174,19 @@ h3 {
 }
 
 /* 滾動條軌道 */
-.box-right .scroll-box::-webkit-scrollbar-track {
+.box-right #scroll-box::-webkit-scrollbar-track {
     background: var(--light-gray);
     border-radius: 10px;
 }
 
 /* 滾動條的滑塊 */
-.box-right .scroll-box::-webkit-scrollbar-thumb {
+.box-right #scroll-box::-webkit-scrollbar-thumb {
     background: var(--gray);
     border-radius: 10px;
 }
 
 /* 滑鼠懸停時的滾動條 */
-.box-right .scroll-box::-webkit-scrollbar-thumb:hover {
+.box-right #scroll-box::-webkit-scrollbar-thumb:hover {
     background: var(--blue);
 }
 
@@ -205,12 +205,12 @@ h3 {
     font-weight: 450;
 }
 
-#first-line{
+.first-line{
     border-top-left-radius: var(--border-rad);
     border-top-right-radius: var(--border-rad);
 }
 
-#last-line{
+.last-line{
     border-bottom-left-radius: var(--border-rad);
     border-bottom-right-radius: var(--border-rad);
     border: none;
