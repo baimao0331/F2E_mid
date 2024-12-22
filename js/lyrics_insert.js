@@ -131,23 +131,38 @@ function updateLyrics() {
     const scrollBox = document.getElementById('scroll-box'); // 獲取右側的歌詞滾動區塊
     console.log(currentTime);
     // 找到對應的歌詞行
-    let currentIndex = Array.from(lyricLines).findIndex(line => {
+    let currentIndex = Array.from(lyricLines).findIndex((line, i) => {
         const time = parseFloat(line.dataset.time);
-        const nextTime = parseFloat(lyricLines[line.dataset.time + 1]?.dataset.time || Infinity);
+        const nextTime = parseFloat(lyricLines[i + 1]?.dataset.time || Infinity); // 使用 i 找到下一行時間
         return currentTime >= time && currentTime < nextTime;
     });
+
+    console.log("當前高亮索引:", currentIndex);
 
     // 如果找到對應的歌詞行，滾動並高亮
     if (currentIndex !== -1) {
         lyricLines.forEach((line, index) => {
-            line.classList.toggle('highlight', index === currentIndex);
+            // 高亮當前歌詞行，移除其他行的高亮
+            if (index === currentIndex) {
+                line.classList.add('highlight');
+            } else {
+                line.classList.remove('highlight');
+            }
         });
 
         const currentLine = document.getElementById(`lyric-${currentIndex}`);
-        // 僅滾動 scroll-box 中的歌詞行
-        scrollBox.scrollTo({
-            top: currentLine.offsetTop - scrollBox.offsetHeight / 2, // 滾動到中心位置
-            behavior: 'smooth', // 平滑滾動
-        });
+        // 如果找到對應的歌詞行，滾動並高亮
+        if (currentIndex !== -1) {
+            lyricLines.forEach((line, index) => {
+                line.classList.toggle('highlight', index === currentIndex);
+            });
+
+            const currentLine = document.getElementById(`lyric-${currentIndex}`);
+            // 僅滾動 scroll-box 中的歌詞行
+            scrollBox.scrollTo({
+                top: currentLine.offsetTop - scrollBox.offsetHeight / 2, // 滾動到中心位置
+                behavior: 'smooth', // 平滑滾動
+            });
+        }
     }
 }
