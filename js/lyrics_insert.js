@@ -138,6 +138,7 @@ function updateLyrics() {
 
     // 如果找到對應的歌詞行，滾動並高亮
     if (currentIndex !== -1) {
+        console.log("找到對應歌詞");
         lyricLines.forEach((line, index) => {
             line.classList.toggle('highlight', index === currentIndex);
         });
