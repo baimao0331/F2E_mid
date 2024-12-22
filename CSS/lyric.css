@@ -1,5 +1,6 @@
 /*---------------------資訊區域-------------------------*/
 .song-info-box {
+    position: relative;
     margin: 4vh 0 calc(1vh + 1vw);
     width: 90%;
     padding: 2vh 1vw;
@@ -10,20 +11,21 @@
 }
 
 .song-img-box{
-    width: clamp(60px, 7vw, 100px);
-    height:clamp(60px, 7vw, 100px);
+    height: 15vh;
+    aspect-ratio: 1/1;
     box-shadow: 1vh 1vh 0 var(--gray);
     border-radius: calc(var(--border-rad)/2);
 }
 
 #song-img {
-    width:100%;
-    height:100%;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
     border-radius: calc(var(--border-rad)/2);
 }
 
 .song-info {
+    height: 15vh;
     padding-left: 2vh;
 }
 
@@ -62,9 +64,53 @@ h3 {
     align-items: center;
 }
 
-.song-info-box img{
-    width: clamp(1px,1rem,30px);
-    height: clamp(1px,1.2rem,30px);
+#heart { 
+    position: absolute;
+    right: 6vh;
+    bottom: 2vh; 
+    width: 2rem; 
+    height: 1.8rem; 
+    cursor: pointer;
+} 
+
+#heart:before, #heart:after { 
+    position: absolute; 
+    content: ""; 
+    left: 1rem; 
+    top: 0; 
+    width: 1rem; 
+    height: 1.8rem; 
+    background: var(--dark-gray);
+    border-radius: 1rem 1rem 0 0; 
+    transform: rotate(-45deg); 
+    transform-origin: 0 100%; 
+    transition: 0.2s;
+} 
+#heart:after { 
+    left: 0; 
+    transform: rotate(45deg); 
+    transform-origin :100% 100%; 
+}
+#heart.liked:before, #heart.liked:after{
+    background-color: var(--blue);
+}
+#heart .hover-text{
+    display: none;
+    position: relative;
+    right: 1.5rem;
+    bottom: 2.5rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+    z-index: 2;
+    background-color: var(--gray);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem var(--dark-gray);
+    color: var(--white);
+    font-weight: 600;
+}
+
+#heart:hover .hover-text{
+    display: unset;
 }
 /*---------------------資訊區域-------------------------*/
 /*----------------------大框架--------------------------*/
@@ -99,13 +145,14 @@ h3 {
 /*---------------------影片區域-------------------------*/
 .iframe_player {
     position: relative;
-    height: 60%;
     width: 100%;
+    aspect-ratio: 16 / 9;
 }
 
 .iframe_player iframe {
     width: 100%;
     border-radius: var(--border-rad);
+    aspect-ratio: 16 / 9;
 }
 /*---------------------影片區域-------------------------*/
 /*---------------------歌詞區域-------------------------*/
@@ -183,6 +230,7 @@ h3 {
     font-size: 0.8rem;
     letter-spacing: 0rem;
 }
+
 /*---------------------歌詞區域-------------------------*/
 /*---------------------相關區域-------------------------*/
 .related-songs{
@@ -337,11 +385,21 @@ aside {
         overflow: hidden;
     }
 
-    .song-info-box {
-        flex-direction: column;
-    }
-
     #song-img {
         align-self: center;
+    }
+}
+
+@media screen and (max-width:700px){
+    #main{
+        margin-top: 26vh;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .box-left,.box-right{
+        width: 100%;
+    }
+    .related-songs{
+        margin-top: 30vh;
     }
 }

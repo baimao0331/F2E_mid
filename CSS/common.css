@@ -46,20 +46,17 @@ h1,h2,h3,h4,ol,ul{
 /*---------------------頁首&nav區域-------------------------*/
 header{
     width: clamp(10px, 1200px, 100vw);
-    padding: 0 5vw;
+    padding: 0 1vw;
     display: flex;
     position: relative;
 }
 header .logoimg{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 1vh 0;
     margin-top: 3vh;
     position: relative;
     width: clamp(100px,15%,200px);
     transition: 0.3s ease;
-    border-radius: var(--border-rad);
+    left: 0%;
 }
 
 header .logoimg:hover{
@@ -68,7 +65,6 @@ header .logoimg:hover{
 
 .logoimg img{
     width: 100%;
-    justify-self: center;
 }
 
 #back-to-top {
@@ -101,11 +97,11 @@ nav{
     margin-top: 2.5vh;
     margin-left: 2vw;
     align-self: center;
-    width: 75%;
     height: 7vh;
     max-height: 60px;
     display: flex;
     align-items: center;
+    left: 0%;
 }
 
 nav ul{
@@ -150,17 +146,64 @@ nav li::after {
 nav li:hover::after {
     width: 100%;
 }
-#hamburger-menu{
-    right: 5%;
+.account{
     position: absolute;
+    background-color:transparent;
+    height: 3.25rem;
+    margin-top: 3.25vh;
+    right: calc(2rem + clamp(10px,3rem,15vw));
+    display: flex;
+}
+#account-btn{
+    background-color: transparent;
+    display: flex;
+    border: none;
+    cursor: pointer;
+}
+#account-btn img{
+    height: 100%;
+    align-self: center;
+}
+#account-btn #arrow{
+    width: 2rem;
+    rotate: 180deg;
+    transition: 0.5s ease-in-out;
+}
+#account-btn #arrow.active{
+    rotate: 360deg;
+}
+
+#account_option{
+    position: absolute;
+    top: 4rem;
+    width: 6rem;
+    height: 0px;
+    background-color: aqua;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    padding: 0 0.5rem;
+    z-index: 2;
+}
+#account_option.active{
+    height: 100px;
+    padding: 0.5rem;
+}
+#account_option li{
+    text-decoration: none;
+    list-style: none;
+}
+
+#hamburger-menu{
+    position: absolute;
+    right: 1vw;
 }
 #hamburger-btn{
     padding: 0;
     margin-top: 4vh;
     background-color: transparent;
     border: none;
-    width: clamp(10px,4rem,15vw);
-    height: clamp(10px,3rem,15vw);
+    width: clamp(10px,3rem,15vw);
+    height: 5vh;
     position: relative;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -182,7 +225,6 @@ nav li:hover::after {
     height: 0.3rem;
     width: 100%;
     background: var(--light-gray);
-    border-radius: 9px;
     opacity: 1;
     left: 0;
     -webkit-transform: rotate(0deg);
@@ -225,7 +267,7 @@ nav li:hover::after {
   }
   
   #hamburger-btn.active span:nth-child(4) {
-    top: 1rem;
+    top: 2vh;
     width: 0%;
     left: 50%;
   }
@@ -238,6 +280,7 @@ nav li:hover::after {
     padding: 0;
     border: 0;
     background: transparent;
+    cursor: pointer;
 }
 
 #hamburger-btn-close img{

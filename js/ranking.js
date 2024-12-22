@@ -6,7 +6,7 @@ const view_num_header = document.getElementById("view-num");
 function view_num_check(views){
     let view_num;
     if (views === "???") {
-        view_num = "SSS"; // 如果是未知數值，直接顯示 "???"
+        view_num = "SSS";
     } else if (views >= 1000000) {
         // 如果大於或等於 1,000,000，轉為百萬單位（m）
         view_num = (views / 1000000).toFixed(1) + "M";
@@ -23,7 +23,7 @@ function view_num_check(views){
 function displayRanking(data) {
     rankingList_grow.innerHTML = ''; // 清空之前的內容
     // 根據當前頁面 URL 動態決定顯示的歌曲數量
-    const maxSongs = window.location.pathname.includes('ranking.html') ? 50 : 10; // 如果在 ranking.html 顯示 50 首，否則顯示 10 首
+    const maxSongs = window.location.pathname.includes('ranking.html') ? 49 : 9; // 如果在 ranking.html 顯示 50 首，否則顯示 10 首
     const song92 = data.find(song => song.id === 92);
 
     // 根據 popularity 將歌曲按熱門度降序排序，並選取前 maxSongs 名
@@ -49,7 +49,7 @@ function displayRanking(data) {
             <a href="lyric.html?songId=${song.id}"  target="_self" class="song-img"><img src="${song.img}" alt="${song.title} 封面圖" class="song-img" /></a>
             <div class="text-info">
                 <a href="lyric.html?songId=${song.id}"  target="_self" class="song-name">${song.title}</a>
-                <p class="song-artist">${song.artist}</p>
+                <a href="search.html?type=song&query=${song.artist}" class="song-artist"><p>${song.artist}</p></a>
                 <div class=view-num><img src="./images/eye.svg" alt="views" class="icon"><p class="num">${view_num_check(song.ViewsGrow)}</p></div>
             </div>
         `;
@@ -66,7 +66,7 @@ function displayRanking(data) {
                 <a href="lyric.html?songId=${song.id}"  target="_self" class="song-img"><img src="${song.img}" alt="${song.title} 封面圖" class="song-img" /></a>
                 <div class="text-info">
                     <a href="lyric.html?songId=${song.id}"  target="_self" class="song-name">${song.title}</a>
-                    <p class="song-artist">${song.artist}</p>
+                    <a href="search.html?type=song&query=${song.artist}" class="song-artist"><p>${song.artist}</p></a>
                     <div class=view-num><img src="./images/eye.svg" alt="views" class="icon"><p class="num">${view_num_check(song.CurViews)}</p></div>
                 </div>
             `;

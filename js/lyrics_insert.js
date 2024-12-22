@@ -18,19 +18,10 @@ fetch('songs.json')
             document.getElementById('song-artist').textContent = song.artist;
             document.getElementById('song-img').src = song.img;
 
-            console.log("使用 IFrame API 創建 YouTube 播放器");
-            // 使用 IFrame API 創建 YouTube 播放器
-            player = new YT.Player('video-container', {
-                videoId: song.ytid, // 使用 JSON 中的 youtubeId
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-
             const lyricContainer = document.getElementById('lyric-container');
             const japaneseLyrics = song.lyrics.japanese;
             const chineseLyrics = song.lyrics.chinese;
+            const lyricTimes = song.lyrics.time; // 獲取歌詞時間戳
             lyricContainer.innerHTML = '';
 
             for (let i = 0; i < japaneseLyrics.length; i++) {
@@ -53,7 +44,15 @@ fetch('songs.json')
                 `;
                 lyricContainer.appendChild(lyricLine);
             }
-
+            console.log("使用 IFrame API 創建 YouTube 播放器");
+            // 使用 IFrame API 創建 YouTube 播放器
+            player = new YT.Player('video-container', {
+                videoId: song.ytid, // 使用 JSON 中的 youtubeId
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
             // 顯示同一位藝術家的隨機五首歌曲
             displayRelatedSongs(song.artist, data);
         } else {
@@ -61,7 +60,9 @@ fetch('songs.json')
             lyricContainer.innerHTML = '<p>找不到該歌曲</p>';
         }
     })
-    .catch(error => console.error('無法載入 JSON:', error));
+    .catch(error => {
+        location.reload();
+        console.error('無法載入 JSON:', error)});
 
 // 顯示同一位藝術家的隨機五首歌曲
 function displayRelatedSongs(artist, data) {
@@ -110,9 +111,36 @@ function shuffleArray(array) {
 function onPlayerReady(event) {
     // 可以在這裡控制播放器，比如自動播放
     // event.target.playVideo();
+    console.log('YouTube IFrame API 已載入完成');
+    setInterval(updateLyrics, 500); // 每 500ms 更新一次歌詞
 }
 
 function onPlayerStateChange(event) {
     // 可以處理播放器狀態變化
 }
 
+// 更新歌詞滾動同步
+function updateLyrics() {
+    const currentTime = player.getCurrentTime(); // 獲取當前播放時間
+    const lyricLines = document.querySelectorAll('.lyric-line');
+
+    // 找到對應的歌詞行
+    let currentIndex = Array.from(lyricLines).findIndex(line => {
+        const time = parseFloat(line.dataset.time);
+        const nextTime = parseFloat(lyricLines[line.dataset.time + 1]?.dataset.time || Infinity);
+        return currentTime >= time && currentTime < nextTime;
+    });
+
+    // 如果找到對應的歌詞行，滾動並高亮
+    if (currentIndex !== -1) {
+        lyricLines.forEach((line, index) => {
+            line.classList.toggle('highlight', index === currentIndex);
+        });
+
+        const currentLine = document.getElementById(`lyric-${currentIndex}`);
+        currentLine.scrollIntoView({
+            behavior: 'smooth', // 平滑滾動
+            block: 'center',   // 滾動到容器中間
+        });
+    }
+}

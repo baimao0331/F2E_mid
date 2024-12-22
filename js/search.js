@@ -88,7 +88,7 @@ function displayResults(results) {
                                 <div class="song-info">
                                     <p>${song.album}</p>
                                     <a href="lyric.html?songId=${song.id}" class="song-name"><h2>${song.title}</h2></a>
-                                    <p>${song.artist}</p>
+                                    <a href="search.html?type=song&query=${song.artist}"><p>${song.artist}</p>
                                 </div>
                                 <a href="lyric.html?songId=${song.id}" class="link-item">看歌詞</a>
                             `;

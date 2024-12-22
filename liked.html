@@ -17,8 +17,6 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./CSS/common.css">
-    <link rel="stylesheet" href="./CSS/search.css">
-
 </head>
 
 <body>
@@ -48,7 +46,8 @@
                 <img src="./images/arrow.svg" alt="arrow" id="arrow">
                 <img src="./images/account.svg" alt="account" id="account-head">
             </button>
-            <ul id="account_option"></ul></ul>
+            <ul id="account_option"></ul>
+            </ul>
         </div>
         <div class="hamburger-menu" id="hamburger-menu">
             <button id="hamburger-btn">
@@ -83,46 +82,82 @@
 
     <main>
         <div class="container">
-            <div class="search">
-                <div class="searchbar">
-                    <input type="text" name="search-content" id="search-content" placeholder="請輸入搜尋內容">
-                    <button class="search-btn" id="search-btn">搜尋</button>
-                </div>
-                <script>
-                    function performsearch() {
-                        const query = document.getElementById('search-content').value;
-                        if (query.trim()) {
-                            window.location.href = `search.html?type=song&query=${encodeURIComponent(query)}`;
-                        }
-                    }
-                    // 監聽按鈕點擊事件
-                    document.getElementById('search-btn').addEventListener('click', function () {
-                        performsearch();
-                    });
-                    document.getElementById('search-content').addEventListener('keydown', function (event) {
-                        if (event.key === 'Enter') {
-                            performsearch();
-                        }
-                    });
-                </script>
-            </div>
+            <div class="liked">
+                <h2 class="title">
+                    喜歡的歌曲
+                </h2>
+                <ul id="liked-list">
 
-            <!-- 排序選項 -->
-            <div class="result-header" id="result-header">
-                <div class="sort-box">
-                    <label for="sort-order">排序：</label>
-                    <select id="sort-order">
-                        <option value="popularity">依熱門程度</option>
-                        <option value="newest">從新到舊</option>
-                        <option value="oldest">從舊到新</option>
-                    </select>
-                </div>
-                <div class="buttonarea">
-                    <button id="title-btn"></button>
-                    <button id="artist-btn"></button>
-                </div>
+                </ul>
             </div>
-            <div id="search-results"></div>
+            <script type="module">
+                import { auth, firestore } from './js/firebase-init.js';
+                import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js';
+                import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js';
+
+                const likedSongsList = document.getElementById('liked-list');
+
+                // 獲取本地 JSON 數據
+                async function fetchJSON() {
+                    try {
+                        const response = await fetch('./songs.json');
+                        if (!response.ok) {
+                            throw new Error("無法加載 JSON 檔案");
+                        }
+                        return await response.json();
+                    } catch (error) {
+                        console.error("加載 JSON 數據失敗：", error.message);
+                        return [];
+                    }
+                }
+
+                // 根據 liked 的歌曲 ID 過濾 JSON 數據
+                async function renderLikedSongs(liked) {
+                    const jsonData = await fetchJSON();
+
+                    // 過濾 JSON 中的歌曲數據
+                    const likedSongs = jsonData.filter(song => liked.map(String).includes(song.id.toString()));
+                    console.log(likedSongs);
+                    // 清空當前列表
+                    likedSongsList.innerHTML = '';
+
+                    // 渲染到頁面
+                    if (likedSongs.length > 0) {
+                        likedSongs.forEach(song => {
+                            const li = document.createElement('li');
+                            li.innerHTML = `
+                                <a href="lyric.html?songId=${song.id}"  target="_self" class="song-img"><img src="${song.img}" alt="${song.title} 封面圖" class="song-img" /></a>
+                                <div class="text-info">
+                                <a href="lyric.html?songId=${song.id}"  target="_self" class="song-name">${song.title}</a>
+                                <div class="song-artist">${song.artist}</div>
+                                </div>
+                            `;
+                            likedSongsList.appendChild(li);
+                        });
+                    } else {
+                        likedSongsList.innerHTML = '<p>尚未喜歡任何歌曲。</p>';
+                    }
+                }
+
+                // 監聽登入狀態
+                onAuthStateChanged(auth, async (user) => {
+                    if (user) {
+                        const userDocRef = doc(firestore, 'users', user.uid);
+                        const userDoc = await getDoc(userDocRef);
+
+                        if (userDoc.exists()) {
+                            const userData = userDoc.data();
+                            const liked = userData.liked || [];
+                            console.log(liked);
+                            renderLikedSongs(liked);
+                        } else {
+                            console.error("無法找到用戶資料");
+                        }
+                    } else {
+                        likedSongsList.innerHTML = '<p>請先登入以查看喜歡的歌曲。</p>';
+                    }
+                });
+            </script>
         </div>
     </main>
     <footer>
@@ -134,7 +169,6 @@
         </div>
 
     </footer>
-    <script src="./js/search.js"></script>
     <script src="./js/to_top.js"></script>
     <script type="module">
         import { auth, firestore } from './js/firebase-init.js';

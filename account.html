@@ -17,8 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./CSS/common.css">
-    <link rel="stylesheet" href="./CSS/search.css">
-
+    <link rel="stylesheet" href="./CSS/account.css">
 </head>
 
 <body>
@@ -48,8 +47,10 @@
                 <img src="./images/arrow.svg" alt="arrow" id="arrow">
                 <img src="./images/account.svg" alt="account" id="account-head">
             </button>
-            <ul id="account_option"></ul></ul>
+            <ul id="account_option"></ul>
+            </ul>
         </div>
+
         <div class="hamburger-menu" id="hamburger-menu">
             <button id="hamburger-btn">
                 <span></span>
@@ -83,46 +84,56 @@
 
     <main>
         <div class="container">
-            <div class="search">
-                <div class="searchbar">
-                    <input type="text" name="search-content" id="search-content" placeholder="請輸入搜尋內容">
-                    <button class="search-btn" id="search-btn">搜尋</button>
-                </div>
-                <script>
-                    function performsearch() {
-                        const query = document.getElementById('search-content').value;
-                        if (query.trim()) {
-                            window.location.href = `search.html?type=song&query=${encodeURIComponent(query)}`;
-                        }
-                    }
-                    // 監聽按鈕點擊事件
-                    document.getElementById('search-btn').addEventListener('click', function () {
-                        performsearch();
-                    });
-                    document.getElementById('search-content').addEventListener('keydown', function (event) {
-                        if (event.key === 'Enter') {
-                            performsearch();
-                        }
-                    });
-                </script>
+            <div id="messagebox"></div>
+            <div id="login">
+                <h4>登入會員</h4>
+                <input id="email" type="email" placeholder="電子郵件">
+                <input id="password" type="password" placeholder="密碼">
+                <p>忘記密碼?</p>
+                <button id="loginButton">登錄</button>
             </div>
-
-            <!-- 排序選項 -->
-            <div class="result-header" id="result-header">
-                <div class="sort-box">
-                    <label for="sort-order">排序：</label>
-                    <select id="sort-order">
-                        <option value="popularity">依熱門程度</option>
-                        <option value="newest">從新到舊</option>
-                        <option value="oldest">從舊到新</option>
-                    </select>
-                </div>
-                <div class="buttonarea">
-                    <button id="title-btn"></button>
-                    <button id="artist-btn"></button>
-                </div>
+            <div id="register">
+                <h4>註冊會員</h4>
+                <input id="email" type="email" placeholder="電子郵件">
+                <input id="username" type="text" placeholder="使用者名稱">
+                <input id="password" type="password" placeholder="密碼">
+                <button id="registerButton">註冊</button>
             </div>
-            <div id="search-results"></div>
+            <div class="buttonarea">
+                <button id="login-btn">登入</button>
+                <button id="register-btn">註冊</button>
+            </div>
+            <script>
+                const urlParams = new URLSearchParams(window.location.search);
+                const Type = urlParams.get('type'); // "login" 或 "register"
+                console.log(Type);
+                if (Type === "login") {
+                    document.getElementById('login-btn').classList.add('active');
+                    document.getElementById('login').classList.add('active');
+                    document.getElementById('register-btn').classList.remove('active');
+                    document.getElementById('register').classList.remove('active');
+                }
+                if (Type === "register") {
+                    document.getElementById('login-btn').classList.remove('active');
+                    document.getElementById('login').classList.remove('active');
+                    document.getElementById('register-btn').classList.add('active');
+                    document.getElementById('register').classList.add('active');
+                };
+                const login_btn = document.getElementById('login-btn');
+                const rigister_btn = document.getElementById('register-btn');
+                login_btn.addEventListener('click', function () {
+                    document.getElementById('login-btn').classList.add('active');
+                    document.getElementById('login').classList.add('active');
+                    document.getElementById('register-btn').classList.remove('active');
+                    document.getElementById('register').classList.remove('active');
+                });
+                rigister_btn.addEventListener('click', function () {
+                    document.getElementById('login-btn').classList.remove('active');
+                    document.getElementById('login').classList.remove('active');
+                    document.getElementById('register-btn').classList.add('active');
+                    document.getElementById('register').classList.add('active');
+                });
+            </script>
         </div>
     </main>
     <footer>
@@ -134,10 +145,25 @@
         </div>
 
     </footer>
-    <script src="./js/search.js"></script>
     <script src="./js/to_top.js"></script>
     <script type="module">
         import { auth, firestore } from './js/firebase-init.js';
+    </script>
+    <script type="module">
+        import { registerUser, loginUser, logoutUser } from './js/auth.js';
+
+        document.getElementById('registerButton').addEventListener('click', () => {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const username = document.getElementById('username').value;
+            registerUser(email, password, username);
+        });
+
+        document.getElementById('loginButton').addEventListener('click', () => {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            loginUser(email, password);
+        });
     </script>
 </body>
 

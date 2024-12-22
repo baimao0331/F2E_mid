@@ -37,6 +37,13 @@
                 </a>
             </ul>
         </nav>
+        <div class="account">
+            <button id="account-btn">
+                <img src="./images/arrow.svg" alt="arrow" id="arrow">
+                <img src="./images/account.svg" alt="account" id="account-head">
+            </button>
+            <ul id="account_option"></ul></ul>
+        </div>
         <div class="hamburger-menu" id="hamburger-menu">
             <button id="hamburger-btn">
                 <span></span>
@@ -70,6 +77,8 @@
 
     <main>
         <div class="container">
+            <script src="https://www.youtube.com/iframe_api"></script>
+            <script src="./js/lyrics_insert.js"></script>
             <div class="song-info-box">
                 <div class="song-img-box"><img id="song-img" alt="歌曲封面" /></div>
                 <div class="song-info">
@@ -84,18 +93,106 @@
                         <h3 id="release-date"></h3>
                     </div>
                 </div>
+                <div id="heart"><span class="hover-text">加入喜歡</span></div>
+                <script type="module">
+                    import { auth, firestore } from './js/firebase-init.js';
+                    import { doc, getDoc, updateDoc, arrayUnion, arrayRemove } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js';
+                    import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js';
+            
+                    // 提取 URL 中的查詢參數
+                    function getQueryParam(param) {
+                        const urlParams = new URLSearchParams(window.location.search);
+                        return urlParams.get(param);
+                    }
+            
+                    // 獲取歌曲 ID
+                    const songId = getQueryParam('songId');
+                    if (!songId) {
+                        alert("未找到歌曲 ID！");
+                        throw new Error("歌曲 ID 缺失！");
+                    }
+                    console.log("歌曲 ID:", songId);
+            
+                    // 綁定按鈕
+                    const likeButton = document.getElementById('heart');
+                    const hoverText = likeButton.querySelector('.hover-text');
+            
+                    let userId = null; // 用來存儲當前登入用戶的 ID
+            
+                    // 更新按鈕狀態
+                    async function updateButtonState() {
+                        if (!userId) return;
+            
+                        const userDocRef = doc(firestore, 'users', userId);
+                        const userDoc = await getDoc(userDocRef);
+            
+                        if (userDoc.exists()) {
+                            const userData = userDoc.data();
+                            const likedSongs = userData.liked || [];
+                            if(likedSongs.includes(songId)){
+                                likeButton.classList.add('liked');
+                                hoverText.textContent = "移出喜歡";
+                            }else{
+                                likeButton.classList.remove('liked');
+                                hoverText.textContent = "加入喜歡";
+                            }
+                        }
+                    }
+            
+                    // 按鈕點擊事件：加入或移出喜歡
+                    async function toggleLikeStatus() {
+                        if (!userId) {
+                            alert("請先登入！");
+                            return;
+                        }
+            
+                        const userDocRef = doc(firestore, 'users', userId);
+                        const userDoc = await getDoc(userDocRef);
+            
+                        if (userDoc.exists()) {
+                            const userData = userDoc.data();
+                            const likedSongs = userData.liked || [];
+            
+                            if (likedSongs.includes(songId)) {
+                                // 如果已經喜歡，則移出
+                                await updateDoc(userDocRef, {
+                                    liked: arrayRemove(songId),
+                                });
+                            } else {
+                                // 如果尚未喜歡，則加入
+                                await updateDoc(userDocRef, {
+                                    liked: arrayUnion(songId),
+                                });
+                            }
+            
+                            // 更新按鈕狀態
+                            updateButtonState();
+                        } else {
+                            console.error("用戶資料不存在！");
+                        }
+                    }
+            
+                    // 監聽用戶登入狀態
+                    onAuthStateChanged(auth, (user) => {
+                        if (user) {
+                            userId = user.uid; // 獲取用戶 ID
+                            updateButtonState(); // 更新按鈕狀態
+                        } else {
+                            userId = null;
+                            hoverText.textContent = 加入喜歡;
+                        }
+                    });
+            
+                    // 綁定按鈕事件
+                    likeButton.addEventListener('click', toggleLikeStatus);
+                </script>
             </div>
             <div id="main">
                 <div class="box-left">
                     <div class="iframe_player">
                         <div id="video-container"></div>
                     </div>
-                    <script>
-                        // 通知 API 載入完成
-                        function onYouTubeIframeAPIReady() {
-                            console.log('YouTube IFrame API 已載入完成');
-                        }
-                    </script>
+
                 </div>
                 <div class="box-right">
                     <div class="scroll-box">
@@ -124,10 +221,10 @@
         </div>
 
     </footer>
-    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="./js/to_top.js"></script>
-    <script src="./js/lyrics_insert.js"></script>
     <script src="./js/title_scroll.js"></script>
+    <script type="module">
+        import { auth, firestore } from './js/firebase-init.js';
     </script>
 </body>
 

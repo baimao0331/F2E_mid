@@ -18,7 +18,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./CSS/common.css">
     <link rel="stylesheet" href="./CSS/index.css">
-
 </head>
 
 <body>
@@ -43,6 +42,13 @@
                 </a>
             </ul>
         </nav>
+        <div class="account">
+            <button id="account-btn">
+                <img src="./images/arrow.svg" alt="arrow" id="arrow">
+                <img src="./images/account.svg" alt="account" id="account-head">
+            </button>
+            <ul id="account_option"></ul></ul>
+        </div>
         <div class="hamburger-menu" id="hamburger-menu">
             <button id="hamburger-btn">
                 <span></span>
@@ -144,6 +150,9 @@
     <script src="./js/ranking.js"></script>
     <script src="./js/recom_insert.js"></script>
     <script src="./js/to_top.js"></script>
+    <script type="module">
+        import { auth, firestore } from './js/firebase-init.js';
+    </script>
 </body>
 
 </html>

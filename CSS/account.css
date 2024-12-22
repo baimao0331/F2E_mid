@@ -1,0 +1,95 @@
+.container{
+    padding: 5vh 0;
+}
+#messagebox{
+    width: 50%;
+    text-align: center;
+    color: var(--white);
+    height: 0;
+    line-height: 4rem;
+    margin-bottom: 1rem;
+    border-radius: var(--border-rad);
+}
+#messagebox.error{
+    height: 4rem;
+    background-color: rgb(207, 44, 44);
+}
+#messagebox.correct{
+    height: 4rem;
+    background-color: rgb(44, 207, 79);
+}
+.buttonarea{
+    position: relative;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+.buttonarea button{
+    cursor: pointer;
+    background-color: var(--light-gray);
+    border-radius: var(--border-rad);
+    border: 0;
+    width: 50%;
+    transition: 0.5s;
+    height: 5vh;
+    overflow: hidden;
+}
+.buttonarea button.active{
+    padding: 0;
+    width: 0;
+    font-size: 0;
+    background-color: var(--blue);
+}
+
+#login{
+    position: relative;
+    display: none;
+    width: 50%;
+    height: 60vh;
+    margin-bottom: 5vh;
+    padding:  1rem 5rem;
+    background-color: var(--light-gray);
+    border-radius: var(--border-rad);
+}
+#loginButton, #registerButton{
+    position: absolute;
+    align-self: center;
+    width: calc(100% - 10rem);
+    bottom: 5vh;
+}
+#register{
+    position: relative;
+    display: none;
+    width: 50%;
+    height: 60vh;
+    margin-bottom: 5vh;
+    padding:  1rem 5rem;
+    background-color: var(--light-gray);
+    border-radius: var(--border-rad);
+}
+input{
+    height: 3rem;
+    border: none;
+    margin: 1rem 0;
+    padding-left: 3rem;
+    border-radius: var(--border-rad);
+}
+#register input{
+    margin: 0.5rem 0;
+}
+
+#login.active{
+    display: flex;
+    flex-direction: column;
+}
+#register.active{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    background-color: var(--blue);
+    border: 0;
+    height: 5vh;
+    border-radius: var(--border-rad);
+    cursor: pointer;
+}

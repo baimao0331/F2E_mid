@@ -30,7 +30,7 @@ function displaySongs_recom(data) {
                 </a>
                 <div class="song-info">
                     <a href="lyric.html?songId=${song.id}" class="song-name">${song.title}</a>
-                    <div class="song-artist"><p>${song.artist}</p></div>
+                    <a href="search.html?type=song&query=${song.artist}" class="song-artist"><p>${song.artist}</p></a>
                 </div>
             `;
             ul.appendChild(li);

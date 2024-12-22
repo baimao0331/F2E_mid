@@ -98,6 +98,7 @@
 }
 
 .recommend-box button {
+    cursor: pointer;
     background-color: var(--blue);
     border: none;
     height: 10vh;
@@ -113,12 +114,13 @@
 }
 
 .song-list {
-    width: 80%;
-    height: auto;
+    width: 85%;
     overflow-x: scroll;
+    overflow-y: visible;
     padding: 0;
     display: flex;
     flex-direction: row;
+    padding: 1rem 0.5rem;
 }
 
 /* 滾動條的整體 */
@@ -129,11 +131,12 @@
     /* 水平滾動條高度 */
 }
 
-.page {
+ul.page {
     position: relative;
     display: flex;
     padding: 0;
     min-width: 100%;
+    height: 110%;
 }
 
 .recommend .card {
@@ -145,10 +148,9 @@
     margin: 0.25vh;
     border-radius: calc(var(--border-rad)/2);
     background-color: var(--light-gray);
-    height: clamp(200px, 20vh, 30vh);
     min-width: calc(20% - 0.5vh);
+    aspect-ratio: 10/16;
     padding: 0.5vh;
-    overflow: hidden;
     padding-bottom: 1vh;
     transition: 0.5s;
 }
@@ -156,8 +158,8 @@
 .recommend .song-img {
     position: relative;
     top: 0;
-    height: clamp(70px, 10vh, 130px);
     width: 100%;
+    aspect-ratio: 1/1;
 }
 
 .recommend img {
@@ -215,9 +217,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
-button {
-    cursor: pointer;
+.recommend .card:hover{
+    bottom: 1vh;
+    scale: 1.1;
+    box-shadow: 0 1vh 1rem var(--dark-gray);
+    z-index: 2;
 }
 
 /*---------------------推薦區域-------------------------*/
@@ -257,14 +261,20 @@ button {
 
 .rankbox {
     position: relative;
-    margin: 0.25vh 0;
+    margin: 1vh 0;
     background-color: var(--light-gray);
     display: flex;
     align-items: center;
+    justify-self: center;
     flex-direction: row;
     width: 100%;
     height: 15vh;
     transition: 0.5s;
+    border-radius: var(--border-rad);
+}
+
+.rankbox:hover{
+    width: 110%;
 }
 
 #rank-list-header {
@@ -274,6 +284,7 @@ button {
 }
 
 #rank-list-header:hover {
+    width: 100%;
     box-shadow: 0px 0 0 var(--blue);
 }
 
@@ -287,10 +298,13 @@ button {
     z-index: 1;
 }
 
-.rankbox img.song-img {
-    border-radius: calc(var(--border-rad)/2);
+.rankbox a.song-img{
     position: relative;
     left: 4vw;
+}
+
+.rankbox img.song-img {
+    border-radius: calc(var(--border-rad)/2);
     top: 0;
     height: clamp(60px, 6vw, 7vw);
     width: clamp(60px, 6vw, 7vw);
@@ -298,13 +312,9 @@ button {
     transition: 0.5s;
 }
 
-.rankbox:hover img.song-img {
-    scale: 1.1;
-}
-
 .rankbox .text-info {
     position: absolute;
-    left: 6vw;
+    left: 11vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -314,12 +324,11 @@ button {
 
 .rankbox .song-name {
     position: relative;
-    left: 5vw;
     transition: 0.5s;
     text-decoration: none;
     color: black;
     font-weight: 500;
-    width: 10rem;
+    width: 15rem;
     font-size: 1rem;
     white-space: nowrap;
     overflow: hidden;
@@ -333,9 +342,10 @@ button {
 }
 
 .rankbox .song-artist {
+    text-decoration: none;
     position: relative;
-    left: clamp(10px, 6vw, 100%);
-    width: 10rem;
+    left: 1rem;
+    width: 12rem;
     margin: 0;
     padding: 0;
     font-weight: 400;
@@ -349,22 +359,20 @@ button {
 }
 
 #rank-list-header .song-name:hover {
+    text-decoration: none;
     color: black;
 }
 
 .rankbox .view-num {
     position: relative;
+    left: 10%;
     display: flex;
     align-items: center;
-    left: 40%;
     width: 6rem;
     height: 2rem;
     font-size: 0.8rem;
     font-weight: 400;
     white-space: nowrap;
-}
-.rankbox .view-num .num {
-    line-height: 1rem;
 }
 
 #rank-list-header .song-artist {
@@ -374,8 +382,8 @@ button {
 }
 
 #view-num-header {
+    left: 15%;
     position: relative;
-    left: 40%;
     white-space: nowrap;
 }
 
@@ -386,8 +394,8 @@ button {
 }
 
 .rankbox:hover .ranking-number {
-    font-weight: 600;
-    scale: 1.1;
+    left: 1.5rem;
+    scale: 2;
 }
 
 .read-more {
@@ -400,8 +408,7 @@ button {
     color: var(--white);
     text-decoration: none;
     font-weight: bold;
-    border-bottom-left-radius: var(--border-rad);
-    border-bottom-right-radius: var(--border-rad);
+    border-radius: var(--border-rad);
     border: none;
     transition: 0.5s;
     font-weight: bold;
@@ -413,6 +420,7 @@ button {
 
 /*---------------------排名區域-------------------------*/
 /*-----------------------------------------------主頁內容結束--------------------------------------------------------*/
+/*---------------------RWD-----------------------------*/
 
 @media screen and (max-width:1200px) {
     .recommend .card .song-name {
@@ -463,6 +471,7 @@ button {
         width: 10vh;
     }
     .rankbox .song-name{
+        width: 20rem;
         left: 0;
     }
 
@@ -568,6 +577,7 @@ button {
     }
 
     .rankbox .song-name {
+        width: 15rem;
         left: 0;
     }
 
@@ -602,5 +612,7 @@ button {
     .recommend .card{
         height: 150px;
     }
-
+    .rankbox .song-name {
+        width: 40vw;
+    }
 }
