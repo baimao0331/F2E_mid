@@ -33,10 +33,10 @@ fetch('songs.json')
                 lyricLine.id = `lyric-${i}`;
                 lyricLine.dataset.time = lyricTime; // 將時間戳保存到 data 屬性
                 if (i === 0) {
-                    lyricLine.id = 'first-line';
+                    lyricLine.classList.add('first-line');
                 }
                 if (i === japaneseLyrics.length - 1) {
-                    lyricLine.id = 'last-line';
+                    lyricLine.classList.add('last-line');
                 }
                 const rubyParsedLine = japaneseLine.replace(/{(.*?)\|(.*?)}/g, '<ruby>$1<rt>$2</rt></ruby>');
 
