@@ -218,7 +218,9 @@ h3 {
 
 .lyric-line:hover {
     background-color: #d9e0ef;
-    max-height: 50vh;
+}
+.highlight {
+    background-color: #d9e0ef;
 }
 
 .lyric-line ruby{
