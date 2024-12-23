@@ -1,7 +1,6 @@
 // 解析 URL 參數以獲取歌曲 ID
 const urlParams = new URLSearchParams(window.location.search);
 const songId = parseInt(urlParams.get('songId'));
-let song; // 將 song 定義為全域變數
 let player;
 if (songId == 92) {
     window.location.href = 'storm.html';
@@ -11,7 +10,7 @@ if (songId == 92) {
 fetch('songs.json')
     .then(response => response.json())
     .then(data => {
-        song = data.find(s => s.id === songId);
+        const song = data.find(s => s.id === songId);
         if (song) {
             document.getElementById('release-date').textContent = song.release;
             document.getElementById('album').textContent = song.album;
@@ -22,24 +21,20 @@ fetch('songs.json')
             const lyricContainer = document.getElementById('lyric-container');
             const japaneseLyrics = song.lyrics.japanese;
             const chineseLyrics = song.lyrics.chinese;
-            if (song.lyrics.time || song.lyrics.time.length != 0) {
-                const lyricTimes = song.lyrics.time; // 獲取歌詞時間戳
-            }
+            const lyricTimes = song.lyrics.time; // 獲取歌詞時間戳
+
             lyricContainer.innerHTML = '';
 
             for (let i = 0; i < japaneseLyrics.length; i++) {
                 const japaneseLine = japaneseLyrics[i];
                 const chineseLine = chineseLyrics[i];
-                if (lyricTimes) {
-                    const lyricTime = lyricTimes[i]; // 獲取當前行的時間戳
-                }
+                const lyricTime = song.lyrics.time[i]; // 獲取當前行的時間戳
+
                 const lyricLine = document.createElement('div');
                 lyricLine.classList.add('lyric-line');
                 lyricLine.id = `lyric-${i}`;
-                if (song.lyrics.time || song.lyrics.time.length != 0) {
-                    lyricLine.dataset.time = lyricTime; // 將單一的時間戳分配到 data-time
-                }
-                
+                lyricLine.dataset.time = lyricTime; // 將單一的時間戳分配到 data-time
+
                 if (i === 0) {
                     lyricLine.classList.add('first-line');
                 }
@@ -137,9 +132,6 @@ function onPlayerStateChange(event) {
 }
 // 更新歌詞滾動同步
 function updateLyrics() {
-    if (!song.lyrics.time || song.lyrics.time.length === 0) {
-        return; // 如果 time 為 null 或空，直接跳過
-    }
     console.log("執行歌詞同步");
     const currentTime = Math.floor(player.getCurrentTime()); // 獲取當前播放時間
     const lyricLines = document.querySelectorAll('.lyric-line');
