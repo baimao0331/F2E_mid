@@ -4,7 +4,6 @@ const songId = parseInt(urlParams.get('songId'));
 let player;
 if (songId == 92) {
     window.location.href = 'storm.html';
-    return;
 }
 
 // 根據 ID 載入歌曲資料
