@@ -4,6 +4,7 @@ const songId = parseInt(urlParams.get('songId'));
 let sync = false;
 let player;
 let song;
+const currentLyrics = document.getElementById('dynamic-lyric-box'); // 歌詞顯示區塊
 if (songId == 92) {
     window.location.href = 'storm.html';
 }
@@ -55,6 +56,9 @@ fetch('songs.json')
                 `;
                 lyricContainer.appendChild(lyricLine);
             }
+            if(!sync){
+                currentLyrics.innerHTML = "這歌的歌詞尚未同步";
+            }
             console.log("使用 IFrame API 創建 YouTube 播放器");
             // 使用 IFrame API 創建 YouTube 播放器
             player = new YT.Player('video-container', {
@@ -68,11 +72,12 @@ fetch('songs.json')
             displayRelatedSongs(song.artist, data);
         } else {
             console.error('找不到歌曲');
-            lyricContainer.innerHTML = '<p>找不到該歌曲</p>';
+            document.getElementById('song-title').textContent ='找不到該歌曲';
         }
     })
     .catch(error => {
         console.error('無法載入 JSON:', error)
+        location.reload();
     });
 
 // 顯示同一位藝術家的隨機五首歌曲
@@ -122,6 +127,7 @@ function shuffleArray(array) {
 function onPlayerReady(event) {
     // 可以在這裡控制播放器，比如自動播放
     // event.target.playVideo();
+    updateLyrics();
     console.log('YouTube IFrame API 已載入完成');
     if (sync) {
         setInterval(updateLyrics, 500); // 每 500ms 更新一次歌詞
@@ -148,7 +154,6 @@ function updateLyrics() {
     const currentTime = Math.floor(player.getCurrentTime()); // 獲取當前播放時間
     const lyricLines = document.querySelectorAll('.lyric-line');
     const scrollBox = document.getElementById('scroll-box'); // 獲取右側的歌詞滾動區塊
-    const currentLyrics = document.getElementById('dynamic-lyric-box'); // 新的歌詞顯示區塊
     console.log(currentTime);
     // 找到對應的歌詞行
     currentIndex = Array.from(lyricLines).findIndex((line, i) => {
@@ -186,12 +191,10 @@ function updateLyrics() {
                 // 更新新的歌詞區塊
                 const japaneseText = song.lyrics.japanese[currentIndex] || '';
                 const chineseText = song.lyrics.chinese[currentIndex] || '';
-                currentLyrics.innerHTML = `
+                currentLyricsBox.innerHTML = `
                     <p>${japaneseText}</p>
                     <p>${chineseText}</p>
                 `;
-            }else{
-                currentLyricsBox.innerHTML = "這歌的歌詞尚未同步";
             }
         }
     }
