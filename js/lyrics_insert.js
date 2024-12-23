@@ -127,15 +127,16 @@ function onPlayerReady(event) {
     }
 }
 
-let currentIndex = -1; // 高亮索引初始化為 -1
+let playing = false;
 
 function onPlayerStateChange(event) {
     const lyricLines = document.querySelectorAll('.lyric-line'); // 在函數內重新選擇元素
     if (event.data === YT.PlayerState.PAUSED) {
-        currentIndex = -1; // 高亮索引初始化為 -1
+        playing = false;
         lyricLines.forEach(line => line.classList.remove('highlight')); // 移除所有高亮
     } else if (event.data === YT.PlayerState.PLAYING) {
         // 繼續執行歌詞同步
+        playing = true;
         updateLyrics();
     }
 }
@@ -156,7 +157,7 @@ function updateLyrics() {
 
     console.log("當前高亮索引:", currentIndex);
     // 如果找到對應的歌詞行，滾動並高亮
-    if (currentIndex !== -1) {
+    if (currentIndex !== -1 && playing === true) {
         lyricLines.forEach((line, index) => {
             // 高亮當前歌詞行，移除其他行的高亮
             if (index === currentIndex) {
