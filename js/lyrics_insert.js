@@ -71,7 +71,6 @@ fetch('songs.json')
         }
     })
     .catch(error => {
-        location.reload();
         console.error('無法載入 JSON:', error)
     });
 
