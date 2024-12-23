@@ -1,6 +1,7 @@
 // 解析 URL 參數以獲取歌曲 ID
 const urlParams = new URLSearchParams(window.location.search);
 const songId = parseInt(urlParams.get('songId'));
+let song; // 將 song 定義為全域變數
 let player;
 if (songId == 92) {
     window.location.href = 'storm.html';
@@ -10,7 +11,7 @@ if (songId == 92) {
 fetch('songs.json')
     .then(response => response.json())
     .then(data => {
-        const song = data.find(s => s.id === songId);
+        song = data.find(s => s.id === songId);
         if (song) {
             document.getElementById('release-date').textContent = song.release;
             document.getElementById('album').textContent = song.album;
