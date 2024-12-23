@@ -1,6 +1,7 @@
 // 解析 URL 參數以獲取歌曲 ID
 const urlParams = new URLSearchParams(window.location.search);
 const songId = parseInt(urlParams.get('songId'));
+let sync = false;
 let player;
 if (songId == 92) {
     window.location.href = 'storm.html';
@@ -28,13 +29,17 @@ fetch('songs.json')
             for (let i = 0; i < japaneseLyrics.length; i++) {
                 const japaneseLine = japaneseLyrics[i];
                 const chineseLine = chineseLyrics[i];
-                const lyricTime = song.lyrics.time[i]; // 獲取當前行的時間戳
+                let lyricTime;
 
                 const lyricLine = document.createElement('div');
                 lyricLine.classList.add('lyric-line');
                 lyricLine.id = `lyric-${i}`;
-                lyricLine.dataset.time = lyricTime; // 將單一的時間戳分配到 data-time
-
+                if(lyricTimes != null){
+                    sync = true;
+                    lyricTime = song.lyrics.time[i]; // 獲取當前行的時間戳
+                    lyricLine.dataset.time = lyricTime; // 將單一的時間戳分配到 data-time
+                }
+            
                 if (i === 0) {
                     lyricLine.classList.add('first-line');
                 }
@@ -117,20 +122,24 @@ function onPlayerReady(event) {
     // 可以在這裡控制播放器，比如自動播放
     // event.target.playVideo();
     console.log('YouTube IFrame API 已載入完成');
-    setInterval(updateLyrics, 500); // 每 500ms 更新一次歌詞
+    if(sync){
+        setInterval(updateLyrics, 500); // 每 500ms 更新一次歌詞
+    }
 }
+
+let currentIndex = -1; // 高亮索引初始化為 -1
 
 function onPlayerStateChange(event) {
     const lyricLines = document.querySelectorAll('.lyric-line'); // 在函數內重新選擇元素
     if (event.data === YT.PlayerState.PAUSED) {
-        console.log("影片暫停，高亮索引設為 -1");
+        let currentIndex = -1; // 高亮索引初始化為 -1
         lyricLines.forEach(line => line.classList.remove('highlight')); // 移除所有高亮
     } else if (event.data === YT.PlayerState.PLAYING) {
-        console.log("影片繼續播放，同步歌詞");
         // 繼續執行歌詞同步
         updateLyrics();
     }
 }
+
 // 更新歌詞滾動同步
 function updateLyrics() {
     console.log("執行歌詞同步");
@@ -139,14 +148,13 @@ function updateLyrics() {
     const scrollBox = document.getElementById('scroll-box'); // 獲取右側的歌詞滾動區塊
     console.log(currentTime);
     // 找到對應的歌詞行
-    let currentIndex = Array.from(lyricLines).findIndex((line, i) => {
+    currentIndex = Array.from(lyricLines).findIndex((line, i) => {
         const time = parseFloat(line.dataset.time);
         const nextTime = parseFloat(lyricLines[i + 1]?.dataset.time || Infinity); // 使用 i 找到下一行時間
         return currentTime >= time && currentTime < nextTime;
     });
 
     console.log("當前高亮索引:", currentIndex);
-
     // 如果找到對應的歌詞行，滾動並高亮
     if (currentIndex !== -1) {
         lyricLines.forEach((line, index) => {
@@ -173,4 +181,8 @@ function updateLyrics() {
             });
         }
     }
+}
+
+function checkPlayerState(){
+
 }
