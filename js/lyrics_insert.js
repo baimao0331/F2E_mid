@@ -132,7 +132,7 @@ let currentIndex = -1; // 高亮索引初始化為 -1
 function onPlayerStateChange(event) {
     const lyricLines = document.querySelectorAll('.lyric-line'); // 在函數內重新選擇元素
     if (event.data === YT.PlayerState.PAUSED) {
-        let currentIndex = -1; // 高亮索引初始化為 -1
+        currentIndex = -1; // 高亮索引初始化為 -1
         lyricLines.forEach(line => line.classList.remove('highlight')); // 移除所有高亮
     } else if (event.data === YT.PlayerState.PLAYING) {
         // 繼續執行歌詞同步
