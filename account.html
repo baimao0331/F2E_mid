@@ -86,17 +86,20 @@
         <div class="container">
             <div id="messagebox"></div>
             <div id="login">
-                <h4>登入會員</h4>
-                <input id="email" type="email" placeholder="電子郵件">
-                <input id="password" type="password" placeholder="密碼">
+                <label for="email">電子信箱</label>
+                <input id="email_login" type="email" placeholder="exmaple@mail.com">
+                <label for="password">密碼</label>
+                <input id="password_login" type="password" placeholder="密碼最少由六個字元組成">
                 <p>忘記密碼?</p>
                 <button id="loginButton">登錄</button>
             </div>
             <div id="register">
-                <h4>註冊會員</h4>
-                <input id="email" type="email" placeholder="電子郵件">
-                <input id="username" type="text" placeholder="使用者名稱">
-                <input id="password" type="password" placeholder="密碼">
+                <label for="email">電子信箱</label>
+                <input id="email_register" type="email" placeholder="exmaple@mail.com">
+                <label for="username">使用者名稱</label>
+                <input id="username_register" type="text" placeholder="不得超過十六個字元">
+                <label for="password">密碼</label>
+                <input id="password_register" type="password" placeholder="密碼">
                 <button id="registerButton">註冊</button>
             </div>
             <div class="buttonarea">
@@ -153,15 +156,15 @@
         import { registerUser, loginUser, logoutUser } from './js/auth.js';
 
         document.getElementById('registerButton').addEventListener('click', () => {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const username = document.getElementById('username').value;
+            const email = document.getElementById('email_register').value;
+            const password = document.getElementById('password_register').value;
+            const username = document.getElementById('username_register').value;
             registerUser(email, password, username);
         });
 
         document.getElementById('loginButton').addEventListener('click', () => {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+            const email = document.getElementById('email_login').value;
+            const password = document.getElementById('password_login').value;
             loginUser(email, password);
         });
     </script>

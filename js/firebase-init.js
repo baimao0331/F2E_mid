@@ -44,7 +44,7 @@ async function updateMenu(user) {
               const userData = userDoc.data();
               const userLi = document.createElement('li');
               userLi.className = 'dynamic-item';
-              userLi.textContent = `歡迎, ${userData.nickname || '用戶'}`;
+              userLi.textContent = `歡迎 ${userData.nickname || '用戶'}`;
               
               const likeLi = document.createElement('li');
               likeLi.className = 'dynamic-item';
