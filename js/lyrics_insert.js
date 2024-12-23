@@ -34,12 +34,12 @@ fetch('songs.json')
                 const lyricLine = document.createElement('div');
                 lyricLine.classList.add('lyric-line');
                 lyricLine.id = `lyric-${i}`;
-                if(lyricTimes != null){
+                if (lyricTimes != null) {
                     sync = true;
                     lyricTime = song.lyrics.time[i]; // 獲取當前行的時間戳
                     lyricLine.dataset.time = lyricTime; // 將單一的時間戳分配到 data-time
                 }
-            
+
                 if (i === 0) {
                     lyricLine.classList.add('first-line');
                 }
@@ -122,7 +122,7 @@ function onPlayerReady(event) {
     // 可以在這裡控制播放器，比如自動播放
     // event.target.playVideo();
     console.log('YouTube IFrame API 已載入完成');
-    if(sync){
+    if (sync) {
         setInterval(updateLyrics, 500); // 每 500ms 更新一次歌詞
     }
 }
@@ -147,6 +147,7 @@ function updateLyrics() {
     const currentTime = Math.floor(player.getCurrentTime()); // 獲取當前播放時間
     const lyricLines = document.querySelectorAll('.lyric-line');
     const scrollBox = document.getElementById('scroll-box'); // 獲取右側的歌詞滾動區塊
+    const currentLyrics = document.getElementById('dynamic-lyric-box'); // 新的歌詞顯示區塊
     console.log(currentTime);
     // 找到對應的歌詞行
     currentIndex = Array.from(lyricLines).findIndex((line, i) => {
@@ -180,10 +181,21 @@ function updateLyrics() {
                 top: currentLine.offsetTop - scrollBox.offsetHeight / 2, // 滾動到中心位置
                 behavior: 'smooth', // 平滑滾動
             });
+            if (sync) {
+                // 更新新的歌詞區塊
+                const japaneseText = song.lyrics.japanese[currentIndex] || '';
+                const chineseText = song.lyrics.chinese[currentIndex] || '';
+                currentLyricsBox.innerHTML = `
+                    <p>${japaneseText}</p>
+                    <p>${chineseText}</p>
+                `;
+            }else{
+                currentLyricsBox.innerHTML = "這歌的歌詞尚未同步";
+            }
         }
     }
 }
 
-function checkPlayerState(){
+function checkPlayerState() {
 
 }
