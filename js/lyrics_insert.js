@@ -191,7 +191,7 @@ function updateLyrics() {
                 // 更新新的歌詞區塊
                 const japaneseText = song.lyrics.japanese[currentIndex] || '';
                 const chineseText = song.lyrics.chinese[currentIndex] || '';
-                currentLyricsBox.innerHTML = `
+                currentLyrics.innerHTML = `
                     <p>${japaneseText}</p>
                     <p>${chineseText}</p>
                 `;
