@@ -191,8 +191,9 @@ function updateLyrics() {
                 // 更新新的歌詞區塊
                 const japaneseText = song.lyrics.japanese[currentIndex] || '';
                 const chineseText = song.lyrics.chinese[currentIndex] || '';
+                const rubyParsedLine = japaneseText.replace(/{(.*?)\|(.*?)}/g, '<ruby>$1<rt>$2</rt></ruby>');
                 currentLyrics.innerHTML = `
-                    <p>${japaneseText}</p>
+                    <p>${rubyParsedLine}</p>
                     <p>${chineseText}</p>
                 `;
             }
