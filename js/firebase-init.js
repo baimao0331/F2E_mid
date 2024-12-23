@@ -48,7 +48,7 @@ async function updateMenu(user) {
               
               const likeLi = document.createElement('li');
               likeLi.className = 'dynamic-item';
-              likeLi.innerHTML = `<a href="/liked.html">喜歡的歌曲</a>`;
+              likeLi.innerHTML = `<a href="liked.html">喜歡的歌曲</a>`;
 
               const logoutLi = document.createElement('li');
               logoutLi.className = 'dynamic-item';
