@@ -122,7 +122,7 @@ h3 {
     width: 90%;
     gap: 1vw;
     justify-content: center;
-    height: 45rem;
+    height: 40rem;
 }
 
 .box-left{
@@ -164,6 +164,12 @@ h3 {
     font-size: 1.5rem;
     text-align: center;
     padding-top: 2rem;
+}
+#dynamic-lyric-box p{
+    margin: 0.5rem 0;
+}
+#dynamic-lyric-box ruby{
+    margin: 0 0.5rem;
 }
 /*---------------------影片區域-------------------------*/
 /*---------------------歌詞區域-------------------------*/
@@ -324,9 +330,10 @@ aside {
     border-radius: calc(var(--border-rad)/2);
     background-color: var(--gray);
     margin: 1vh;
-    padding: 1vh 1vw 1vh;
+    padding: 1rem;
     transition: 0.5s;
-    height: 18vh;
+    height: 10rem;
+    width: 10rem;
 }
 
 
