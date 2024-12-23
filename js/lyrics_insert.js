@@ -12,10 +12,6 @@ fetch('songs.json')
     .then(data => {
         const song = data.find(s => s.id === songId);
         if (song) {
-            if (!song.lyrics.time || song.lyrics.time.length === 0) {
-                console.error("歌詞時間為 null，跳過同步");
-                return;
-            }
             document.getElementById('release-date').textContent = song.release;
             document.getElementById('album').textContent = song.album;
             document.getElementById('song-title').textContent = song.title;
@@ -25,18 +21,24 @@ fetch('songs.json')
             const lyricContainer = document.getElementById('lyric-container');
             const japaneseLyrics = song.lyrics.japanese;
             const chineseLyrics = song.lyrics.chinese;
-            const lyricTimes = song.lyrics.time; // 獲取歌詞時間戳
+            if (song.lyrics.time || song.lyrics.time.length != 0) {
+                const lyricTimes = song.lyrics.time; // 獲取歌詞時間戳
+            }
             lyricContainer.innerHTML = '';
 
             for (let i = 0; i < japaneseLyrics.length; i++) {
                 const japaneseLine = japaneseLyrics[i];
                 const chineseLine = chineseLyrics[i];
-                const lyricTime = song.lyrics.time[i]; // 獲取當前行的時間戳
+                if (song.lyrics.time || song.lyrics.time.length != 0) {
+                    const lyricTime = song.lyrics.time[i]; // 獲取當前行的時間戳
+                }
                 const lyricLine = document.createElement('div');
                 lyricLine.classList.add('lyric-line');
                 lyricLine.id = `lyric-${i}`;
-                lyricLine.dataset.time = lyricTime; // 將單一的時間戳分配到 data-time
-
+                if (song.lyrics.time || song.lyrics.time.length != 0) {
+                    lyricLine.dataset.time = lyricTime; // 將單一的時間戳分配到 data-time
+                }
+                
                 if (i === 0) {
                     lyricLine.classList.add('first-line');
                 }
