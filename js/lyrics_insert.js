@@ -30,8 +30,8 @@ fetch('songs.json')
             for (let i = 0; i < japaneseLyrics.length; i++) {
                 const japaneseLine = japaneseLyrics[i];
                 const chineseLine = chineseLyrics[i];
-                if (song.lyrics.time || song.lyrics.time.length != 0) {
-                    const lyricTime = song.lyrics.time[i]; // 獲取當前行的時間戳
+                if (lyricTimes) {
+                    const lyricTime = lyricTimes[i]; // 獲取當前行的時間戳
                 }
                 const lyricLine = document.createElement('div');
                 lyricLine.classList.add('lyric-line');
