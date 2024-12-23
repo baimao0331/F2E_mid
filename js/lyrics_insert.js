@@ -121,6 +121,7 @@ function onPlayerReady(event) {
 }
 
 function onPlayerStateChange(event) {
+    const lyricLines = document.querySelectorAll('.lyric-line'); // 在函數內重新選擇元素
     if (event.data === YT.PlayerState.PAUSED) {
         console.log("影片暫停，高亮索引設為 -1");
         lyricLines.forEach(line => line.classList.remove('highlight')); // 移除所有高亮
