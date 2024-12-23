@@ -12,6 +12,10 @@ fetch('songs.json')
     .then(data => {
         const song = data.find(s => s.id === songId);
         if (song) {
+            if (!song.lyrics.time || song.lyrics.time.length === 0) {
+                console.error("歌詞時間為 null，跳過同步");
+                return;
+            }
             document.getElementById('release-date').textContent = song.release;
             document.getElementById('album').textContent = song.album;
             document.getElementById('song-title').textContent = song.title;
@@ -120,11 +124,20 @@ function onPlayerReady(event) {
 }
 
 function onPlayerStateChange(event) {
-    // 可以處理播放器狀態變化
+    if (event.data === YT.PlayerState.PAUSED) {
+        console.log("影片暫停，高亮索引設為 -1");
+        lyricLines.forEach(line => line.classList.remove('highlight')); // 移除所有高亮
+    } else if (event.data === YT.PlayerState.PLAYING) {
+        console.log("影片繼續播放，同步歌詞");
+        // 繼續執行歌詞同步
+        updateLyrics();
+    }
 }
-
 // 更新歌詞滾動同步
 function updateLyrics() {
+    if (!song.lyrics.time || song.lyrics.time.length === 0) {
+        return; // 如果 time 為 null 或空，直接跳過
+    }
     console.log("執行歌詞同步");
     const currentTime = Math.floor(player.getCurrentTime()); // 獲取當前播放時間
     const lyricLines = document.querySelectorAll('.lyric-line');
