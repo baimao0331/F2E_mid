@@ -2,6 +2,7 @@
     padding: 5vh 0;
 }
 #messagebox{
+    position: relative;
     width: 50%;
     text-align: center;
     color: var(--white);
@@ -18,9 +19,9 @@
     height: 4rem;
     background-color: rgb(44, 207, 79);
 }
+
 .buttonarea{
     position: relative;
-    display: flex;
     width: 50%;
     justify-content: center;
 }
@@ -30,42 +31,42 @@
     border-radius: var(--border-rad);
     border: 0;
     width: 50%;
+    opacity: 1;
     transition: 0.5s;
     height: 5vh;
     overflow: hidden;
+    z-index: 2;
 }
 .buttonarea button.active{
     padding: 0;
-    width: 0;
+    opacity: 0;
     font-size: 0;
     background-color: var(--blue);
+    z-index: 1;
+}
+.accountbox{
+    position: relative;
+    width: 50%;
+    justify-self: center;
+    height: 100%;
+    background-color: var(--light-gray);
+    border-radius: var(--border-rad);
 }
 
+#inputarea{
+    padding: 5%;
+}
 #login{
-    position: relative;
-    display: none;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
     height: 60vh;
     margin-bottom: 5vh;
-    padding:  1rem 5rem;
-    background-color: var(--light-gray);
-    border-radius: var(--border-rad);
-}
-#loginButton, #registerButton{
-    position: absolute;
-    align-self: center;
-    width: calc(100% - 10rem);
-    bottom: 5vh;
 }
 #register{
-    position: relative;
-    display: none;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
     height: 60vh;
     margin-bottom: 5vh;
-    padding:  1rem 5rem;
-    background-color: var(--light-gray);
-    border-radius: var(--border-rad);
 }
 input{
     height: 3rem;
@@ -78,14 +79,17 @@ input{
     margin: 0.5rem 0;
 }
 
-#login.active{
-    display: flex;
-    flex-direction: column;
+#loginButton, #registerButton{
+    align-self: center;
+    display: none;
+    width: calc(100% - 10rem);
+    bottom: 5vh;
 }
-#register.active{
-    display: flex;
-    flex-direction: column;
+
+#loginButton.active, #registerButton.active{
+    display: unset;
 }
+
 button{
     background-color: var(--blue);
     border: 0;

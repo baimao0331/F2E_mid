@@ -15,6 +15,7 @@ html {
     --blue:#5a83dd;
     --blue-hover: #5475bd;
     --white:#ececec;
+    --orange: rgb(236, 158, 85);
     --border-rad:clamp(10px,30px,5vw);
     --min-width:320px;
 }
@@ -46,17 +47,18 @@ h1,h2,h3,h4,ol,ul{
 /*---------------------頁首&nav區域-------------------------*/
 header{
     width: clamp(10px, 1200px, 100vw);
+    margin-top: 3vh;
     padding: 0 1vw;
     display: flex;
+    align-items: center;
     position: relative;
 }
 header .logoimg{
     padding: 1vh 0;
-    margin-top: 3vh;
     position: relative;
     width: clamp(100px,15%,200px);
     transition: 0.3s ease;
-    left: 0%;
+    left: 1vw;
 }
 
 header .logoimg:hover{
@@ -94,7 +96,6 @@ header .logoimg:hover{
 
 nav{
     position: relative;
-    margin-top: 2.5vh;
     margin-left: 2vw;
     align-self: center;
     height: 7vh;
@@ -147,11 +148,10 @@ nav li:hover::after {
     width: 100%;
 }
 .account{
-    position: absolute;
+    position: relative;
+    left: calc(70% - 1vw);
     background-color:transparent;
-    height: 3.25rem;
-    margin-top: 3.25vh;
-    right: calc(2rem + clamp(10px,3rem,15vw));
+    height: 3.5rem;
     display: flex;
 }
 #account-btn{
@@ -214,16 +214,15 @@ nav li:hover::after {
 }
 
 #hamburger-menu{
-    position: absolute;
-    right: 1vw;
+    position: relative;
+    left: calc(70% - 1vw);
 }
 #hamburger-btn{
     padding: 0;
-    margin-top: 4vh;
     background-color: transparent;
     border: none;
+    height: 2rem;
     width: clamp(10px,3rem,15vw);
-    height: 5vh;
     position: relative;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -434,6 +433,12 @@ footer p{
     main{
         padding: 0 5vw;
     }
+    .account{
+        left: calc(70% - 5vw);
+    }
+    #hamburger-menu{
+        left: calc(70% - 5vw);
+    }
 }
 
 @media screen and (max-width:768px) {
@@ -446,5 +451,32 @@ footer p{
     }
     #hamberger-nav.active{
         width: 100%;
+    }
+    .account{
+        left: calc(70% - 5vw);
+    }
+    #hamburger-menu{
+        left: calc(70% - 5vw);
+    }
+}
+
+@media screen and (max-width:550px) {
+    .account{
+        display: none;
+    }
+    #hamburger-menu{
+        left: calc(75% - 5vw);
+    }
+}
+
+@media screen and (max-width:450px) {
+    #hamburger-menu{
+        left: calc(65% - 5vw);
+    }
+}
+
+@media screen and (max-width:384px) {
+    #hamburger-menu{
+        left: calc(60% - 5vw);
     }
 }

@@ -52,10 +52,14 @@
     border: none;
     background-color: var(--blue);
     font-weight: 600;
-    transition: 0.5s;
+    transition: 0.2s;
     color: white;
     size: 1rem;
     cursor: pointer;
+}
+
+.search button:active{
+    background-color: var(--orange);
 }
 
 /*---------------------搜尋區域-------------------------*/
@@ -111,6 +115,11 @@
 
 .recommend-box button:hover {
     height: 12vh;
+}
+
+.recommend-box button:active {
+    transition: 0.2s;
+    background-color: var(--orange);
 }
 
 .song-list {
@@ -190,7 +199,8 @@ ul.page {
 }
 
 .recommend .card a:hover {
-    color: var(--white);
+    color: var(--blue);
+    text-decoration:underline;
     font-weight: 700;
 }
 
@@ -402,7 +412,8 @@ ul.page {
     font-size: 1rem;
     line-height: 1rem;
     height: 5vh;
-    width: 100%;
+    width: 50%;
+    margin: 0 25%;
     background-color: var(--blue);
     padding: 0 2vh;
     color: var(--white);
@@ -412,11 +423,19 @@ ul.page {
     border: none;
     transition: 0.5s;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .read-more:hover {
-    border: 2px solid var(--white);
+    width: 60%;
+    margin: 0 20%;
 }
+
+.read-more:active {
+    transition: 0.2s;
+    background-color: var(--orange);
+}
+
 
 /*---------------------排名區域-------------------------*/
 /*-----------------------------------------------主頁內容結束--------------------------------------------------------*/
@@ -458,14 +477,11 @@ ul.page {
         margin: 4vh 0;
     }
 
-    .ranking .text-info {
-        flex-direction: column;
-        left: 25%;
-        height: 15vh;
-    }
+
     .rankbox{
         height: 12vh;
     }
+    
     .rankbox img.song-img{
         height: 10vh;
         width: 10vh;
@@ -480,7 +496,7 @@ ul.page {
     }
 
     .rankbox .view-num {
-        left: 50%;
+        left: 30%;
     }
 
     #rank-list-header .text-info {
@@ -489,12 +505,31 @@ ul.page {
     }
 
     #rank-list-header .song-name {
-        width: auto;
+        width: 15rem;
+        margin-right: 1vw;
+    }
+
+    #rank-list-header .song-artist{
+        width: 15rem;
         margin-right: 1vw;
     }
 
     #view-num-header {
-        left: 40%;
+        left: 35%;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    #rank-list-header{
+        display: none;
+    }
+    .rankbox .view-num {
+        position: relative;
+        left: 0;
+        z-index: 1;
+    }
+    .rankbox .view-num {
+        left: 35%;
     }
 }
 
@@ -509,6 +544,10 @@ ul.page {
 
     .recommend .card {
         width: 33%;
+    }
+
+    .recommend-box {
+        margin-top: 0;
     }
 
     /* 滾動條的整體 */
@@ -570,10 +609,12 @@ ul.page {
     .rankbox:hover img {
         scale: 1;
     }
-
-    .rankbox .text-info {
-        left: 18vh;
+    
+    .ranking .text-info {
+        flex-direction: column;
         display: flex;
+        left: 22%;
+        height: 15vh;
     }
 
     .rankbox .song-name {
@@ -586,16 +627,27 @@ ul.page {
     }
 
     .rankbox .view-num {
-        position: relative;
         left: 0;
-        z-index: 1;
     }
-    #rank-list-header{
-        display: none;
-    }
+
     #prev-btn,
     #next-btn {
         display: none;
+    }
+}
+@media screen and (max-width:684px) {
+    .ranking .text-info {
+        left: 30%;
+    }
+}
+
+@media screen and (max-width:484px) {
+    .rankbox .song-img{
+        max-width: 100px;
+        max-height: 100px;
+    }
+    .ranking .text-info {
+        left: 40%;
     }
 }
 
@@ -612,7 +664,14 @@ ul.page {
     .recommend .card{
         height: 150px;
     }
+    .rankbox .song-img{
+        max-width: 60px;
+        max-height: 60px;
+    }
     .rankbox .song-name {
         width: 40vw;
+    }
+    .ranking .text-info {
+        left: 30%;
     }
 }

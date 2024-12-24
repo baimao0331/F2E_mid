@@ -36,7 +36,12 @@
     font-size: 1.5rem;
 }
 
-#liked-list a{
+#liked-list p a{
+    color: var(--blue);
+    font-weight: 600;
+}
+
+#liked-list a.song-name{
     color: var(--blue);
     align-self: center;
     font-size: 1.5rem;
@@ -92,7 +97,6 @@ img.song-img {
     text-decoration: none;
     color: black;
     font-weight: 500;
-    width: 20rem;
     font-size: 1rem;
     white-space: nowrap;
     overflow: hidden;
@@ -120,4 +124,90 @@ img.song-img {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@media screen and (max-width:1100px) {
+    #liked-list li {
+        height: 18vh;
+    }
+
+    #liked-list li .text-info {
+        flex-direction: column;
+        left: 3rem;
+        width: auto;
+        height: 15vh;
+        align-items: unset;
+    }
+
+    #liked-list li{
+        height: 12vh;
+    }
+    #liked-list li img.song-img{
+        height: 10vh;
+        width: 10vh;
+    }
+    #liked-list li a.song-name{
+        width: 20rem;
+        left: 0;
+    }
+
+    #liked-list li .song-artist {
+        left: 0;
+    }
+
+}
+@media screen and (max-width:768px){
+    .liked {
+        width: 100vw;
+    }
+
+    #liked-list li {
+        height: 15vh;
+        width: 100%;
+        border-radius: calc(var(--border-rad)/2);
+    }
+
+    #liked-list li:hover {
+        scale: 1;
+        margin: 1vh;
+    }
+
+    #liked-list li .song-img {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        left: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        aspect-ratio: 1/1;
+    }
+
+    #liked-list li .song-img img {
+        left: 0;
+        height: 15vh;
+        width: 15vh;
+    }
+
+    #liked-list li:hover img {
+        scale: 1;
+    }
+
+    #liked-list li .text-info {
+        left: 1rem;
+        display: flex;
+    }
+
+    #liked-list li .song-name {
+        width: 15rem;
+        left: 0;
+    }
+
+    #liked-list li .song-artist {
+        left: 0;
+    }
+}
+@media screen and (max-width:384px) {
+    #liked-list li .song-name {
+        width: 40vw;
+    }
 }

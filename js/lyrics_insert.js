@@ -7,6 +7,9 @@ let song;
 const currentLyrics = document.getElementById('dynamic-lyric-box'); // 歌詞顯示區塊
 if (songId == 92) {
     window.location.href = 'storm.html';
+    setTimeout(() => {
+        return
+    }, 1);
 }
 
 // 根據 ID 載入歌曲資料
@@ -77,8 +80,7 @@ fetch('songs.json')
     })
     .catch(error => {
         console.error('無法載入 JSON:', error)
-        if(songId != 92){
-        location.reload();}
+        location.reload();
     });
 
 // 顯示同一位藝術家的隨機五首歌曲

@@ -208,13 +208,13 @@
 /*-----------------------------------------------主頁內容結束--------------------------------------------------------*/
 
 
-@media screen and (max-width:1100px) {
+@media screen and (max-width:1200px) {
     .rankbox {
         height: 18vh;
     }
 
     .rankbox .ranking-number {
-        display: none;
+        left: 3vw;
     }
 
     .recommend:hover {
@@ -228,16 +228,22 @@
     }
 
     .ranking .text-info {
-        flex-direction: column;
         left: 25%;
         height: 15vh;
+        align-items: center;
     }
     .rankbox{
         height: 12vh;
     }
-    .rankbox img.song-img{
+
+    .rankbox a.song-img{
+        left: 5vw;
         height: 10vh;
         width: 10vh;
+    }
+    .rankbox img.song-img{
+        height: 100%;
+        width: 100%;
     }
     .rankbox .song-name{
         width: 20rem;
@@ -249,7 +255,7 @@
     }
 
     .rankbox .view-num {
-        left: 50%;
+        left: 30%;
     }
 
     #rank-list-header .text-info {
@@ -266,6 +272,29 @@
         left: 40%;
     }
 }
+
+@media screen and (max-width:1024px) {
+    .rankbox{
+        height: 18vh;
+    }
+    .ranking .text-info {
+        flex-direction: column;
+        height: 15vh;
+        align-items: unset;
+    }
+    #rank-list-header{
+        display: none;
+    }
+    .rankbox .view-num {
+        position: relative;
+        left: 0;
+        z-index: 1;
+    }
+    .rankbox .view-num {
+        left: 0;
+    }
+}
+
 @media screen and (max-width:768px){
     .ranking {
         width: 100vw;
@@ -322,8 +351,51 @@
         z-index: 1;
     }
 }
+
+@media screen and (max-width:684px) {
+    .rankbox a.song-img{
+        left: 8vw;
+    }
+    .ranking .text-info {
+        left: 38%;
+    }
+}
+
+@media screen and (max-width:484px) {
+
+    .rankbox .song-img{
+        max-width: 100px;
+        max-height: 100px;
+    }
+    .ranking .text-info {
+        left: 45%;
+    }
+    .text-info .song-name{
+        width: 10rem;
+    }
+}
+
 @media screen and (max-width:384px) {
+    .search{
+        height: 150px;
+    }
+    .searchbar{
+        max-height: 40px;
+    }
+    .recommend{
+        height: 280px;
+    }
+    .recommend .card{
+        height: 150px;
+    }
+    .rankbox .song-img{
+        max-width: 60px;
+        max-height: 60px;
+    }
     .rankbox .song-name {
         width: 40vw;
+    }
+    .ranking .text-info {
+        left: 30%;
     }
 }
