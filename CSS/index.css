@@ -12,12 +12,6 @@
     transition: 0.5s;
 }
 
-.search:hover {
-    margin-bottom: 5vh;
-    scale: 1.1;
-    box-shadow: 0px 10px 0 var(--blue);
-}
-
 .searchbar {
     position: relative;
     display: flex;
@@ -75,11 +69,6 @@
     padding-bottom: 5vh;
     border-radius: var(--border-rad);
     transition: 0.5s;
-}
-
-.recommend:hover {
-    scale: 1.1;
-    box-shadow: 0px 10px 0 var(--blue);
 }
 
 .recommend .title {
@@ -200,7 +189,6 @@ ul.page {
 
 .recommend .card a:hover {
     color: var(--blue);
-    text-decoration:underline;
     font-weight: 700;
 }
 
@@ -248,10 +236,6 @@ ul.page {
     transition: 0.5s;
 }
 
-.ranking:hover {
-    margin: 12vh 0;
-    scale: 1.1;
-    box-shadow: 0px 10px 0 var(--blue);
 }
 
 .ranking .title {
