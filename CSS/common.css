@@ -15,7 +15,7 @@ html {
     --blue:#5a83dd;
     --blue-hover: #5475bd;
     --white:#ececec;
-    --orange: rgb(236, 158, 85);
+    --orange: rgb(214, 117, 71);
     --border-rad:clamp(10px,30px,5vw);
     --min-width:320px;
 }
@@ -120,7 +120,7 @@ nav ul{
 
 nav a{
     text-decoration: none;
-    color: var(--white);
+    color: white;
 }
 
 nav li{
@@ -138,14 +138,14 @@ nav li{
 }
 
 nav li::after {
-    content: ''; /* 生成伪元素 */
+    content: '';
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0; /* 初始宽度为0 */
-    height: 0.3rem; /* 下边框的高度 */
-    background-color: var(--blue); /* 下边框的颜色 */
-    transition: width 0.5s; /* 控制宽度的过渡效果 */
+    width: 0;
+    height: 0.3rem;
+    background-color: var(--blue);
+    transition: width 0.5s;
 }
 
 nav li:hover::after {
@@ -240,6 +240,7 @@ nav li:hover::after {
 }
 #hamburger-btn.active{
     z-index: 5;
+    position: fixed;
 }
 
 #hamburger-btn span{
@@ -247,7 +248,7 @@ nav li:hover::after {
     position: absolute;
     height: 0.3rem;
     width: 100%;
-    background: var(--light-gray);
+    background: white;
     opacity: 1;
     left: 0;
     -webkit-transform: rotate(0deg);
@@ -319,7 +320,7 @@ nav li:hover::after {
     height: 100vh;
     z-index: 2;
     background-color: var(--artist-text);
-    opacity: 80%;
+    opacity: 90%;
     transition: 0.5s;
     display: flex;
     flex-direction: column;
@@ -380,7 +381,7 @@ nav li:hover::after {
     color: var(--white);
 }
 
-#hamberger-nav.active #account-option{
+#hamberger-nav.active #hamberger-account-option{
     position: relative;
     top: 70%;
 }
@@ -503,7 +504,7 @@ footer p{
         padding: 0 5vw;
     }
     .account{
-        left: calc(70% - 5vw);
+        left: calc(70% - 8vw);
     }
     #hamburger-menu{
         left: calc(70% - 5vw);

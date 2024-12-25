@@ -332,7 +332,7 @@
     }
 
     .rankbox .text-info {
-        left: 18vh;
+        left: 22%;
         display: flex;
     }
 
@@ -397,5 +397,10 @@
     }
     .ranking .text-info {
         left: 30%;
+    }
+}
+@media screen and (max-width:384px){
+    .ranking .text-info {
+        left: 35%;
     }
 }

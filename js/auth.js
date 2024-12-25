@@ -139,11 +139,16 @@ export function resetpassword(email) {
             document.getElementById('messagebox').classList.remove("correct");
             document.getElementById('messagebox').classList.add("error");
             // 檢查電子郵件格式
-            if (!isValidEmail(email)) {
+            if(email.length === 0){
+                document.getElementById('messagebox').classList.remove("correct");
+                document.getElementById('messagebox').classList.add("error");
+                messageBox.innerText = "若忘記密碼，請先輸入電子郵件地址";
+                return; 
+            }else if (!isValidEmail(email)) {
                 document.getElementById('messagebox').classList.remove("correct");
                 document.getElementById('messagebox').classList.add("error");
                 messageBox.innerText = "請輸入有效的電子郵件地址";
-                return; // 停止註冊流程
+                return; 
             }
             // ..
         });

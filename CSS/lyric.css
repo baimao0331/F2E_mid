@@ -134,6 +134,7 @@ h3 {
 }
 
 .box-left{
+    position: relative;
     height: 35rem;
     width: 50%;
     display: flex;
@@ -142,6 +143,7 @@ h3 {
 }
 
 .box-right {
+    position: relative;
     border-radius: var(--border-rad);
     display: flex;
     width: 50%;
@@ -200,7 +202,7 @@ h3 {
 
 /* 滾動條軌道 */
 .box-right #scroll-box::-webkit-scrollbar-track {
-    background: var(--light-gray);
+    background: var(--dark-gray);
     border-radius: 10px;
 }
 
@@ -405,12 +407,12 @@ aside {
 
     aside {
         width: 100%;
-        margin: 2vh 0;
+        margin: 0;
+        margin-bottom: 5vh;
     }
 
     .card-container {
         display: flex;
-        overflow: hidden;
     }
 
     #song-img {
@@ -424,10 +426,16 @@ aside {
         flex-direction: column;
         height: 100vh;
     }
+    .box-right{
+        margin-top: 5vh;
+    }
     .box-left,.box-right{
         width: 100%;
     }
     .related-songs{
         margin-top: 30vh;
+    }
+    aside{
+        margin-top: 0;
     }
 }

@@ -17,7 +17,7 @@
 }
 #messagebox.correct{
     height: 4rem;
-    background-color: rgb(44, 207, 79);
+    background-color: rgb(38, 163, 65);
 }
 
 button{
@@ -69,6 +69,12 @@ button:active{
     background-color: var(--light-gray);
     border-radius: var(--border-rad);
     transition: 0.5s ease-in-out;
+}
+.accountbox h4{
+    position: absolute;
+    top: 3vh;
+    font-size: 1.5rem;
+    align-self: center;
 }
 
 #inputarea{
