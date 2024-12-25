@@ -12,12 +12,6 @@
     transition: 0.5s;
 }
 
-.search:hover {
-    margin-bottom: 5vh;
-    scale: 1.1;
-    box-shadow: 0px 10px 0 var(--blue);
-}
-
 .searchbar {
     position: relative;
     display: flex;
@@ -156,10 +150,7 @@
 }
 
 .search-item:hover {
-    margin-top: 2vh;
-    margin-bottom: 3vh;
-    scale: 1.1;
-    box-shadow: 0 0.5vh 0 var(--blue);
+    width: 110%;
 }
 
 .search-item .song-img {
@@ -277,6 +268,9 @@
     }
 
     .search-item {
+        width: 100vw;
+    }
+    .search-item:hover{
         width: 100vw;
     }
 

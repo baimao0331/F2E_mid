@@ -153,7 +153,7 @@ nav li:hover::after {
 }
 .account{
     position: relative;
-    left: calc(70% - 1vw);
+    left: calc(70% - 3vw);
     background-color:transparent;
     height: calc(100%);
     display: flex;
@@ -294,7 +294,6 @@ nav li:hover::after {
     width: 0%;
     left: 50%;
   }
-
 
 #hamburger-btn-close{
     position: absolute;
@@ -523,7 +522,7 @@ footer p{
         width: 100%;
     }
     .account{
-        left: calc(70% - 5vw);
+        left: calc(70% - 8vw);
     }
     #hamburger-menu{
         left: calc(70% - 5vw);

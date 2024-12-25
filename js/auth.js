@@ -4,7 +4,8 @@ import {
     signInWithEmailAndPassword,
     signOut,
     updateProfile,
-    reload
+    reload,
+    sendPasswordResetEmail
 } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js';
 import { firestore } from './firebase-init.js';
 import {
@@ -12,9 +13,8 @@ import {
     addDoc,
     getDocs,
     query,
-    orderBy
+    orderBy,doc, setDoc
 } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js';
-import { doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js';
 
 const messageBox = document.getElementById("messagebox");
 
@@ -81,6 +81,7 @@ export async function registerUser(email, password, username) {
             liked: [],
             createdAt: new Date(),
         });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         console.log("用戶註冊並存入 Firestore 成功：", user);
         document.getElementById('messagebox').classList.remove("error");
         document.getElementById('messagebox').classList.add("correct");
@@ -99,6 +100,7 @@ export async function registerUser(email, password, username) {
 export async function loginUser(email, password) {
     signInWithEmailAndPassword(auth, email, password)
         .then(async (userCredential) => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             console.log("登錄成功：", userCredential.user);
             document.getElementById('messagebox').classList.remove("error");
             document.getElementById('messagebox').classList.add("correct");
@@ -125,6 +127,28 @@ export function logoutUser() {
         });
 }
 
+export function resetpassword(email) {
+    sendPasswordResetEmail(auth, email)
+        .then(() => {
+            console.log("Password reset email sent!");
+            document.getElementById('messagebox').classList.remove("error");
+            document.getElementById('messagebox').classList.add("correct");
+            messageBox.innerText = `已寄送重設密碼的信件，請查看你的信箱`;
+        })
+        .catch((error) => {
+            document.getElementById('messagebox').classList.remove("correct");
+            document.getElementById('messagebox').classList.add("error");
+            // 檢查電子郵件格式
+            if (!isValidEmail(email)) {
+                document.getElementById('messagebox').classList.remove("correct");
+                document.getElementById('messagebox').classList.add("error");
+                messageBox.innerText = "請輸入有效的電子郵件地址";
+                return; // 停止註冊流程
+            }
+            // ..
+        });
+}
+
 // 錯誤消息處理
 function getErrorMessage(error) {
     switch (error.code) {
@@ -138,6 +162,8 @@ function getErrorMessage(error) {
             return '密碼為空。請檢查並重新輸入！';
         case 'auth/invalid-credential':
             return '錯誤的信箱或密碼。請檢查並重新輸入！'
+        case 'auth/invalid-email':
+            return '請輸入有效的電子郵件地址'
         default:
             return '發生未知錯誤：' + error.message;
     }

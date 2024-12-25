@@ -189,6 +189,7 @@ ul.page {
 
 .recommend .card a:hover {
     color: var(--blue);
+    text-decoration:underline;
     font-weight: 700;
 }
 
@@ -449,10 +450,6 @@ ul.page {
         display: none;
     }
 
-    .recommend:hover {
-        scale: 1;
-        margin: 4vh 0;
-    }
 
     .ranking:hover {
         scale: 1;
