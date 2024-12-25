@@ -1,3 +1,11 @@
+#loader.active{
+    position: absolute;
+    display: unset;
+    align-self: center;
+    top: 50vh;
+    z-index: 4;
+}
+
 /*---------------------資訊區域-------------------------*/
 .song-info-box {
     position: relative;

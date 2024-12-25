@@ -47,8 +47,7 @@
                 <img src="./images/arrow.svg" alt="arrow" id="arrow">
                 <img src="./images/account.svg" alt="account" id="account-head">
             </button>
-            <ul id="account_option"></ul>
-            </ul>
+            <ul id="account_option"></ul></ul>
         </div>
         <div class="hamburger-menu" id="hamburger-menu">
             <button id="hamburger-btn">
@@ -59,7 +58,7 @@
             </button>
             <div id="hamberger-nav">
                 <button id="hamburger-btn-close"><img src="./images/close.svg" alt="close.svg"></button>
-                <ul class="link">
+                <ul class="link" id="hamberger-link">
                     <a href="index.html">
                         <li class="link-item">
                             首頁
@@ -76,6 +75,7 @@
                         </li>
                     </a>
                 </ul>
+                <ul id="account-option"></ul>
             </div>
         </div>
     </header>
@@ -87,9 +87,10 @@
                 <h2 class="title">
                     喜歡的歌曲
                 </h2>
+                <span id="loader" class="active"></span>
                 <ul id="liked-list">
-
                 </ul>
+                
             </div>
             <script type="module">
                 import { auth, firestore } from './js/firebase-init.js';
@@ -97,6 +98,8 @@
                 import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js';
 
                 const likedSongsList = document.getElementById('liked-list');
+                const loading = document.getElementById('loader');
+                
 
                 // 獲取本地 JSON 數據
                 async function fetchJSON() {
@@ -111,11 +114,9 @@
                         return [];
                     }
                 }
-
                 // 根據 liked 的歌曲 ID 過濾 JSON 數據
                 async function renderLikedSongs(liked) {
                     const jsonData = await fetchJSON();
-
                     // 過濾 JSON 中的歌曲數據
                     const likedSongs = jsonData.filter(song => liked.map(String).includes(song.id.toString()));
                     console.log(likedSongs);
@@ -138,6 +139,7 @@
                     } else {
                         likedSongsList.innerHTML = '<p>尚未喜歡任何歌曲。</p>';
                     }
+                    loading.classList.remove('active');
                 }
 
                 // 監聽登入狀態

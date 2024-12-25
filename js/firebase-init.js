@@ -20,16 +20,16 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const firestore = getFirestore(app);
 
-console.log("Firebase 初始化成功", app);
-
-const menu = document.getElementById('account_option');
+console.log("Firebase 初始化成功", app);;
 
 // 更新選單的函數
 async function updateMenu(user) {
-  const menu = document.getElementById('account_option');
+  const acmenu = document.getElementById('account_option');
+  const hamberger = document.getElementById('hamberger-link');
+  const ham_ac = document.getElementById('account-option');
 
   // 如果頁面中沒有選單，則跳過更新
-  if (!menu) return;
+  if (!acmenu) return;
 
   // 清空舊的登入/登出選項
   const dynamicItems = document.querySelectorAll('.dynamic-item');
@@ -42,21 +42,36 @@ async function updateMenu(user) {
           const userDoc = await getDoc(userDocRef);
           if (userDoc.exists()) {
               const userData = userDoc.data();
-              const userLi = document.createElement('li');
-              userLi.className = 'dynamic-item';
-              userLi.textContent = `歡迎 ${userData.nickname || '用戶'}`;
+              const userLi_ac = document.createElement('li');
+              userLi_ac.className = 'dynamic-item';
+              userLi_ac.textContent = `歡迎 ${userData.nickname || '用戶'}`;
               
-              const likeLi = document.createElement('li');
-              likeLi.className = 'dynamic-item';
-              likeLi.innerHTML = `<a href="liked.html">喜歡的歌曲</a>`;
+              const likeLi_ac = document.createElement('li');
+              likeLi_ac.className = 'dynamic-item';
+              likeLi_ac.innerHTML = `<a href="liked.html">喜歡的歌曲</a>`;
 
-              const logoutLi = document.createElement('li');
-              logoutLi.className = 'dynamic-item';
-              logoutLi.innerHTML = `<a href="#" id="logoutButton">登出</a>`;
+              const logoutLi_ac = document.createElement('li');
+              logoutLi_ac.className = 'dynamic-item';
+              logoutLi_ac.innerHTML = `<a href="#" id="logoutButton">登出</a>`;
 
-              menu.appendChild(userLi);
-              menu.appendChild(likeLi);
-              menu.appendChild(logoutLi);
+              const userLi_ham = document.createElement('li');
+              userLi_ham.className = 'dynamic-item';
+              userLi_ham.textContent = `歡迎 ${userData.nickname || '用戶'}`;
+              
+              const likeLi_ham = document.createElement('li');
+              likeLi_ham.className = 'dynamic-item';
+              likeLi_ham.innerHTML = `<a href="liked.html">喜歡的歌曲</a>`;
+
+              const logoutLi_ham = document.createElement('li');
+              logoutLi_ham.className = 'dynamic-item';
+              logoutLi_ham.innerHTML = `<a href="#" id="logoutButton">登出</a>`;
+
+              ham_ac.appendChild(userLi_ham);
+              ham_ac.appendChild(likeLi_ham);
+              ham_ac.appendChild(logoutLi_ham);
+              acmenu.appendChild(userLi_ac);
+              acmenu.appendChild(likeLi_ac);
+              acmenu.appendChild(logoutLi_ac);
 
               const logoutButton = document.getElementById('logoutButton');
               if (logoutButton) {
@@ -79,16 +94,26 @@ async function updateMenu(user) {
       }
   } else {
       // 使用者未登入
-      const loginLi = document.createElement('li');
-      loginLi.className = 'dynamic-item';
-      loginLi.innerHTML = `<a href="account.html?type=login">登入</a>`;
+      const loginLi_ac = document.createElement('li');
+      loginLi_ac.className = 'dynamic-item';
+      loginLi_ac.innerHTML = `<a href="account.html?type=login">登入</a>`;
 
-      const registerLi = document.createElement('li');
-      registerLi.className = 'dynamic-item';
-      registerLi.innerHTML = `<a href="account.html?type=register">註冊</a>`;
+      const registerLi_ac = document.createElement('li');
+      registerLi_ac.className = 'dynamic-item';
+      registerLi_ac.innerHTML = `<a href="account.html?type=register">註冊</a>`;
 
-      menu.appendChild(loginLi);
-      menu.appendChild(registerLi);
+      const loginLi_ham = document.createElement('li');
+      loginLi_ham.className = 'dynamic-item';
+      loginLi_ham.innerHTML = `<a href="account.html?type=login">登入</a>`;
+
+      const registerLi_ham = document.createElement('li');
+      registerLi_ham.className = 'dynamic-item';
+      registerLi_ham.innerHTML = `<a href="account.html?type=register">註冊</a>`;
+
+      ham_ac.appendChild(loginLi_ham);
+      ham_ac.appendChild(registerLi_ham);
+      acmenu.appendChild(loginLi_ac);
+      acmenu.appendChild(registerLi_ac);
   }
 }
 

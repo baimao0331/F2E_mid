@@ -5,6 +5,7 @@ let sync = false;
 let player;
 let song;
 const currentLyrics = document.getElementById('dynamic-lyric-box'); // 歌詞顯示區塊
+const loading = document.getElementById('loader');
 if (songId == 92) {
     window.location.href = 'storm.html';
     setTimeout(() => {
@@ -18,6 +19,7 @@ fetch('songs.json')
     .then(data => {
         song = data.find(s => s.id === songId);
         if (song) {
+            loading.classList.remove('active');
             document.getElementById('release-date').textContent = song.release;
             document.getElementById('album').textContent = song.album;
             document.getElementById('song-title').textContent = song.title;
@@ -30,7 +32,6 @@ fetch('songs.json')
             const lyricTimes = song.lyrics.time; // 獲取歌詞時間戳
 
             lyricContainer.innerHTML = '';
-
             for (let i = 0; i < japaneseLyrics.length; i++) {
                 const japaneseLine = japaneseLyrics[i];
                 const chineseLine = chineseLyrics[i];
@@ -74,6 +75,7 @@ fetch('songs.json')
             // 顯示同一位藝術家的隨機五首歌曲
             displayRelatedSongs(song.artist, data);
         } else {
+            loading.classList.remove('active');
             console.error('找不到歌曲');
             document.getElementById('song-title').textContent ='找不到該歌曲';
         }
@@ -204,6 +206,6 @@ function updateLyrics() {
     }
 }
 
-function checkPlayerState() {
-
-}
+document.addEventListener('loadingEvent', () => {
+    console.log('自定義事件 myEvent 被觸發了');
+});

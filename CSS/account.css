@@ -20,22 +20,29 @@
     background-color: rgb(44, 207, 79);
 }
 
+button{
+    background-color: var(--blue);
+    border: 0;
+    height: 2.5rem;
+    border-radius: var(--border-rad);
+    cursor: pointer;
+}
+
 .buttonarea{
-    position: relative;
-    width: 50%;
-    justify-content: center;
+    margin-top: 5vh;
+    width: 40%;
 }
 .buttonarea button{
+    position: relative;
     cursor: pointer;
     background-color: var(--light-gray);
     border-radius: var(--border-rad);
     border: 0;
-    width: 50%;
+    width: 100%;
     opacity: 1;
     transition: 0.5s;
-    height: 5vh;
     overflow: hidden;
-    z-index: 2;
+    z-index: 1;
 }
 .buttonarea button.active{
     padding: 0;
@@ -45,31 +52,31 @@
     z-index: 1;
 }
 .accountbox{
+    display: flex;
+    flex-direction: column;
     position: relative;
     width: 50%;
+    height: calc-size(auto , size + 10vh);
     justify-self: center;
-    height: 100%;
     background-color: var(--light-gray);
     border-radius: var(--border-rad);
+    transition: 0.5s ease-in-out;
 }
 
 #inputarea{
-    padding: 5%;
+    padding: 10vh 10%;
+    transition: 0.5s ease-in-out;
 }
 #login{
     display: flex;
     flex-direction: column;
-    height: 60vh;
-    margin-bottom: 5vh;
 }
 #register{
     display: flex;
     flex-direction: column;
-    height: 60vh;
-    margin-bottom: 5vh;
 }
 input{
-    height: 3rem;
+    height: 2.5rem;
     border: none;
     margin: 1rem 0;
     padding-left: 3rem;
@@ -80,20 +87,35 @@ input{
 }
 
 #loginButton, #registerButton{
-    align-self: center;
     display: none;
-    width: calc(100% - 10rem);
-    bottom: 5vh;
+    width: 50%;
+    align-self: center;
 }
 
 #loginButton.active, #registerButton.active{
     display: unset;
 }
 
-button{
-    background-color: var(--blue);
-    border: 0;
-    height: 5vh;
-    border-radius: var(--border-rad);
-    cursor: pointer;
+@media screen and (max-width:768px) {
+    #messagebox{
+        width: 80%;
+    }
+    .accountbox{
+        width: 80%;
+    }
+    input{
+        padding-left: 2rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    #messagebox{
+        width: 100%;
+    }
+    .accountbox{
+        width: 100%;
+    }
+    input{
+        padding-left: 1rem;
+    }
 }
