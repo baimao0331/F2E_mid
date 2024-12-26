@@ -58,7 +58,6 @@ h3 {
     position: relative;
     display: inline-block;
     font-size: 1.1rem;
-    cursor: pointer;
     transition: transform 0.3s ease-out; /* 滑鼠移開時的平滑過渡 */
 }
 
@@ -208,13 +207,13 @@ h3 {
 
 /* 滾動條的滑塊 */
 .box-right #scroll-box::-webkit-scrollbar-thumb {
-    background: var(--gray);
+    background: var(--blue);
     border-radius: 10px;
 }
 
 /* 滑鼠懸停時的滾動條 */
 .box-right #scroll-box::-webkit-scrollbar-thumb:hover {
-    background: var(--blue);
+    background: var(--orange);
 }
 
 #lyric-container {
@@ -323,13 +322,13 @@ aside {
 
 /* 滾動條的滑塊 */
 .related-songs .scroll-box::-webkit-scrollbar-thumb {
-    background: var(--gray);
+    background: var(--blue);
     border-radius: 10px;
 }
 
 /* 滑鼠懸停時的滾動條 */
 .related-songs .scroll-box::-webkit-scrollbar-thumb:hover {
-    background: var(--blue);
+    background: var(--orange);
 }
 
 .card {

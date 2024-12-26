@@ -22,10 +22,12 @@
 
 button{
     background-color: var(--blue);
+    color: var(--white);
     border: 0;
     height: 2.5rem;
     border-radius: var(--border-rad);
     cursor: pointer;
+    font-weight: 600;
 }
 
 button:active{
@@ -43,6 +45,7 @@ button:active{
     position: absolute;
     cursor: pointer;
     background-color: var(--light-gray);
+    color: black;
     border-radius: var(--border-rad);
     border: 0;
     width: 100%;
@@ -51,6 +54,7 @@ button:active{
     overflow: hidden;
     z-index: 2;
     height: 2rem;
+    font-weight: 500;
 }
 .buttonarea button.active{
     padding: 0;

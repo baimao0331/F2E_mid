@@ -9,15 +9,16 @@ html {
 :root {
     --dark-gray: #3c3e46;
     --backgrond: #25272e;
-    --gray: #56575f;
+    --gray: #5d5c6b;
     --light-gray: #c8cacf;
     --artist-text: #202020;
-    --blue:#5a83dd;
+    --blue:#5a79dd;
     --blue-hover: #5475bd;
     --white:#ececec;
-    --orange: rgb(214, 117, 71);
+    --orange: #cb5e5b;
     --border-rad:clamp(10px,30px,5vw);
     --min-width:320px;
+    /*cb5e5b*/
 }
 
 body {
@@ -56,7 +57,7 @@ header{
 header .logoimg{
     padding: 1vh 0;
     position: relative;
-    width: clamp(100px,15%,200px);
+    width: clamp(120px,15%,200px);
     transition: 0.3s ease;
     left: 1vw;
 }
@@ -130,7 +131,7 @@ nav li{
     white-space: nowrap;
     list-style-type: none;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     transition: 0.5s;
     overflow: hidden;
     text-align: center;
@@ -151,6 +152,12 @@ nav li::after {
 nav li:hover::after {
     width: 100%;
 }
+
+nav li:active::after {
+    transition: 0.2s;
+    background-color: var(--orange);
+}
+
 .account{
     position: relative;
     left: calc(70% - 3vw);
@@ -345,7 +352,7 @@ nav li:hover::after {
     width: 0rem;
     list-style-type: none;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     transition: 0.5s;
     overflow: hidden;
     text-align: center;
@@ -355,18 +362,23 @@ nav li:hover::after {
 }
 
 #hamberger-nav li::after {
-    content: ''; /* 生成伪元素 */
+    content: '';
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0; /* 初始宽度为0 */
-    height: 0.3rem; /* 下边框的高度 */
-    background-color: var(--blue); /* 下边框的颜色 */
-    transition: width 0.5s; /* 控制宽度的过渡效果 */
+    width: 0;
+    height: 0.3rem;
+    background-color: var(--blue);
+    transition: width 0.5s;
 }
 
 #hamberger-nav li:hover::after {
     width: 100%;
+}
+
+#hamberger-nav li:active::after {
+    transition: 0.2s;
+    background-color: var(--orange);
 }
 
 #hamberger-nav.active{
@@ -393,13 +405,20 @@ body .container{
     flex-direction: column;
     justify-self: center;
     align-items: center;
+    justify-content: center;
     height: 100%; /* 使容器高度为视口高度 */
     background-color: var(--gray); 
     border-radius: var(--border-rad);
 }
 
 main{
+    position: relative;
     width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 /*-------------------頁首&nav區域-----------------------*/
 /*---------------------頁尾區域-------------------------*/

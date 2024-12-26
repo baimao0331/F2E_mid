@@ -1,5 +1,13 @@
 
 /*---------------------排名區域-------------------------*/
+main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .ranking{
     position: relative;
     margin:5vh 0;
@@ -12,10 +20,6 @@
     border-radius: var(--border-rad);
     background-color: var(--dark-gray);
     transition: 0.5s;
-}
-
-.ranking:hover{
-    box-shadow: 0px 10px 0 var(--blue);
 }
 
 .ranking .title{
@@ -46,6 +50,11 @@
 
 .ranking .buttonarea button.active{
     background-color: var(--blue);
+    color: white;
+}
+
+.ranking .buttonarea button:active{
+    background-color: var(--orange);
     color: white;
 }
 
@@ -115,6 +124,7 @@
     width: clamp(60px, 6vw, 7vw);
     object-fit: cover;
     transition: 0.5s;
+    aspect-ratio: 1/1;
 }
 
 .rankbox .text-info {
@@ -211,8 +221,8 @@
 
 
 @media screen and (max-width:1200px) {
-    .rankbox {
-        height: 18vh;
+    .rankbox{
+        height: 12vh;
     }
 
     .rankbox .ranking-number {
@@ -229,15 +239,6 @@
         margin: 4vh 0;
     }
 
-    .ranking .text-info {
-        left: 25%;
-        height: 15vh;
-        align-items: center;
-    }
-    .rankbox{
-        height: 12vh;
-    }
-
     .rankbox a.song-img{
         left: 5vw;
         height: 10vh;
@@ -246,6 +247,12 @@
     .rankbox img.song-img{
         height: 100%;
         width: 100%;
+    }
+
+    .ranking .text-info {
+        left: calc(10vh + 5rem);
+        height: 15vh;
+        align-items: center;
     }
     .rankbox .song-name{
         width: 20rem;
@@ -257,7 +264,7 @@
     }
 
     .rankbox .view-num {
-        left: 30%;
+        left: 25%;
     }
 
     #rank-list-header .text-info {
@@ -334,7 +341,7 @@
     }
 
     .rankbox .text-info {
-        left: 22%;
+        left: calc(15vh + 3rem);
         display: flex;
     }
 

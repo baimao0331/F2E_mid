@@ -19,7 +19,6 @@ fetch('songs.json')
     .then(data => {
         song = data.find(s => s.id === songId);
         if (song) {
-            loading.classList.remove('active');
             document.getElementById('release-date').textContent = song.release;
             document.getElementById('album').textContent = song.album;
             document.getElementById('song-title').textContent = song.title;
@@ -72,6 +71,7 @@ fetch('songs.json')
                     'onStateChange': onPlayerStateChange
                 }
             });
+            loading.classList.remove('active');
             // 顯示同一位藝術家的隨機五首歌曲
             displayRelatedSongs(song.artist, data);
         } else {

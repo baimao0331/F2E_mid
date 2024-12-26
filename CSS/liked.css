@@ -29,13 +29,6 @@
     width: 80%;
 }
 
-#liked-list p{
-    margin-top: 2rem;
-    color: var(--white);
-    align-self: center;
-    font-size: 1.5rem;
-}
-
 #liked-list p a{
     color: var(--blue);
     font-weight: 600;
@@ -98,6 +91,7 @@ img.song-img {
     color: black;
     font-weight: 500;
     font-size: 1rem;
+    width: 15rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -124,6 +118,10 @@ img.song-img {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.text-info p{
+    margin-top: 0;
 }
 
 @media screen and (max-width:1100px) {
@@ -206,8 +204,9 @@ img.song-img {
         left: 0;
     }
 }
-@media screen and (max-width:384px) {
+@media screen and (max-width:500px) {
+
     #liked-list li .song-name {
-        width: 40vw;
+        width: 15rem;
     }
 }

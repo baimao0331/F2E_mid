@@ -131,7 +131,7 @@
                                 <a href="lyric.html?songId=${song.id}"  target="_self" class="song-img"><img src="${song.img}" alt="${song.title} 封面圖" class="song-img" /></a>
                                 <div class="text-info">
                                 <a href="lyric.html?songId=${song.id}"  target="_self" class="song-name">${song.title}</a>
-                                <div class="song-artist">${song.artist}</div>
+                                <a href="search.html?type=song&query=${song.artist}" class="song-artist"><p>${song.artist}</p></a>
                                 </div>
                             `;
                             likedSongsList.appendChild(li);

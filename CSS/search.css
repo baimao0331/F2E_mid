@@ -191,7 +191,8 @@
 }
 
 .search-item .song-info a:hover {
-    color: white;
+    color: var(--blue);
+    text-decoration: underline;
 }
 
 .search-item .song-info h2 {
@@ -219,10 +220,6 @@
 
 .search-item:hover .link-item {
     padding: 0.5vh 3vw;
-}
-
-.search-item .link-item:hover {
-    background-color: var(--blue-hover);
 }
 
 .search-item .link-item:active {
