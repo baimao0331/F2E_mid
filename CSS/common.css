@@ -247,7 +247,6 @@ nav li:active::after {
 }
 #hamburger-btn.active{
     z-index: 5;
-    position: fixed;
 }
 
 #hamburger-btn span{
@@ -508,6 +507,10 @@ footer p{
    
 /*---------------------頁尾區域-------------------------*/
 @media screen and (max-width:1440px) {
+    #hamburger-btn.active{
+        z-index: 5;
+        position: fixed;
+    }
     #hamburger-btn-close{
         display: none;
     }
