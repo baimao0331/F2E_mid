@@ -81,7 +81,13 @@ fetch('songs.json')
         }
     })
     .catch(error => {
-        console.error('無法載入 JSON:', error)
+        console.error(error);
+        if (error instanceof TypeError && error.message.includes('YT.Player is not a constructor')) {
+            console.error("YT.Player 初始化失敗，3秒後重新整理頁面");
+            setTimeout(() => {
+                location.reload(); // 重新整理頁面
+            }, 1000); // 延遲 1 秒後重新整理
+        }
     });
 
 // 顯示同一位藝術家的隨機五首歌曲
