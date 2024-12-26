@@ -82,7 +82,6 @@ fetch('songs.json')
     })
     .catch(error => {
         console.error('無法載入 JSON:', error)
-        location.reload();
     });
 
 // 顯示同一位藝術家的隨機五首歌曲
