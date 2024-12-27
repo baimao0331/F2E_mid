@@ -34,7 +34,7 @@
 }
 
 .searchbar input:hover {
-    border: 1px solid var(--blue);
+    border: 1px solid var(--orange);
 }
 
 .search button {
@@ -44,16 +44,12 @@
     width: clamp(100px, 15%, 20vw);
     border-radius: var(--border-rad);
     border: none;
-    background-color: var(--blue);
+    background-color: var(--orange);
     font-weight: 600;
     transition: 0.2s;
     color: white;
     size: 1rem;
     cursor: pointer;
-}
-
-.search button:active {
-    background-color: var(--orange);
 }
 
 /*---------------------搜尋區域-------------------------*/
@@ -92,7 +88,7 @@
 
 .recommend-box button {
     cursor: pointer;
-    background-color: var(--blue);
+    background-color: var(--orange);
     border: none;
     height: 10vh;
     border-radius: var(--border-rad);
@@ -104,11 +100,6 @@
 
 .recommend-box button:hover {
     height: 12vh;
-}
-
-.recommend-box button:active {
-    transition: 0.2s;
-    background-color: var(--orange);
 }
 
 .song-list {
@@ -414,7 +405,7 @@ ul.page {
     height: 5vh;
     width: 50%;
     margin: 0 25%;
-    background-color: var(--blue);
+    background-color: var(--orange);
     padding: 0 2vh;
     color: var(--white);
     text-decoration: none;
@@ -431,10 +422,6 @@ ul.page {
     margin: 0 20%;
 }
 
-.read-more:active {
-    transition: 0.2s;
-    background-color: var(--orange);
-}
 
 
 /*---------------------排名區域-------------------------*/
