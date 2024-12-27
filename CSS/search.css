@@ -89,22 +89,17 @@
 }
 
 .buttonarea button:hover {
-    border: 1px solid var(--blue);
+    border: 1px solid var(--orange);
     color: var(--white);
     font-weight: 600;
-    background-color: var(--blue);
+    background-color: var(--orange);
 }
 
 .buttonarea button.active {
     transition: 0.2s;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--orange);
     color: var(--white);
     font-weight: 600;
-    background-color: var(--blue);
-}
-
-.buttonarea button:active{
-    transition: 0.2ss;
     background-color: var(--orange);
 }
 
@@ -208,7 +203,7 @@
     position: absolute;
     top: 30%;
     right: 10%;
-    background-color: var(--blue);
+    background-color: var(--orange);
     padding: 0.5vh 1vw;
     color: white;
     text-decoration: none;
@@ -220,11 +215,6 @@
 
 .search-item:hover .link-item {
     padding: 0.5vh 3vw;
-}
-
-.search-item .link-item:active {
-    transition: 0.2s;
-    background-color: var(--orange);
 }
 
 #noresult {
