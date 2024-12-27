@@ -1,0 +1,440 @@
+#loader.active{
+    position: absolute;
+    display: unset;
+    align-self: center;
+    top: 50vh;
+    z-index: 4;
+}
+
+/*---------------------資訊區域-------------------------*/
+.song-info-box {
+    position: relative;
+    margin: 4vh 0 calc(1vh + 1vw);
+    width: 90%;
+    padding: 2vh 1vw;
+    display: flex;
+    background-color: var(--light-gray);
+    border-radius: var(--border-rad);
+    box-shadow: 0 1vh 0 var(--blue);
+}
+
+.song-img-box{
+    height: 15vh;
+    aspect-ratio: 1/1;
+    box-shadow: 1vh 1vh 0 var(--gray);
+    border-radius: calc(var(--border-rad)/2);
+}
+
+#song-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: calc(var(--border-rad)/2);
+}
+
+.song-info {
+    height: 15vh;
+    padding-left: 2vh;
+}
+
+.song-info h2,
+h3 {
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin-bottom: 0.5vh;
+}
+
+#title-scroll {
+    margin-bottom: 0.5vh;
+    width: 20rem;
+    height: 1.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+#song-title {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease-out; /* 滑鼠移開時的平滑過渡 */
+}
+
+#song-artist{
+    font-size: 0.9rem;
+}
+
+.album,
+.release-date {
+    display: flex;
+    align-items: center;
+}
+
+#heart { 
+    position: absolute;
+    right: 6vh;
+    bottom: 2vh; 
+    width: 2rem; 
+    height: 1.8rem; 
+    cursor: pointer;
+} 
+
+#heart:before, #heart:after { 
+    position: absolute; 
+    content: ""; 
+    left: 1rem; 
+    top: 0; 
+    width: 1rem; 
+    height: 1.8rem; 
+    background: var(--dark-gray);
+    border-radius: 1rem 1rem 0 0; 
+    transform: rotate(-45deg); 
+    transform-origin: 0 100%; 
+    transition: 0.2s;
+} 
+#heart:after { 
+    left: 0; 
+    transform: rotate(45deg); 
+    transform-origin :100% 100%; 
+}
+#heart.liked:before, #heart.liked:after{
+    background-color: var(--blue);
+}
+#heart .hover-text{
+    display: none;
+    position: relative;
+    right: 1.5rem;
+    bottom: 2.5rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+    z-index: 2;
+    background-color: var(--gray);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem var(--dark-gray);
+    color: var(--white);
+    font-weight: 600;
+}
+
+#heart:hover .hover-text{
+    display: unset;
+}
+/*---------------------資訊區域-------------------------*/
+/*----------------------大框架--------------------------*/
+
+#main {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    gap: 1vw;
+    justify-content: center;
+    height: 40rem;
+}
+
+.box-left{
+    position: relative;
+    height: 35rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box-right {
+    position: relative;
+    border-radius: var(--border-rad);
+    display: flex;
+    width: 50%;
+    height: 35rem;
+    background-color: var(--light-gray);
+    padding: 2vh 1vw;
+}
+/*----------------------大框架--------------------------*/
+/*---------------------影片區域-------------------------*/
+.iframe_player {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.iframe_player iframe {
+    width: 100%;
+    border-radius: var(--border-rad);
+    aspect-ratio: 16 / 9;
+}
+
+#dynamic-lyric-box{
+    width: 100%;
+    height: 10rem;
+    background-color: black;
+    border-radius: var(--border-rad);
+    color: var(--white);
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 2rem;
+}
+#dynamic-lyric-box p{
+    margin: 0.5rem 0;
+}
+#dynamic-lyric-box ruby{
+    margin: 0 0.5rem;
+}
+/*---------------------影片區域-------------------------*/
+/*---------------------歌詞區域-------------------------*/
+.box-right #scroll-box{
+    width: 100%;
+    height: 100%;
+    padding-right: 1vw;
+    overflow: scroll;
+    overflow-x: hidden;
+    /* 隱藏水平滾動條 */
+}
+
+/* 滾動條的整體 */
+.box-right #scroll-box::-webkit-scrollbar {
+    width: 8px;
+    /* 垂直滾動條寬度 */
+    height: 0px;
+    /* 水平滾動條高度 */
+}
+
+/* 滾動條軌道 */
+.box-right #scroll-box::-webkit-scrollbar-track {
+    background: var(--dark-gray);
+    border-radius: 10px;
+}
+
+/* 滾動條的滑塊 */
+.box-right #scroll-box::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 10px;
+}
+
+/* 滑鼠懸停時的滾動條 */
+.box-right #scroll-box::-webkit-scrollbar-thumb:hover {
+    background: var(--orange);
+}
+
+#lyric-container {
+    position: relative;
+    width: 100%;
+}
+
+.lyric-line {
+    margin: 0;
+    padding: 2vh 1vw;
+    border-bottom: 1px solid var(--gray);
+    background-color: var(--light-gray);
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 450;
+}
+
+.first-line{
+    border-top-left-radius: var(--border-rad);
+    border-top-right-radius: var(--border-rad);
+}
+
+.last-line{
+    border-bottom-left-radius: var(--border-rad);
+    border-bottom-right-radius: var(--border-rad);
+    border: none;
+}
+
+.lyric-line:hover {
+    background-color: #d9e0ef;
+}
+.highlight {
+    background-color: #d9e0ef;
+}
+
+.lyric-line ruby{
+    margin: 0 0.2vw;
+}
+
+.lyric-line rt{
+    margin-bottom: 0.05rem;
+    font-size: 0.8rem;
+    letter-spacing: 0rem;
+}
+
+/*---------------------歌詞區域-------------------------*/
+/*---------------------相關區域-------------------------*/
+.related-songs{
+    position: relative;
+    width: 90%;
+    margin: 4vh 0;
+}
+
+.card-container {
+    display: flex;
+}
+
+.related-title {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 450;
+    color: var(--white);
+    background-color: var(--dark-gray);
+    border-top-left-radius: var(--border-rad);
+    border-top-right-radius: var(--border-rad);
+}
+
+aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0vh;
+    left: 1vh;
+    width: 100%;
+    background-color: var(--light-gray);
+    border-bottom-left-radius: var(--border-rad);
+    border-bottom-right-radius: var(--border-rad);
+    height: 80%;
+    padding-bottom: 1vh;
+}
+
+.related-songs .scroll-box {
+    width: 90%;
+    height: 100%;
+    overflow: scroll;
+    border: var(--border-rad);
+}
+
+/* 滾動條的整體 */
+.related-songs .scroll-box::-webkit-scrollbar {
+    width: 0px;
+    /* 垂直滾動條寬度 */
+    height: 8px;
+    /* 水平滾動條高度 */
+}
+
+/* 滾動條軌道 */
+.related-songs .scroll-box::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 10px;
+}
+
+/* 滾動條的滑塊 */
+.related-songs .scroll-box::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 10px;
+}
+
+/* 滑鼠懸停時的滾動條 */
+.related-songs .scroll-box::-webkit-scrollbar-thumb:hover {
+    background: var(--orange);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: calc(var(--border-rad)/2);
+    background-color: var(--gray);
+    margin: 1vh;
+    padding: 1rem;
+    transition: 0.5s;
+    height: 10rem;
+    width: 10rem;
+}
+
+
+.card a img {
+    /*推薦區域圖片設定*/
+    position: relative;
+    height: clamp(30px, 4rem, 10rem);
+    width: clamp(30px, 4rem, 10rem);
+    border-radius: calc(var(--border-rad)/2);
+}
+
+.card .song-info {
+    line-clamp: 2;
+    box-orient: vertical;
+    display: flex;
+    flex-direction: column;
+    width: 8rem;
+    text-align: center;
+}
+
+.card a {
+    text-decoration: none;
+    color: var(--white);
+    text-align: center;
+    transition: 0.5s;
+    width: 5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card a:hover {
+    color: var(--white);
+}
+
+.card .song-name {
+    line-clamp: 2;
+    box-orient: vertical;
+    text-align: center;
+    height: 3rem;
+}
+
+.card .card-info h4 {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.card .card-info h4:hover {
+    font-weight: 500;
+}
+/*---------------------相關區域-------------------------*/
+
+@media screen and (max-width:768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    article {
+        width: 100%;
+    }
+
+    aside {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 5vh;
+    }
+
+    .card-container {
+        display: flex;
+    }
+
+    #song-img {
+        align-self: center;
+    }
+}
+
+@media screen and (max-width:700px){
+    #main{
+        margin-top: 26vh;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .box-right{
+        margin-top: 5vh;
+    }
+    .box-left,.box-right{
+        width: 100%;
+    }
+    .related-songs{
+        margin-top: 30vh;
+    }
+    aside{
+        margin-top: 0;
+    }
+}
